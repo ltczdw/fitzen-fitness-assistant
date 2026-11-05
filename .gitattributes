@@ -1,0 +1,3 @@
+# These upstream files are verified against pinned byte hashes.
+# Preserve their original bytes on every platform, including CRLF checkouts.
+backend/app/vendor/deepseek_v41/** -text

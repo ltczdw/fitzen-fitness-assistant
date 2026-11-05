@@ -1,5 +1,6 @@
 # Files included in this public upload tree.
 .env.example
+.gitattributes
 .github/workflows/checks.yml
 .gitignore
 LICENSE
