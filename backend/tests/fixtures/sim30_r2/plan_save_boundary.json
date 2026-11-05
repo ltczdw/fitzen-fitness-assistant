@@ -1,0 +1,25 @@
+{
+  "case": "plan_save_boundary",
+  "source_file": "continuation-01/live/synthetic-model-responses.jsonl",
+  "source_message": "请把刚才对话里改成第二天25分钟的两天预览保存成正式计划。如果你在对话里不能保存，请直说并告诉我现有页面如何操作，不要只预览却说已经保存。",
+  "items": [
+    {
+      "source_call": 78,
+      "tool": "return_request_understanding",
+      "sha256": "3b200939706ef24f9bb3d340045e6f5d29b3734504f76a62fda86e5802860aa2",
+      "arguments": "{\"tasks\": [{\"task_type\": \"training_plan\", \"action\": \"answer\", \"text\": \"请把刚才对话里改成第二天25分钟的两天预览保存成正式计划。\", \"is_negated\": false, \"is_hypothetical\": false, \"is_third_party\": false, \"plan_result\": false, \"result_scope\": null, \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"required\", \"fact_text\": null, \"reply_mode\": \"conversation\", \"reply_purpose\": \"execution_status\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"delivery_type\": \"preview\"}, {\"task_type\": \"chitchat\", \"action\": \"answer\", \"text\": \"如果你在对话里不能保存，请直说并告诉我现有页面如何操作，不要只预览却说已经保存。\", \"is_negated\": false, \"is_hypothetical\": false, \"is_third_party\": false, \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"none\", \"fact_text\": null, \"reply_mode\": \"conversation\", \"reply_purpose\": \"execution_status\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"delivery_type\": \"capability\"}], \"safety\": {\"level\": \"normal\", \"evidence\": \"\", \"categories\": [], \"reason\": \"无当前医疗风险，仅涉及计划保存与页面操作说明\"}, \"relation\": \"follow_up\", \"reply_mode\": \"conversation\", \"reply_purpose\": \"execution_status\", \"output_format\": \"default\", \"critical_fact_fields\": [], \"current_is_critical\": false, \"needs_clarification\": false}"
+    },
+    {
+      "source_call": 80,
+      "tool": "return_request_understanding",
+      "sha256": "d669a9f5028705e264883c87e4853e900e987efa77d4a2b4430c311f96eac4a2",
+      "arguments": "{\"tasks\": [{\"task_type\": \"training_plan\", \"action\": \"record\", \"text\": \"请把刚才对话里改成第二天25分钟的两天预览保存成正式计划。\", \"is_negated\": false, \"is_hypothetical\": false, \"is_third_party\": false, \"plan_result\": false, \"result_scope\": null, \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"required\", \"fact_text\": null, \"reply_mode\": \"grounded\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"context_ids\": [\"8338bbd9-30f0-4b49-966c-5e19b0c443da:user\", \"4a69c140-88ed-4766-b0c2-c36b96539bd7:user\"], \"fact_fields\": [], \"critical_fact_fields\": [], \"delivery_type\": \"plan\"}, {\"task_type\": \"chitchat\", \"action\": \"question\", \"text\": \"如果你在对话里不能保存，请直说并告诉我现有页面如何操作，不要只预览却说已经保存。\", \"is_negated\": false, \"is_hypothetical\": false, \"is_third_party\": false, \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"none\", \"fact_text\": null, \"reply_mode\": \"conversation\", \"reply_purpose\": \"execution_status\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"delivery_type\": \"capability\"}], \"safety\": {\"level\": \"normal\", \"evidence\": \"\", \"categories\": [], \"reason\": \"本轮仅要求保存预览并询问保存操作方式，无当前症状或医疗风险表述。\"}, \"relation\": \"follow_up\", \"reply_mode\": \"grounded\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"critical_fact_fields\": [], \"current_is_critical\": false, \"needs_clarification\": false, \"dialogue_ids\": [\"8338bbd9-30f0-4b49-966c-5e19b0c443da:user\", \"4a69c140-88ed-4766-b0c2-c36b96539bd7:user\"]}"
+    },
+    {
+      "source_call": 81,
+      "tool": "return_dialogue_answer",
+      "sha256": "6fe00a68dee8252d3506d654bd7bcc05f44b99118d26cfb2c71a78d95e54e68b",
+      "arguments": "{\"answer\": \"这次我不能保存。当前这条对话路径没有保存或修改工具，所以我无法把刚才那个「第二天改为25分钟」的两天预览写成正式计划，也不会声称已经保存。\\n\\n关于现有页面怎么操作，我这边没有可确认的正式计划保存入口信息，因此不能给你具体的按钮或步骤指引，以免误导。你可以先在应用内查看训练计划相关页面是否有保存或确认选项；如果找不到，建议以页面实际显示为准。\\n\\n需要的话，我可以把刚才那版两天预览（第二天25分钟）重新整理成文字版，方便你对照手动录入。\", \"requires_grounding\": false, \"status_kind\": \"save_permission\", \"capability_kind\": \"plan_save\"}"
+    }
+  ]
+}

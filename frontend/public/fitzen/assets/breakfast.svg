@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" fill="none">
+  <!-- Original decorative breakfast icon; not a meal photograph. Copyright (c) 2026 ltczdw. MIT License. -->
+  <rect width="640" height="240" fill="#201f20"/>
+  <circle cx="320" cy="120" r="90" fill="#131314" stroke="#3d4a3d" stroke-width="2"/>
+  <path d="M258 112h124c-5 40-24 61-62 61s-57-21-62-61Z" fill="#bccbb9"/>
+  <path d="M264 107h112" stroke="#4be277" stroke-width="8" stroke-linecap="round"/>
+  <path d="M293 70c-13 10 10 18 0 28m27-28c-13 10 10 18 0 28m27-28c-13 10 10 18 0 28" stroke="#bccbb9" stroke-width="5" stroke-linecap="round"/>
+</svg>

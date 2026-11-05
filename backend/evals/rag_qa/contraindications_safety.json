@@ -1,0 +1,654 @@
+{
+ "suite": "rag_qa",
+ "category": "contraindication",
+ "description": "动作/剂量/禁忌与安全边界问答：就医信号、紧急评估信号、不适用人群、安全分流边界。安全分诊类查询在系统里证据门槛更高（阈值 0.58）。",
+ "samples": [
+  {
+   "id": "qa-c001",
+   "category": "contraindication",
+   "query": "扭伤后出现哪些情况应该尽快寻求医疗建议？",
+   "reference_answer": "如果疼痛或肿胀严重或持续加重、无法承重或活动、淤青明显、恢复没有改善，应尽快寻求医疗建议。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "如果疼痛或肿胀严重或持续加重、无法承重或活动、淤青明显、恢复没有改善，应尽快寻求医疗建议"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "就医信号"
+   ]
+  },
+  {
+   "id": "qa-c002",
+   "category": "contraindication",
+   "query": "扭伤后哪些表现需要及时接受紧急评估？",
+   "reference_answer": "若出现明显变形、麻木或针刺感、皮肤颜色异常，或受伤时听到断裂声，应及时接受紧急评估。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "若出现明显变形、麻木或针刺感、皮肤颜色异常，或受伤时听到断裂声，应及时接受紧急评估"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "紧急信号"
+   ]
+  },
+  {
+   "id": "qa-c003",
+   "category": "contraindication",
+   "query": "受伤时听到断裂声应该怎么办？",
+   "reference_answer": "应及时接受紧急评估。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "或受伤时听到断裂声，应及时接受紧急评估"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "紧急信号"
+   ]
+  },
+  {
+   "id": "qa-c004",
+   "category": "contraindication",
+   "query": "扭伤后无法承重走路，还可以自己硬练吗？",
+   "reference_answer": "不可以。无法承重或活动属于应尽快寻求医疗建议的情况。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "无法承重或活动、淤青明显、恢复没有改善，应尽快寻求医疗建议"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "就医信号"
+   ]
+  },
+  {
+   "id": "qa-c005",
+   "category": "contraindication",
+   "query": "扭伤处淤青越来越明显还持续加重，该怎么处理？",
+   "reference_answer": "这属于危险信号，应尽快寻求医疗建议，而不是继续自行处理。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "如果疼痛或肿胀严重或持续加重、无法承重或活动、淤青明显、恢复没有改善，应尽快寻求医疗建议"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "就医信号"
+   ]
+  },
+  {
+   "id": "qa-c006",
+   "category": "contraindication",
+   "query": "脚踝扭伤一周恢复没有任何改善，正常吗？",
+   "reference_answer": "恢复没有改善是应尽快寻求医疗建议的信号之一，建议就医评估。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "淤青明显、恢复没有改善，应尽快寻求医疗建议"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "就医信号"
+   ]
+  },
+  {
+   "id": "qa-c007",
+   "category": "contraindication",
+   "query": "伤处皮肤颜色异常需要重视吗？",
+   "reference_answer": "需要。皮肤颜色异常属于应及时接受紧急评估的表现。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "明显变形、麻木或针刺感、皮肤颜色异常，或受伤时听到断裂声，应及时接受紧急评估"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "紧急信号"
+   ]
+  },
+  {
+   "id": "qa-c008",
+   "category": "contraindication",
+   "query": "扭伤部位有针刺感应怎么处理？",
+   "reference_answer": "麻木或针刺感应及时接受紧急评估。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "明显变形、麻木或针刺感、皮肤颜色异常，或受伤时听到断裂声，应及时接受紧急评估"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "紧急信号"
+   ]
+  },
+  {
+   "id": "qa-c009",
+   "category": "contraindication",
+   "query": "NHS 的扭伤建议能替代医生诊断吗？",
+   "reference_answer": "不能。该信息用于安全分流，不用于自行诊断或替代医生。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "该信息用于安全分流，不用于自行诊断或替代医生"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "边界"
+   ]
+  },
+  {
+   "id": "qa-c010",
+   "category": "contraindication",
+   "query": "有肾病的人能直接按 WHO 的通用膳食原则吃吗？",
+   "reference_answer": "不能直接照搬。人群层面的膳食原则不能直接替代糖尿病、肾病、妊娠、过敏或其他疾病所需的个体化医疗营养方案。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "不能直接替代糖尿病、肾病、妊娠、过敏或其他疾病所需的个体化医疗营养方案"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "禁忌"
+   ]
+  },
+  {
+   "id": "qa-c011",
+   "category": "contraindication",
+   "query": "过敏体质人群执行公共膳食目标需要注意什么？",
+   "reference_answer": "过敏属于需要个体化医疗营养方案的情况，人群膳食原则不能直接替代。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "糖尿病、肾病、妊娠、过敏或其他疾病所需的个体化医疗营养方案"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "禁忌"
+   ]
+  },
+  {
+   "id": "qa-c012",
+   "category": "contraindication",
+   "query": "正在用药的人想加大训练量，要注意什么边界？",
+   "reference_answer": "WHO 的活动建议不替代针对个人疾病、伤病或用药情况的专业评估，用药情况下应先咨询专业意见。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "不替代针对个人疾病、伤病或用药情况的专业评估"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "用药"
+   ]
+  },
+  {
+   "id": "qa-c013",
+   "category": "contraindication",
+   "query": "有明显症状的人能自行决定高强度训练吗？",
+   "reference_answer": "不能自行决定。对于有慢性病、残疾、妊娠或明显症状的人，活动类型和强度应根据专业建议调整。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "对于有慢性病、残疾、妊娠或明显症状的人，活动类型和强度应根据专业建议调整"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "禁忌"
+   ]
+  },
+  {
+   "id": "qa-c014",
+   "category": "contraindication",
+   "query": "有慢性病的情况下运动需要注意什么边界？",
+   "reference_answer": "有慢性病、残疾、妊娠或明显症状时，活动类型和强度应根据专业建议调整；该摘要也不是个人诊疗处方。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "对于有慢性病、残疾、妊娠或明显症状的人，活动类型和强度应根据专业建议调整"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "边界"
+   ]
+  },
+  {
+   "id": "qa-c015",
+   "category": "contraindication",
+   "query": "疼痛难忍还要坚持训练吗？",
+   "reference_answer": "不应该。NHS 建议停止会加重疼痛的活动；剧烈疼痛属于应停止并寻求专业帮助的情况。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "停止会加重疼痛的活动"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "安全"
+   ]
+  },
+  {
+   "id": "qa-c016",
+   "category": "contraindication",
+   "query": "疼痛加重时还要继续练习吗？",
+   "reference_answer": "不要继续。应停止会加重疼痛的活动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "停止会加重疼痛的活动"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "安全"
+   ]
+  },
+  {
+   "id": "qa-c017",
+   "category": "contraindication",
+   "query": "扭伤后长期完全不动好不好？",
+   "reference_answer": "不好。疼痛允许时应逐步进行轻柔活动，避免长期完全不动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "疼痛允许时逐步进行轻柔活动，避免长期完全不动"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "康复"
+   ]
+  },
+  {
+   "id": "qa-c018",
+   "category": "contraindication",
+   "query": "扭伤处理中什么情况下可以开始活动？",
+   "reference_answer": "疼痛允许时逐步进行轻柔活动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "疼痛允许时逐步进行轻柔活动，避免长期完全不动"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "康复"
+   ]
+  },
+  {
+   "id": "qa-c019",
+   "category": "contraindication",
+   "query": "刚开始训练就上大运动量，符合循序渐进的原则吗？",
+   "reference_answer": "不安全。刚开始训练的人应从较低量开始并逐步增加；训练安排应通过循序渐进降低过度使用风险。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "刚开始训练、长期不活动或健康状况特殊的人，应从较低量开始并逐步增加"
+    },
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "通过循序渐进、适度变化和恢复来降低过度使用风险"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "综合",
+    "安全"
+   ]
+  },
+  {
+   "id": "qa-c020",
+   "category": "contraindication",
+   "query": "不循序渐进地加量，会有什么过度使用风险？",
+   "reference_answer": "训练安排应考虑个人能力，通过循序渐进、适度变化和恢复来降低过度使用风险；不循序渐进会增加过度使用风险。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "训练安排应考虑个人能力，通过循序渐进、适度变化和恢复来降低过度使用风险"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "安全"
+   ]
+  },
+  {
+   "id": "qa-c021",
+   "category": "contraindication",
+   "query": "长期久坐为什么不好？",
+   "reference_answer": "指南建议减少久坐、多动；长期久坐与建议相悖，少量活动也比完全不动好。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "应减少久坐，把日常走路、家务和工作中的活动也计入整体活动量"
+    },
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "少量活动也比完全不动好"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "久坐"
+   ]
+  },
+  {
+   "id": "qa-c022",
+   "category": "contraindication",
+   "query": "哪些人群不能直接使用通用膳食目标？",
+   "reference_answer": "糖尿病、肾病、妊娠、过敏或其他疾病人群需要个体化医疗营养方案，不能直接使用人群层面的膳食原则。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "不能直接替代糖尿病、肾病、妊娠、过敏或其他疾病所需的个体化医疗营养方案"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "禁忌"
+   ]
+  },
+  {
+   "id": "qa-c023",
+   "category": "contraindication",
+   "query": "官方指南能代替医生对我做诊断吗？",
+   "reference_answer": "不能。这些资料是群体健康教育与安全分流信息，不替代针对个人情况的专业评估，也不是个人诊疗处方。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "不替代针对个人疾病、伤病或用药情况的专业评估"
+    },
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "不用于自行诊断或替代医生"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "综合",
+    "边界"
+   ]
+  },
+  {
+   "id": "qa-c024",
+   "category": "contraindication",
+   "query": "按照知识库能否给出针对我个人疾病的营养处方？",
+   "reference_answer": "不能。知识库内容是人群层面的膳食原则，不能直接替代个体化医疗营养方案。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "以上是人群层面的膳食原则，不能直接替代糖尿病、肾病、妊娠、过敏或其他疾病所需的个体化医疗营养方案"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "边界"
+   ]
+  },
+  {
+   "id": "qa-c025",
+   "category": "contraindication",
+   "query": "肿胀持续加重时还能继续冰敷观察吗？",
+   "reference_answer": "疼痛或肿胀严重或持续加重属于应尽快寻求医疗建议的情况，不应只靠自行处理。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "如果疼痛或肿胀严重或持续加重、无法承重或活动、淤青明显、恢复没有改善，应尽快寻求医疗建议"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "就医信号"
+   ]
+  },
+  {
+   "id": "qa-c026",
+   "category": "contraindication",
+   "query": "受伤部位明显变形该怎么处理？",
+   "reference_answer": "明显变形是紧急信号，应及时接受紧急评估。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "若出现明显变形、麻木或针刺感、皮肤颜色异常，或受伤时听到断裂声，应及时接受紧急评估"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "紧急信号"
+   ]
+  },
+  {
+   "id": "qa-c027",
+   "category": "contraindication",
+   "query": "安全分流的含义是什么？",
+   "reference_answer": "指用这类健康信息判断问题的严重程度和去向（自行处理还是就医），而不是自行诊断或替代医生。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "该信息用于安全分流，不用于自行诊断或替代医生"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "边界"
+   ]
+  },
+  {
+   "id": "qa-c028",
+   "category": "contraindication",
+   "query": "健康儿童可以照搬成人的盐摄入上限吗？",
+   "reference_answer": "成人每日盐摄入宜低于 5 克是针对成人的公共健康目标；儿童属于需按年龄等因素调整的人群，不能简单套用成人数字。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "成人每日盐摄入宜低于 5 克"
+    },
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "并根据年龄、活动量、文化习惯、食物可获得性和健康状况调整"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "适用范围"
+   ]
+  },
+  {
+   "id": "qa-c029",
+   "category": "contraindication",
+   "query": "扭伤了还坚持训练的说法可取吗？",
+   "reference_answer": "不可取。应停止会加重疼痛的活动；疼痛允许时才逐步进行轻柔活动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "停止会加重疼痛的活动"
+    },
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "疼痛允许时逐步进行轻柔活动，避免长期完全不动"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "安全"
+   ]
+  },
+  {
+   "id": "qa-c030",
+   "category": "contraindication",
+   "query": "妊娠期运动类型和强度听谁的建议？",
+   "reference_answer": "妊娠属于应根据专业建议调整活动类型和强度的人群，不应自行决定。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "对于有慢性病、残疾、妊娠或明显症状的人，活动类型和强度应根据专业建议调整"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "妊娠"
+   ]
+  },
+  {
+   "id": "qa-c031",
+   "category": "contraindication",
+   "query": "扭伤后麻木需要立即就医吗？",
+   "reference_answer": "麻木或针刺感属于应及时接受紧急评估的表现。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "明显变形、麻木或针刺感、皮肤颜色异常，或受伤时听到断裂声，应及时接受紧急评估"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "紧急信号"
+   ]
+  },
+  {
+   "id": "qa-c032",
+   "category": "contraindication",
+   "query": "恢复期做康复动作疼痛加剧该怎么办？",
+   "reference_answer": "应停止会加重疼痛的活动；若疼痛严重或持续加重，应尽快寻求医疗建议。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "停止会加重疼痛的活动"
+    },
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "如果疼痛或肿胀严重或持续加重、无法承重或活动、淤青明显、恢复没有改善，应尽快寻求医疗建议"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "安全"
+   ]
+  },
+  {
+   "id": "qa-c033",
+   "category": "contraindication",
+   "query": "训练量越大健康收益一定越大吗？",
+   "reference_answer": "不是无条件的。更多健康收益来自在可承受范围内增加活动量，超出承受能力反而有过度使用风险，应循序渐进。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "获得更多健康收益时，可在可承受范围内增加活动量"
+    },
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "训练安排应考虑个人能力，通过循序渐进、适度变化和恢复来降低过度使用风险"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "综合",
+    "剂量"
+   ]
+  },
+  {
+   "id": "qa-c034",
+   "category": "contraindication",
+   "query": "扭伤后我能只靠这些资料给自己定处理方案吗？",
+   "reference_answer": "不能。NHS 资料明确用于安全分流，不用于自行诊断或替代医生；具体伤情应由专业医疗人员评估。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "该信息用于安全分流，不用于自行诊断或替代医生"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "边界"
+   ]
+  }
+ ]
+}

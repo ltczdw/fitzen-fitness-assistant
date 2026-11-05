@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+.coverage*
+htmlcov/
+coverage/
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.local
+# Frontend
+node_modules/
+dist/
+*.tsbuildinfo
+# Personal data and run artifacts
+backend/data/*.json
+backend/data/_json_fallback_backup/
+backups/
+evidence/
+*.log
+runtime-logs/
+backend/*-result.json
+.setup-status
+zz-test*.txt
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Historical local debugging/export artifacts (kept on disk, not published)
+/stitch-assets/
+/frontend/*.png
+/frontend/*.cjs
+!/frontend/postcss.config.cjs
+!/frontend/tailwind.config.cjs
+/backend/scripts/qa_acceptance_run.py
+/backend/scripts/verify_wiki_live.py
+/backend/package-lock.json
+/package-lock.json
+/test-report.md
+/bug-report.md
+/coverage-matrix.md
+/FITZEN-RESTORATION.md
+
+# Local comparison projects, agent history and temporary test databases.
+/_compare/
+/.zcodeignore
+/zcode-token-tasks.md
+/docs/agent-handoffs/
+/docs/agent-backlog.md
+/docs/agent-workflow.md
+/docs/agent-handoff-template.md
+/docs/*-evidence/
+/backend/.pytest-*/
+/backend/.test-tmp/
+/backend/_dbg_*.db
+/backend/_patch_*.py
+*.db
+*.db-shm
+*.db-wal
+
+# Python package build output
+/backend/build/

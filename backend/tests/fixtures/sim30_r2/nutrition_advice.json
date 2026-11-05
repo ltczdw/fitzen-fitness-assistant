@@ -1,0 +1,13 @@
+{
+  "case": "nutrition_advice",
+  "source_file": "continuation-01/live/synthetic-model-responses.jsonl",
+  "source_message": "成年人力量训练后一定要喝蛋白粉吗？如果用日常食物，怎么搭配一顿有蛋白质和蔬菜的饭？只讲通用原则，不保存饮食。",
+  "items": [
+    {
+      "source_call": 33,
+      "tool": "return_request_understanding",
+      "sha256": "396927c328f293955efdd224fd395965c5f4f25e87920a0b192fd372817a7399",
+      "arguments": "{\"tasks\": [{\"task_type\": \"nutrition_advice\", \"action\": \"question\", \"text\": \"成年人力量训练后一定要喝蛋白粉吗？\", \"is_negated\": false, \"is_hypothetical\": false, \"is_third_party\": false, \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"none\", \"fact_text\": null, \"reply_mode\": \"grounded\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"delivery_type\": \"advice\"}, {\"task_type\": \"nutrition_advice\", \"action\": \"question\", \"text\": \"如果用日常食物，怎么搭配一顿有蛋白质和蔬菜的饭？只讲通用原则，不保存饮食。\", \"is_negated\": false, \"is_hypothetical\": false, \"is_third_party\": false, \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"none\", \"fact_text\": null, \"reply_mode\": \"grounded\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"delivery_type\": \"advice\"}], \"safety\": {\"level\": \"normal\", \"evidence\": \"\", \"categories\": [], \"reason\": \"通用营养知识咨询，无当前症状或医疗风险。\"}, \"reply_mode\": \"grounded\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"relation\": \"new\", \"needs_clarification\": false, \"current_is_critical\": false, \"critical_fact_fields\": [], \"critical_history_ids\": [], \"dialogue_ids\": [], \"memory_requests\": [], \"context_states\": [], \"constraint_fields\": [], \"conflict_fields\": [], \"references\": []}"
+    }
+  ]
+}

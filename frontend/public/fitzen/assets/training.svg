@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none">
+  <!-- Original decorative training icon; not an exercise instruction. Copyright (c) 2026 ltczdw. MIT License. -->
+  <rect width="240" height="180" fill="#201f20"/>
+  <g stroke="#4be277" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-18 120 90)">
+    <path d="M76 90h88M76 62v56M60 70v40M164 62v56M180 70v40"/>
+    <path d="M54 90h6m120 0h6"/>
+  </g>
+</svg>

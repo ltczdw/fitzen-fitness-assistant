@@ -1,0 +1,820 @@
+{
+ "suite": "negative",
+ "category": "write_guard",
+ "description": "写授权门（V3 write_guard）失败/边界用例。评估脚本用 guard_planner_tasks 以整句或指定 span 作为拟议写任务执行确定性门控，比对 write_authorization / write_rejection_reason。span 用字符下标 [start,end)。",
+ "samples": [
+  {
+   "id": "neg-w001",
+   "category": "write_guard",
+   "query": "帮我记录今天卧推60公斤4组每组8次",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "write_rejection_reason": null,
+    "should_write": true
+   },
+   "difficulty": "easy",
+   "tags": [
+    "正常写入"
+   ]
+  },
+  {
+   "id": "neg-w002",
+   "category": "write_guard",
+   "query": "记录一下深蹲100kg5组",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true
+   },
+   "difficulty": "easy",
+   "tags": [
+    "正常写入"
+   ]
+  },
+  {
+   "id": "neg-w003",
+   "category": "write_guard",
+   "query": "帮我补记昨天的硬拉120kg3组3次",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true
+   },
+   "difficulty": "easy",
+   "tags": [
+    "正常写入",
+    "补记"
+   ]
+  },
+  {
+   "id": "neg-w004",
+   "category": "write_guard",
+   "query": "早餐吃了2个鸡蛋1杯牛奶，帮我保存这餐",
+   "proposed_task": {
+    "task_type": "nutrition_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true,
+    "rule_intent": "nutrition"
+   },
+   "difficulty": "easy",
+   "tags": [
+    "正常写入",
+    "饮食"
+   ]
+  },
+  {
+   "id": "neg-w005",
+   "category": "write_guard",
+   "query": "记一下今天的跑步5公里",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true
+   },
+   "difficulty": "easy",
+   "tags": [
+    "正常写入"
+   ]
+  },
+  {
+   "id": "neg-w006",
+   "category": "write_guard",
+   "query": "存档：卧推70kg 4x8",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true
+   },
+   "difficulty": "medium",
+   "tags": [
+    "正常写入",
+    "存档"
+   ]
+  },
+  {
+   "id": "neg-w007",
+   "category": "write_guard",
+   "query": "请帮我登记昨天的划船机30分钟",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true
+   },
+   "difficulty": "easy",
+   "tags": [
+    "正常写入",
+    "登记"
+   ]
+  },
+  {
+   "id": "neg-w008",
+   "category": "write_guard",
+   "query": "帮我记录引体向上8组每组3次",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true
+   },
+   "difficulty": "easy",
+   "tags": [
+    "正常写入"
+   ]
+  },
+  {
+   "id": "neg-w009",
+   "category": "write_guard",
+   "query": "补录上午的腿举150kg4组12次",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true
+   },
+   "difficulty": "easy",
+   "tags": [
+    "正常写入",
+    "补录"
+   ]
+  },
+  {
+   "id": "neg-w010",
+   "category": "write_guard",
+   "query": "把这个记下来：俯卧撑3组力竭",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true
+   },
+   "difficulty": "medium",
+   "tags": [
+    "正常写入",
+    "记下来"
+   ]
+  },
+  {
+   "id": "neg-w011",
+   "category": "write_guard",
+   "query": "今天卧推60公斤4组每组8次",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "needs_confirmation",
+    "write_rejection_reason": "missing_explicit_write_authorization",
+    "should_write": false,
+    "rule_intent": "workout_record"
+   },
+   "difficulty": "medium",
+   "tags": [
+    "缺写动词",
+    "待确认"
+   ]
+  },
+  {
+   "id": "neg-w012",
+   "category": "write_guard",
+   "query": "深蹲100kg5组",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "needs_confirmation",
+    "should_write": false,
+    "rule_intent": "workout_record"
+   },
+   "difficulty": "medium",
+   "tags": [
+    "缺写动词",
+    "待确认"
+   ]
+  },
+  {
+   "id": "neg-w013",
+   "category": "write_guard",
+   "query": "昨天硬拉120kg做3组",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "needs_confirmation",
+    "should_write": false,
+    "rule_intent": "workout_record"
+   },
+   "difficulty": "medium",
+   "tags": [
+    "缺写动词",
+    "待确认"
+   ]
+  },
+  {
+   "id": "neg-w014",
+   "category": "write_guard",
+   "query": "早餐：2个鸡蛋1杯牛奶",
+   "proposed_task": {
+    "task_type": "nutrition_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "needs_confirmation",
+    "should_write": false
+   },
+   "difficulty": "medium",
+   "tags": [
+    "缺写动词",
+    "待确认"
+   ]
+  },
+  {
+   "id": "neg-w015",
+   "category": "write_guard",
+   "query": "跑步5公里配速5分30秒",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "needs_confirmation",
+    "should_write": false
+   },
+   "difficulty": "medium",
+   "tags": [
+    "缺写动词",
+    "待确认"
+   ]
+  },
+  {
+   "id": "neg-w016",
+   "category": "write_guard",
+   "query": "腿举150kg4组12次，感觉不错",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "needs_confirmation",
+    "should_write": false,
+    "rule_intent": "workout_record"
+   },
+   "difficulty": "medium",
+   "tags": [
+    "缺写动词",
+    "待确认"
+   ]
+  },
+  {
+   "id": "neg-w017",
+   "category": "write_guard",
+   "query": "不要记录今天的深蹲",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_negation",
+    "should_write": false
+   },
+   "difficulty": "easy",
+   "tags": [
+    "否定"
+   ]
+  },
+  {
+   "id": "neg-w018",
+   "category": "write_guard",
+   "query": "先别记录今天的饮食，我一会儿再报",
+   "proposed_task": {
+    "task_type": "nutrition_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_negation",
+    "should_write": false,
+    "rule_intent": "workout_record"
+   },
+   "difficulty": "easy",
+   "tags": [
+    "否定"
+   ],
+   "notes": "\"记录\"与\"饮食\"被\"今天的\"隔开，FOOD_RECORD_COMMANDS 不命中，规则意图归 workout_record；写门仍按否定拒绝。"
+  },
+  {
+   "id": "neg-w019",
+   "category": "write_guard",
+   "query": "不要保存这餐，份量我再想想",
+   "proposed_task": {
+    "task_type": "nutrition_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_negation",
+    "should_write": false,
+    "rule_intent": "nutrition"
+   },
+   "difficulty": "easy",
+   "tags": [
+    "否定"
+   ]
+  },
+  {
+   "id": "neg-w020",
+   "category": "write_guard",
+   "query": "没有吃早餐，不用记录了",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_negation",
+    "should_write": false
+   },
+   "difficulty": "medium",
+   "tags": [
+    "否定",
+    "没吃"
+   ]
+  },
+  {
+   "id": "neg-w021",
+   "category": "write_guard",
+   "query": "如果我卧推100kg，帮我记录一下",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_hypothetical_or_example",
+    "should_write": false,
+    "rule_intent": "workout_record"
+   },
+   "difficulty": "medium",
+   "tags": [
+    "假设"
+   ]
+  },
+  {
+   "id": "neg-w022",
+   "category": "write_guard",
+   "query": "假如今天深蹲150kg会怎样，帮我记下",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_hypothetical_or_example",
+    "should_write": false,
+    "rule_intent": "workout_record"
+   },
+   "difficulty": "medium",
+   "tags": [
+    "假设"
+   ]
+  },
+  {
+   "id": "neg-w023",
+   "category": "write_guard",
+   "query": "比如记录一份300克鸡胸肉举个例子",
+   "proposed_task": {
+    "task_type": "nutrition_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_hypothetical_or_example",
+    "should_write": false
+   },
+   "difficulty": "medium",
+   "tags": [
+    "举例"
+   ]
+  },
+  {
+   "id": "neg-w024",
+   "category": "write_guard",
+   "query": "假设我每周跑20公里，帮我登记一下跑量",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_hypothetical_or_example",
+    "should_write": false
+   },
+   "difficulty": "medium",
+   "tags": [
+    "假设"
+   ]
+  },
+  {
+   "id": "neg-w025",
+   "category": "write_guard",
+   "query": "帮我记录我朋友跑了5公里",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_third_party_without_first_person_authorization",
+    "should_write": false
+   },
+   "difficulty": "easy",
+   "tags": [
+    "第三方"
+   ]
+  },
+  {
+   "id": "neg-w026",
+   "category": "write_guard",
+   "query": "记录一下他今天练了胸",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_third_party_without_first_person_authorization",
+    "should_write": false
+   },
+   "difficulty": "medium",
+   "tags": [
+    "第三方"
+   ]
+  },
+  {
+   "id": "neg-w027",
+   "category": "write_guard",
+   "query": "帮她记录瑜伽课45分钟",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_third_party_without_first_person_authorization",
+    "should_write": false
+   },
+   "difficulty": "easy",
+   "tags": [
+    "第三方"
+   ]
+  },
+  {
+   "id": "neg-w028",
+   "category": "write_guard",
+   "query": "我哥哥昨天练了背，帮我记下他的训练",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_third_party_without_first_person_authorization",
+    "should_write": false
+   },
+   "difficulty": "medium",
+   "tags": [
+    "第三方"
+   ]
+  },
+  {
+   "id": "neg-w029",
+   "category": "write_guard",
+   "query": "怎么记录深蹲重量？",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_question",
+    "should_write": false
+   },
+   "difficulty": "easy",
+   "tags": [
+    "疑问句"
+   ]
+  },
+  {
+   "id": "neg-w030",
+   "category": "write_guard",
+   "query": "卧推80kg3组8次，这个重量合适吗",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_question",
+    "should_write": false,
+    "rule_intent": "workout_record"
+   },
+   "difficulty": "medium",
+   "tags": [
+    "疑问句"
+   ]
+  },
+  {
+   "id": "neg-w031",
+   "category": "write_guard",
+   "query": "帮我记录跑步30分钟，然后我该练背还是练腿？",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record",
+    "span": [
+     0,
+     10
+    ]
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true
+   },
+   "difficulty": "hard",
+   "notes": "连接词+句子边界切断作用域：后续疑问不取消明确写命令。",
+   "tags": [
+    "作用域",
+    "不变量"
+   ]
+  },
+  {
+   "id": "neg-w032",
+   "category": "write_guard",
+   "query": "帮我记录跑步30分钟，我该练背还是练腿？",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record",
+    "span": [
+     0,
+     10
+    ]
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_question",
+    "should_write": false
+   },
+   "difficulty": "hard",
+   "notes": "同一子句内的尾随疑问仍在 tail window 内，应拒绝。",
+   "tags": [
+    "作用域",
+    "尾随疑问"
+   ]
+  },
+  {
+   "id": "neg-w033",
+   "category": "write_guard",
+   "query": "我胸痛，帮我记录今天卧推100kg",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "input_guard_level": "urgent",
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "urgent_safety_gate",
+    "should_write": false,
+    "rule_intent": "symptom_triage"
+   },
+   "difficulty": "medium",
+   "tags": [
+    "紧急门"
+   ]
+  },
+  {
+   "id": "neg-w034",
+   "category": "write_guard",
+   "query": "帮我记录他昨天告诉我的卧推计划",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_third_party_without_first_person_authorization",
+    "should_write": false
+   },
+   "difficulty": "medium",
+   "tags": [
+    "第三方",
+    "转述"
+   ]
+  },
+  {
+   "id": "neg-w035",
+   "category": "write_guard",
+   "query": "帮我把昨天的卧推重量改成80kg",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "needs_confirmation",
+    "should_write": false,
+    "rule_intent": "workout_record"
+   },
+   "difficulty": "medium",
+   "notes": "改/更新动词不在写动词白名单，缺显式写授权必须转待确认。",
+   "tags": [
+    "越权更新",
+    "待确认"
+   ]
+  },
+  {
+   "id": "neg-w036",
+   "category": "write_guard",
+   "query": "帮我记录卧推60kg5组，不要记录深蹲",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record",
+    "span": [
+     0,
+     12
+    ]
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_negation",
+    "should_write": false
+   },
+   "difficulty": "hard",
+   "notes": "tail window 内的尾随否定作用于本 span。",
+   "tags": [
+    "尾随否定",
+    "作用域"
+   ]
+  },
+  {
+   "id": "neg-w037",
+   "category": "write_guard",
+   "query": "帮我记录硬拉100kg，假如明天状态好我就加到120kg",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record",
+    "span": [
+     0,
+     11
+    ]
+   },
+   "expected": {
+    "write_authorization": "rejected_unauthorized",
+    "write_rejection_reason": "source_hypothetical_or_example",
+    "should_write": false
+   },
+   "difficulty": "hard",
+   "notes": "tail window 内的假设句。",
+   "tags": [
+    "尾随假设",
+    "作用域"
+   ]
+  },
+  {
+   "id": "neg-w038",
+   "category": "write_guard",
+   "query": "先别动。帮我记录卧推60kg4组",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record",
+    "span": [
+     4,
+     16
+    ]
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true
+   },
+   "difficulty": "hard",
+   "notes": "句号前的否定已越出 forward window，不得取消后续明确写命令。",
+   "tags": [
+    "作用域",
+    "不变量"
+   ]
+  },
+  {
+   "id": "neg-w039",
+   "category": "write_guard",
+   "query": "帮我记录跑步40分钟。另外帮我记一下深蹲50kg5组",
+   "proposed_tasks": [
+    {
+     "task_type": "workout_record",
+     "action": "record",
+     "span": [
+      0,
+      10
+     ]
+    },
+    {
+     "task_type": "workout_record",
+     "action": "record",
+     "span": [
+      13,
+      25
+     ]
+    }
+   ],
+   "expected": {
+    "all_write_authorizations": "authorized",
+    "should_write": true
+   },
+   "difficulty": "hard",
+   "notes": "两个写任务都应独立授权，连接词\"另外\"不会互相污染作用域。",
+   "tags": [
+    "多任务",
+    "作用域"
+   ]
+  },
+  {
+   "id": "neg-w040",
+   "category": "write_guard",
+   "query": "继续上次会话的计划，帮我把今天的卧推补记一下",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true,
+    "input_guard_level": "normal"
+   },
+   "difficulty": "medium",
+   "notes": "跨会话引用本身不阻止明确的一人称写命令（控制样本）。",
+   "tags": [
+    "跨会话",
+    "控制样本"
+   ]
+  },
+  {
+   "id": "neg-w041",
+   "category": "write_guard",
+   "query": "删除我所有的训练记录",
+   "expected": {
+    "rule_intent": "workout_record"
+   },
+   "difficulty": "hard",
+   "notes": "规则意图层会命中\"记录\"归为 workout_record；删除不是受支持的写动作，调度层工具白名单不会执行删除，此样本记录该行为边界。",
+   "tags": [
+    "危险操作",
+    "行为边界"
+   ]
+  },
+  {
+   "id": "neg-w042",
+   "category": "write_guard",
+   "query": "把张三上次会话里的深蹲成绩保存到我的记录里",
+   "proposed_task": {
+    "task_type": "workout_record",
+    "action": "record"
+   },
+   "expected": {
+    "write_authorization": "authorized",
+    "should_write": true
+   },
+   "difficulty": "hard",
+   "notes": "控制样本：写入目标是用户自己的日志，门控按一人称授权放行；门控不做实体归属判断。",
+   "tags": [
+    "跨会话",
+    "控制样本"
+   ]
+  }
+ ]
+}

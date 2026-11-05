@@ -1,0 +1,19 @@
+{
+  "case": "plan_followup",
+  "source_file": "continuation-01/live/synthetic-model-responses.jsonl",
+  "source_message": "沿用刚才的两天预览，把第二天缩到25分钟，保留热身和收尾，减少一个动作并说明删了什么。只改这份预览，不保存。",
+  "items": [
+    {
+      "source_call": 8,
+      "tool": "return_request_understanding",
+      "sha256": "a9aa62c1e7cd235ce7e9cd23a4cbcc14597a4689186cafb82b05406f45b6e498",
+      "arguments": "{\"tasks\": [{\"task_type\": \"training_plan\", \"action\": \"answer\", \"text\": \"沿用刚才的两天预览，把第二天缩到25分钟，保留热身和收尾，减少一个动作并说明删了什么。只改这份预览，不保存。\", \"is_negated\": true, \"is_hypothetical\": false, \"is_third_party\": false, \"plan_result\": false, \"result_scope\": null, \"plan_goal_id\": \"\", \"plan_request_quote\": \"\", \"shared_scope_quote\": \"\", \"plan_target_quote\": \"\", \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"required\", \"fact_text\": null, \"reply_mode\": \"conversation\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"record_query\": null, \"read_spec\": null, \"delivery_type\": \"preview\"}], \"safety\": {\"level\": \"normal\", \"evidence\": \"\", \"categories\": [], \"reason\": \"无当前症状或医疗风险，仅为训练预览修改请求\"}, \"relation\": \"follow_up\", \"reply_mode\": \"conversation\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"critical_fact_fields\": [], \"current_is_critical\": false, \"needs_clarification\": true, \"clarification\": \"当前对话中没有提供“刚才的两天预览”内容，请把那份预览（两天的动作、时长、热身和收尾安排）发给我，我再按第二天25分钟缩减并说明删掉的动作。\"}"
+    },
+    {
+      "source_call": 9,
+      "tool": "return_request_understanding",
+      "sha256": "08c231a20616f3bdc03e0aff4d6682c51c5aa1dac6035514b6803163001e76c3",
+      "arguments": "{\"tasks\": [{\"task_type\": \"training_plan\", \"action\": \"answer\", \"text\": \"沿用刚才的两天预览，把第二天缩到25分钟，保留热身和收尾，减少一个动作并说明删了什么。只改这份预览，不保存。\", \"is_negated\": true, \"is_hypothetical\": false, \"is_third_party\": false, \"plan_result\": false, \"result_scope\": null, \"plan_goal_id\": \"\", \"plan_request_quote\": \"\", \"shared_scope_quote\": \"\", \"plan_target_quote\": \"\", \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"required\", \"fact_text\": null, \"reply_mode\": \"conversation\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"record_query\": null, \"read_spec\": null, \"delivery_type\": \"preview\"}]}, \"safety\": {\"level\": \"normal\", \"evidence\": \"\", \"categories\": [], \"reason\": \"无当前症状或医疗风险，仅为已有训练预览的修改请求\"}, \"relation\": \"follow_up\", \"reply_mode\": \"conversation\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"current_is_critical\": false, \"needs_clarification\": false}"
+    }
+  ]
+}

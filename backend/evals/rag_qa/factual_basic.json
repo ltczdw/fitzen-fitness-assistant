@@ -1,0 +1,1322 @@
+{
+ "suite": "rag_qa",
+ "category": "factual",
+ "description": "事实性问答：单文档定性事实、原则、建议条款；期望引用来自 backend/seed/official_documents.py 语料，evidence_snippet 必须是语料原文的逐字子串。",
+ "samples": [
+  {
+   "id": "qa-f001",
+   "category": "factual",
+   "query": "中等强度和高强度有氧活动可以互相替代吗？",
+   "reference_answer": "可以。WHO 指南提出，中等强度有氧活动与高强度有氧活动可以用等效组合替代。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "也可以用等效组合替代"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "有氧"
+   ]
+  },
+  {
+   "id": "qa-f002",
+   "category": "factual",
+   "query": "想获得更多健康收益的话应该怎么调整活动量？",
+   "reference_answer": "WHO 建议在获得更多健康收益时，可在可承受范围内增加活动量。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "获得更多健康收益时，可在可承受范围内增加活动量"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "活动量"
+   ]
+  },
+  {
+   "id": "qa-f003",
+   "category": "factual",
+   "query": "久坐行为在官方建议里是怎么处理的？",
+   "reference_answer": "WHO 建议应减少久坐，把日常走路、家务和工作中的活动也计入整体活动量。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "应减少久坐，把日常走路、家务和工作中的活动也计入整体活动量"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "久坐"
+   ]
+  },
+  {
+   "id": "qa-f004",
+   "category": "factual",
+   "query": "没有整块时间活动，动一点点也有用吗？",
+   "reference_answer": "有用。WHO 明确提出少量活动也比完全不动好。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "少量活动也比完全不动好"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "活动量"
+   ]
+  },
+  {
+   "id": "qa-f005",
+   "category": "factual",
+   "query": "刚开始训练的人应该怎样安排起始运动量？",
+   "reference_answer": "刚开始训练、长期不活动或健康状况特殊的人，应从较低量开始并逐步增加。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "刚开始训练、长期不活动或健康状况特殊的人，应从较低量开始并逐步增加"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "新手"
+   ]
+  },
+  {
+   "id": "qa-f006",
+   "category": "factual",
+   "query": "老年人除了有氧和力量训练，还应结合什么类型的活动？",
+   "reference_answer": "WHO 建议老年人还应结合平衡和功能性活动。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "老年人还应结合平衡和功能性活动"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "老年人"
+   ]
+  },
+  {
+   "id": "qa-f007",
+   "category": "factual",
+   "query": "WHO 的身体活动建议是针对个人的运动处方吗？",
+   "reference_answer": "不是。这些是群体层面的健康促进建议，不替代针对个人疾病、伤病或用药情况的专业评估。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "这些是群体层面的健康促进建议，不替代针对个人疾病、伤病或用药情况的专业评估"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "适用范围"
+   ]
+  },
+  {
+   "id": "qa-f008",
+   "category": "factual",
+   "query": "肌肉强化活动应该覆盖身体哪些部位？",
+   "reference_answer": "应覆盖全身主要肌群，WHO 建议每周至少 2 天进行覆盖主要肌群的肌肉强化活动。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "每周至少 2 天进行覆盖主要肌群的肌肉强化活动"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "力量"
+   ]
+  },
+  {
+   "id": "qa-f009",
+   "category": "factual",
+   "query": "日常走路和做家务能算进活动量里吗？",
+   "reference_answer": "能。指南建议把日常走路、家务和工作中的活动也计入整体活动量。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "把日常走路、家务和工作中的活动也计入整体活动量"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "活动量"
+   ]
+  },
+  {
+   "id": "qa-f010",
+   "category": "factual",
+   "query": "健康饮食的基本原则是什么？",
+   "reference_answer": "WHO 事实表提出健康饮食的基本原则是充足、平衡、适度和多样。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "健康饮食的基本原则是充足、平衡、适度和多样"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "饮食"
+   ]
+  },
+  {
+   "id": "qa-f011",
+   "category": "factual",
+   "query": "健康饮食应优先包含哪几类食物？",
+   "reference_answer": "应优先包含蔬菜水果、豆类、坚果和全谷物。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "饮食应优先包含蔬菜水果、豆类、坚果和全谷物"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "饮食"
+   ]
+  },
+  {
+   "id": "qa-f012",
+   "category": "factual",
+   "query": "膳食建议需要根据哪些个人因素调整？",
+   "reference_answer": "WHO 提出饮食应根据年龄、活动量、文化习惯、食物可获得性和健康状况调整。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "并根据年龄、活动量、文化习惯、食物可获得性和健康状况调整"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "饮食"
+   ]
+  },
+  {
+   "id": "qa-f013",
+   "category": "factual",
+   "query": "膳食脂肪方面官方建议关注什么？",
+   "reference_answer": "脂肪应重视质量，减少饱和脂肪和反式脂肪。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "脂肪应重视质量，减少饱和脂肪和反式脂肪"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "脂肪"
+   ]
+  },
+  {
+   "id": "qa-f014",
+   "category": "factual",
+   "query": "可以用大量高糖高盐的加工食品替代日常多样化食物吗？",
+   "reference_answer": "不建议。WHO 建议避免用大量高糖、高盐或高度加工食品替代多样化食物。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "并避免用大量高糖、高盐或高度加工食品替代多样化食物"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "加工食品"
+   ]
+  },
+  {
+   "id": "qa-f015",
+   "category": "factual",
+   "query": "WHO 的人群膳食原则能直接替代糖尿病患者的个体化营养方案吗？",
+   "reference_answer": "不能。人群层面的膳食原则不能直接替代糖尿病、肾病、妊娠、过敏或其他疾病所需的个体化医疗营养方案。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "以上是人群层面的膳食原则，不能直接替代糖尿病、肾病、妊娠、过敏或其他疾病所需的个体化医疗营养方案"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "个体化"
+   ]
+  },
+  {
+   "id": "qa-f016",
+   "category": "factual",
+   "query": "平衡膳食八准则具体包括哪些内容？",
+   "reference_answer": "包括食物多样、合理搭配；吃动平衡、健康体重；多吃蔬果、奶类、全谷物和大豆；适量吃鱼、禽、蛋和瘦肉；少盐少油，控糖限酒；规律进餐、足量饮水；会烹会选、会看标签；公筷分餐、讲究卫生、珍惜食物。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "平衡膳食八准则包括食物多样、合理搭配；吃动平衡、健康体重；多吃蔬果、奶类、全谷物和大豆；适量吃鱼、禽、蛋和瘦肉；少盐少油，控糖限酒；规律进餐、足量饮水；会烹会选、会看标签；公筷分餐、讲究卫生、珍惜食物"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "八准则"
+   ]
+  },
+  {
+   "id": "qa-f017",
+   "category": "factual",
+   "query": "中国居民膳食指南建议日常控制哪些调味摄入？",
+   "reference_answer": "盐、烹调油和添加糖应控制。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "盐、烹调油和添加糖应控制"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "控油控盐"
+   ]
+  },
+  {
+   "id": "qa-f018",
+   "category": "factual",
+   "query": "膳食指南的参考量还需要结合哪些个人情况调整？",
+   "reference_answer": "具体饮食仍需结合年龄、体重、活动量、疾病和当地食物情况调整。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "具体饮食仍需结合年龄、体重、活动量、疾病和当地食物情况调整"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "个体化"
+   ]
+  },
+  {
+   "id": "qa-f019",
+   "category": "factual",
+   "query": "美国居民身体活动指南的核心行动原则是什么？",
+   "reference_answer": "核心行动原则是多动、少坐，逐渐达到建议量。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "核心行动原则是多动、少坐，逐渐达到建议量"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "原则"
+   ]
+  },
+  {
+   "id": "qa-f020",
+   "category": "factual",
+   "query": "活动可以拆成多次完成吗？",
+   "reference_answer": "算数。活动可以拆成多次完成，步行、家务、休闲运动和结构化训练都可以贡献到总量。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "活动可以拆成多次完成，步行、家务、休闲运动和结构化训练都可以贡献到总量"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "活动拆分"
+   ]
+  },
+  {
+   "id": "qa-f021",
+   "category": "factual",
+   "query": "训练安排怎样降低过度使用损伤的风险？",
+   "reference_answer": "训练安排应考虑个人能力，通过循序渐进、适度变化和恢复来降低过度使用风险。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "训练安排应考虑个人能力，通过循序渐进、适度变化和恢复来降低过度使用风险"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "损伤预防"
+   ]
+  },
+  {
+   "id": "qa-f022",
+   "category": "factual",
+   "query": "有慢性病的人安排运动时需要注意什么？",
+   "reference_answer": "对于有慢性病、残疾、妊娠或明显症状的人，活动类型和强度应根据专业建议调整。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "对于有慢性病、残疾、妊娠或明显症状的人，活动类型和强度应根据专业建议调整"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "慢性病"
+   ]
+  },
+  {
+   "id": "qa-f023",
+   "category": "factual",
+   "query": "美国身体活动指南的摘要能当作个人诊疗处方使用吗？",
+   "reference_answer": "不能。该摘要用于一般健康教育，不是个人诊疗或竞技训练处方。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "该摘要用于一般健康教育，不是个人诊疗或竞技训练处方"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "适用范围"
+   ]
+  },
+  {
+   "id": "qa-f024",
+   "category": "factual",
+   "query": "结构化训练可以贡献到每周活动总量吗？",
+   "reference_answer": "可以。美国指南提出步行、家务、休闲运动和结构化训练都可以贡献到总量。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "步行、家务、休闲运动和结构化训练都可以贡献到总量"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "活动量"
+   ]
+  },
+  {
+   "id": "qa-f025",
+   "category": "factual",
+   "query": "扭伤或拉伤后的初期处理遵循什么思路？",
+   "reference_answer": "扭伤或拉伤后的前 2–3 天，可采用 PRICE 思路：保护受伤部位、停止会加重疼痛的活动、冰敷、适度加压并抬高患处。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "扭伤或拉伤后的前 2–3 天，可采用 PRICE 思路：保护受伤部位、停止会加重疼痛的活动、冰敷（每次最多约 20 分钟、间隔 2–3 小时）、适度加压并抬高患处"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "扭伤"
+   ]
+  },
+  {
+   "id": "qa-f026",
+   "category": "factual",
+   "query": "扭伤后是不是应该一直躺着完全不动？",
+   "reference_answer": "不是。疼痛允许时应逐步进行轻柔活动，避免长期完全不动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "疼痛允许时逐步进行轻柔活动，避免长期完全不动"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "康复"
+   ]
+  },
+  {
+   "id": "qa-f027",
+   "category": "factual",
+   "query": "PRICE 里的保护具体指什么？",
+   "reference_answer": "指保护受伤部位，并停止会加重疼痛的活动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "保护受伤部位、停止会加重疼痛的活动"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "PRICE"
+   ]
+  },
+  {
+   "id": "qa-f028",
+   "category": "factual",
+   "query": "NHS 的扭伤自我处理信息可以用来自己诊断吗？",
+   "reference_answer": "不可以。该信息用于安全分流，不用于自行诊断或替代医生。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "该信息用于安全分流，不用于自行诊断或替代医生"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "适用范围"
+   ]
+  },
+  {
+   "id": "qa-f029",
+   "category": "factual",
+   "query": "偶尔活动一点对健康没有好处，这个说法对吗？",
+   "reference_answer": "不对。WHO 明确少量活动也比完全不动好。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "少量活动也比完全不动好"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "判断题"
+   ]
+  },
+  {
+   "id": "qa-f030",
+   "category": "factual",
+   "query": "反式脂肪应该尽量多吃吗？",
+   "reference_answer": "不应该。WHO 建议减少饱和脂肪和反式脂肪。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "脂肪应重视质量，减少饱和脂肪和反式脂肪"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "脂肪",
+    "判断题"
+   ]
+  },
+  {
+   "id": "qa-f031",
+   "category": "factual",
+   "query": "坚果和豆类在健康饮食里是被限制的食物吗？",
+   "reference_answer": "不是。健康饮食应优先包含蔬菜水果、豆类、坚果和全谷物。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "饮食应优先包含蔬菜水果、豆类、坚果和全谷物"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "判断题"
+   ]
+  },
+  {
+   "id": "qa-f032",
+   "category": "factual",
+   "query": "吃动平衡是平衡膳食八准则之一吗？",
+   "reference_answer": "是。八准则包括食物多样、合理搭配；吃动平衡、健康体重等八项。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "平衡膳食八准则包括食物多样、合理搭配；吃动平衡、健康体重；"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "判断题"
+   ]
+  },
+  {
+   "id": "qa-f033",
+   "category": "factual",
+   "query": "规律进餐、足量饮水属于平衡膳食八准则吗？",
+   "reference_answer": "属于。八准则中有规律进餐、足量饮水这一条。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "规律进餐、足量饮水；会烹会选、会看标签"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "判断题"
+   ]
+  },
+  {
+   "id": "qa-f034",
+   "category": "factual",
+   "query": "扭伤后应该马上恢复高强度训练吗？",
+   "reference_answer": "不应该。前 2–3 天应保护受伤部位、停止会加重疼痛的活动，疼痛允许时再逐步进行轻柔活动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "停止会加重疼痛的活动"
+    },
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "疼痛允许时逐步进行轻柔活动，避免长期完全不动"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "康复"
+   ]
+  },
+  {
+   "id": "qa-f035",
+   "category": "factual",
+   "query": "久坐时间长的人应不应该把通勤走路算进活动量？",
+   "reference_answer": "应该。指南建议把日常走路、家务和工作中的活动也计入整体活动量。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "把日常走路、家务和工作中的活动也计入整体活动量"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "久坐"
+   ]
+  },
+  {
+   "id": "qa-f036",
+   "category": "factual",
+   "query": "孕妇的活动安排可以完全照搬普通成年人的建议吗？",
+   "reference_answer": "不可以。对于有慢性病、残疾、妊娠或明显症状的人，活动类型和强度应根据专业建议调整。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "对于有慢性病、残疾、妊娠或明显症状的人，活动类型和强度应根据专业建议调整"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "妊娠"
+   ]
+  },
+  {
+   "id": "qa-f037",
+   "category": "factual",
+   "query": "妊娠期人群的饮食可以直接套用 WHO 人群膳食原则吗？",
+   "reference_answer": "不能直接套用。人群膳食原则不能直接替代妊娠等所需的个体化医疗营养方案。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "不能直接替代糖尿病、肾病、妊娠、过敏或其他疾病所需的个体化医疗营养方案"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "妊娠"
+   ]
+  },
+  {
+   "id": "qa-f038",
+   "category": "factual",
+   "query": "官方活动建议对正在用药的人适用吗？",
+   "reference_answer": "这类建议是群体层面的健康促进建议，不替代针对个人疾病、伤病或用药情况的专业评估。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "不替代针对个人疾病、伤病或用药情况的专业评估"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "用药"
+   ]
+  },
+  {
+   "id": "qa-f039",
+   "category": "factual",
+   "query": "健康饮食是否要求只吃某一类特定食物？",
+   "reference_answer": "不是，基本原则是充足、平衡、适度和多样。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "健康饮食的基本原则是充足、平衡、适度和多样"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "饮食"
+   ]
+  },
+  {
+   "id": "qa-f040",
+   "category": "factual",
+   "query": "全谷物在膳食指南里被归为主食以外的可选食物吗？",
+   "reference_answer": "不是可选项目。八准则提出多吃蔬果、奶类、全谷物和大豆，谷类摄入中包含全谷物和杂豆。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "多吃蔬果、奶类、全谷物和大豆"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "其中全谷物和杂豆 50–150 克"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "全谷物"
+   ]
+  },
+  {
+   "id": "qa-f041",
+   "category": "factual",
+   "query": "会烹会选、会看标签是膳食指南的内容吗？",
+   "reference_answer": "是，这是平衡膳食八准则之一。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "会烹会选、会看标签；公筷分餐、讲究卫生、珍惜食物"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "判断题"
+   ]
+  },
+  {
+   "id": "qa-f042",
+   "category": "factual",
+   "query": "公筷分餐和珍惜食物与中国膳食指南有关吗？",
+   "reference_answer": "有关。八准则包括公筷分餐、讲究卫生、珍惜食物。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "公筷分餐、讲究卫生、珍惜食物"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "判断题"
+   ]
+  },
+  {
+   "id": "qa-f043",
+   "category": "factual",
+   "query": "恢复在预防训练过度使用问题中起什么作用？",
+   "reference_answer": "训练安排应考虑个人能力，通过循序渐进、适度变化和恢复来降低过度使用风险，恢复是其中一环。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "通过循序渐进、适度变化和恢复来降低过度使用风险"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "恢复"
+   ]
+  },
+  {
+   "id": "qa-f044",
+   "category": "factual",
+   "query": "长期不活动的人开始运动时可以直接上大运动量吗？",
+   "reference_answer": "不可以，应从较低量开始并逐步增加。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "长期不活动或健康状况特殊的人，应从较低量开始并逐步增加"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "新手"
+   ]
+  },
+  {
+   "id": "qa-f045",
+   "category": "factual",
+   "query": "健康状况特殊的人群运动起点应该怎么定？",
+   "reference_answer": "刚开始训练、长期不活动或健康状况特殊的人，应从较低量开始并逐步增加。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "刚开始训练、长期不活动或健康状况特殊的人，应从较低量开始并逐步增加"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "新手"
+   ]
+  },
+  {
+   "id": "qa-f046",
+   "category": "factual",
+   "query": "WHO 的健康饮食目标是为个人定制的吗？",
+   "reference_answer": "不是。像每天至少 400 克蔬菜水果这类数字是公共健康目标，属于人群层面的膳食原则。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "指南提出每天至少 400 克蔬菜水果和至少 25 克天然膳食纤维的公共健康目标"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "适用范围"
+   ]
+  },
+  {
+   "id": "qa-f047",
+   "category": "factual",
+   "query": "膳食纤维的官方目标被描述为什么性质的目标？",
+   "reference_answer": "公共健康目标。WHO 对 10 岁以上人群提出每天至少 25 克天然膳食纤维的公共健康目标。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "至少 25 克天然膳食纤维的公共健康目标"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "纤维"
+   ]
+  },
+  {
+   "id": "qa-f048",
+   "category": "factual",
+   "query": "多动少坐是美国指南的建议吗？",
+   "reference_answer": "是。核心行动原则是多动、少坐，逐渐达到建议量。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "核心行动原则是多动、少坐，逐渐达到建议量"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "判断题"
+   ]
+  },
+  {
+   "id": "qa-f049",
+   "category": "factual",
+   "query": "休闲运动可以计入每周身体活动总量吗？",
+   "reference_answer": "可以。步行、家务、休闲运动和结构化训练都可以贡献到总量。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "步行、家务、休闲运动和结构化训练都可以贡献到总量"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "活动量"
+   ]
+  },
+  {
+   "id": "qa-f050",
+   "category": "factual",
+   "query": "扭伤处理中抬高患处和加压属于什么处理思路？",
+   "reference_answer": "属于 PRICE 思路，扭伤或拉伤后的前 2–3 天适度加压并抬高患处。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "适度加压并抬高患处"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "PRICE"
+   ]
+  },
+  {
+   "id": "qa-f051",
+   "category": "factual",
+   "query": "食物多样合理搭配是哪个指南提出的？",
+   "reference_answer": "是中国居民膳食指南（2022）平衡膳食八准则的第一条：食物多样、合理搭配。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "平衡膳食八准则包括食物多样、合理搭配；"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "溯源"
+   ]
+  },
+  {
+   "id": "qa-f052",
+   "category": "factual",
+   "query": "少盐少油控糖限酒出现在哪份官方资料里？",
+   "reference_answer": "出现在中国居民膳食指南（2022）的平衡膳食八准则中：少盐少油，控糖限酒。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "少盐少油，控糖限酒；"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "溯源"
+   ]
+  },
+  {
+   "id": "qa-f053",
+   "category": "factual",
+   "query": "老年人需要额外关注平衡能力训练吗？",
+   "reference_answer": "需要。WHO 建议老年人还应结合平衡和功能性活动。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "老年人还应结合平衡和功能性活动"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "老年人"
+   ]
+  },
+  {
+   "id": "qa-f054",
+   "category": "factual",
+   "query": "功能性活动是对哪个人群的建议？",
+   "reference_answer": "是对老年人的建议：老年人还应结合平衡和功能性活动。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "老年人还应结合平衡和功能性活动"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "老年人"
+   ]
+  },
+  {
+   "id": "qa-f055",
+   "category": "factual",
+   "query": "健康饮食是否完全禁止糖和盐？",
+   "reference_answer": "不是完全禁止，而是控制总量：游离糖应低于总能量的 10%，成人每日盐摄入宜低于 5 克。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "游离糖应低于总能量的 10%，成人每日盐摄入宜低于 5 克"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "糖盐"
+   ]
+  },
+  {
+   "id": "qa-f056",
+   "category": "factual",
+   "query": "指南建议用什么样的食物替代多样化的饮食结构？",
+   "reference_answer": "指南建议避免这种替代——不要用大量高糖、高盐或高度加工食品替代多样化食物。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "避免用大量高糖、高盐或高度加工食品替代多样化食物"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "加工食品"
+   ]
+  },
+  {
+   "id": "qa-f057",
+   "category": "factual",
+   "query": "逐渐达到建议量是美国指南对起步阶段的建议吗？",
+   "reference_answer": "是。核心行动原则是多动、少坐，逐渐达到建议量。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "逐渐达到建议量"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "起步"
+   ]
+  },
+  {
+   "id": "qa-f058",
+   "category": "factual",
+   "query": "竞技训练处方可以从这些官方摘要里直接获得吗？",
+   "reference_answer": "不能。该摘要用于一般健康教育，不是个人诊疗或竞技训练处方。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "不是个人诊疗或竞技训练处方"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "适用范围"
+   ]
+  },
+  {
+   "id": "qa-f059",
+   "category": "factual",
+   "query": "剧烈疼痛时还应该继续引起疼痛的训练吗？",
+   "reference_answer": "不应该。NHS 建议停止会加重疼痛的活动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "停止会加重疼痛的活动"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "安全"
+   ]
+  },
+  {
+   "id": "qa-f060",
+   "category": "factual",
+   "query": "吃什么食物有助于实现食物多样的目标？",
+   "reference_answer": "膳食指南建议多类食物搭配：多吃蔬果、奶类、全谷物和大豆，适量吃鱼、禽、蛋和瘦肉。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "多吃蔬果、奶类、全谷物和大豆；适量吃鱼、禽、蛋和瘦肉；"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "食物多样"
+   ]
+  },
+  {
+   "id": "qa-f061",
+   "category": "factual",
+   "query": "吃鱼禽蛋瘦肉要注意量的原则是什么？",
+   "reference_answer": "适量吃鱼、禽、蛋和瘦肉，鱼禽蛋肉合计控制在一定范围内。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "适量吃鱼、禽、蛋和瘦肉；"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "肉蛋"
+   ]
+  },
+  {
+   "id": "qa-f062",
+   "category": "factual",
+   "query": "损伤恢复期强调活动还是完全静养？",
+   "reference_answer": "强调适度活动：疼痛允许时逐步进行轻柔活动，避免长期完全不动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "疼痛允许时逐步进行轻柔活动，避免长期完全不动"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "康复"
+   ]
+  },
+  {
+   "id": "qa-f063",
+   "category": "factual",
+   "query": "加压包扎在扭伤初期的作用环节叫什么？",
+   "reference_answer": "它是 PRICE 思路的一环：适度加压并抬高患处。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "适度加压并抬高患处"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "PRICE"
+   ]
+  },
+  {
+   "id": "qa-f064",
+   "category": "factual",
+   "query": "WHO 活动建议和竞技体能训练的关系是什么？",
+   "reference_answer": "WHO 的建议是群体层面的健康促进建议，不替代专业评估，不是竞技训练处方。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "这些是群体层面的健康促进建议，不替代针对个人疾病、伤病或用药情况的专业评估"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "适用范围"
+   ]
+  },
+  {
+   "id": "qa-f065",
+   "category": "factual",
+   "query": "获得更多健康收益需要无限制地加大运动量吗？",
+   "reference_answer": "不需要无限制加大，应在可承受范围内增加活动量。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "可在可承受范围内增加活动量"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "活动量"
+   ]
+  },
+  {
+   "id": "qa-f066",
+   "category": "factual",
+   "query": "深色蔬菜在蔬菜摄入里的占比建议大约是多少？",
+   "reference_answer": "深色蔬菜约占一半。膳食指南建议蔬菜不少于 300 克且深色蔬菜约占一半。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "蔬菜不少于 300 克且深色蔬菜约占一半"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "蔬菜"
+   ]
+  },
+  {
+   "id": "qa-f067",
+   "category": "factual",
+   "query": "膳食指南对每天喝水有建议吗？",
+   "reference_answer": "有。平衡膳食八准则提出规律进餐、足量饮水。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "规律进餐、足量饮水；"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "饮水"
+   ]
+  },
+  {
+   "id": "qa-f068",
+   "category": "factual",
+   "query": "看食品标签在膳食指南里被提倡吗？",
+   "reference_answer": "被提倡。八准则包括会烹会选、会看标签。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "会烹会选、会看标签；公筷分餐、讲究卫生、珍惜食物"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "标签"
+   ]
+  },
+  {
+   "id": "qa-f069",
+   "category": "factual",
+   "query": "残疾人群的活动强度必须与普通人完全一样吗？",
+   "reference_answer": "不是。对于有慢性病、残疾、妊娠或明显症状的人，活动类型和强度应根据专业建议调整。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "对于有慢性病、残疾、妊娠或明显症状的人，活动类型和强度应根据专业建议调整"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "残疾"
+   ]
+  },
+  {
+   "id": "qa-f070",
+   "category": "factual",
+   "query": "病情稳定后想自己加大运动强度，官方建议怎么做？",
+   "reference_answer": "应在可承受范围内逐步增加，并从较低量开始；有慢性病或明显症状时应根据专业建议调整类型和强度。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "可在可承受范围内增加活动量"
+    },
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "活动类型和强度应根据专业建议调整"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "综合",
+    "进阶"
+   ]
+  },
+  {
+   "id": "qa-f071",
+   "category": "factual",
+   "query": "饮食上重视脂肪的质量是什么意思？",
+   "reference_answer": "指优先改善脂肪构成：减少饱和脂肪和反式脂肪。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "脂肪应重视质量，减少饱和脂肪和反式脂肪"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "脂肪"
+   ]
+  },
+  {
+   "id": "qa-f072",
+   "category": "factual",
+   "query": "扭伤后疼痛减轻了还需要保护受伤部位吗？",
+   "reference_answer": "前 2–3 天应持续遵循 PRICE 思路保护受伤部位；疼痛允许时再逐步进行轻柔活动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "扭伤或拉伤后的前 2–3 天，可采用 PRICE 思路：保护受伤部位、停止会加重疼痛的活动"
+    },
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "疼痛允许时逐步进行轻柔活动，避免长期完全不动"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "PRICE"
+   ]
+  }
+ ]
+}

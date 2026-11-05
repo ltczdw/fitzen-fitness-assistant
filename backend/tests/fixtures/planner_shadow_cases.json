@@ -1,0 +1,1108 @@
+{
+  "source_artifact": "evidence/planner-step2/shadow-results.json",
+  "case_count": 40,
+  "notes": {
+    "B20": "The Step 2 artifact retained invalid_json status but not the raw invalid response."
+  },
+  "cases": [
+    {
+      "id": "B01",
+      "source": "built_in_regression",
+      "message": "你好，我想问热量",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "answer",
+          "text": "你好，我想问热量"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "我想问热量",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "source": "built_in_regression",
+      "message": "记录两个鸡蛋",
+      "rule": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "记录两个鸡蛋"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记录两个鸡蛋",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B03",
+      "source": "built_in_regression",
+      "message": "记录深蹲40kg，3组8次",
+      "rule": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "记录深蹲40kg，3组8次"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "记录深蹲40kg，3组8次",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B04",
+      "source": "built_in_regression",
+      "message": "卧推10kg，4组，每组10次合适吗",
+      "rule": [
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "卧推10kg，4组，每组10次合适吗"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "卧推10kg，4组，每组10次合适吗",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B05",
+      "source": "built_in_regression",
+      "message": "明天准备做卧推10kg，4组，每组10次",
+      "rule": [
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "明天准备做卧推10kg，4组，每组10次"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "training_plan",
+          "action": "confirm",
+          "text": "明天准备做卧推10kg，4组，每组10次",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B06",
+      "source": "built_in_regression",
+      "message": "帮我记录哑铃侧平举5kg*12，3组",
+      "rule": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "帮我记录哑铃侧平举5kg*12，3组"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "帮我记录哑铃侧平举5kg*12，3组",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B07",
+      "source": "built_in_regression",
+      "message": "记录今天卧推第一组40公斤10次，第二组45公斤8次",
+      "rule": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "记录今天卧推第一组40公斤10次，第二组45公斤8次"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "记录今天卧推第一组40公斤10次，第二组45公斤8次",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B08",
+      "source": "built_in_regression",
+      "message": "帮我记录今天做了卧推，忘了重量和次数",
+      "rule": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "帮我记录今天做了卧推，忘了重量和次数"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "帮我记录今天做了卧推，忘了重量和次数",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B09",
+      "source": "built_in_regression",
+      "message": "帮我补记昨天卧推40公斤3组8次，今天深蹲60公斤4组6次",
+      "rule": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "帮我补记昨天卧推40公斤3组8次，今天深蹲60公斤4组6次"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "帮我补记昨天卧推40公斤3组8次",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "今天深蹲60公斤4组6次",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B10",
+      "source": "built_in_regression",
+      "message": "把我记录今天中午吃了一碗饭和两个鸡蛋，今晚吃什么好",
+      "rule": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "把我记录今天中午吃了一碗饭和两个鸡蛋"
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "今晚吃什么好"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "把我记录今天中午吃了一碗饭和两个鸡蛋",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "今晚吃什么好",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B11",
+      "source": "built_in_regression",
+      "message": "帮我记录今天午餐吃了两个鸡蛋，安排一下晚餐",
+      "rule": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "帮我记录今天午餐吃了两个鸡蛋"
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "安排一下晚餐"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "帮我记录今天午餐吃了两个鸡蛋",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "安排一下晚餐",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B12",
+      "source": "built_in_regression",
+      "message": "记录卧推，然后安排腿部训练",
+      "rule": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "记录卧推"
+        },
+        {
+          "task_type": "training_plan",
+          "action": "question",
+          "text": "安排腿部训练"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "记录卧推",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "training_plan",
+          "action": "question",
+          "text": "安排腿部训练",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B13",
+      "source": "built_in_regression",
+      "message": "帮我把午餐记一下，再帮我规划晚餐",
+      "rule": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "帮我把午餐记一下"
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "规划晚餐"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "帮我把午餐记一下",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "再帮我规划晚餐",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B14",
+      "source": "built_in_regression",
+      "message": "记录早餐一碗粥，然后记录午餐一份牛肉",
+      "rule": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记录早餐一碗粥"
+        },
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记录午餐一份牛肉"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记录早餐一碗粥",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记录午餐一份牛肉",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B15",
+      "source": "built_in_regression",
+      "message": "帮我记录，我做了哑铃卧推10kg*10,4组，哑铃弯举10kg*10,4组",
+      "rule": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "帮我记录，我做了哑铃卧推10kg*10,4组，哑铃弯举10kg*10,4组"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "帮我记录，我做了哑铃卧推10kg*10,4组，哑铃弯举10kg*10,4组",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B16",
+      "source": "built_in_regression",
+      "message": "如果我吃了两个鸡蛋帮我记录",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "如果我吃了两个鸡蛋帮我记录"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "confirm",
+          "text": "如果我吃了两个鸡蛋帮我记录",
+          "is_negated": false,
+          "is_hypothetical": true,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B17",
+      "source": "built_in_regression",
+      "message": "朋友练了深蹲帮我记录",
+      "rule": [
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "朋友练了深蹲帮我记录"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "workout_record",
+          "action": "question",
+          "text": "朋友练了深蹲帮我记录",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": true
+        }
+      ]
+    },
+    {
+      "id": "B18",
+      "source": "built_in_regression",
+      "message": "不要记录鸡蛋",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "不要记录鸡蛋"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "不要记录鸡蛋",
+          "is_negated": true,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B19",
+      "source": "built_in_regression",
+      "message": "怎么记录两个鸡蛋",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "怎么记录两个鸡蛋"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "question",
+          "text": "怎么记录两个鸡蛋",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "B20",
+      "source": "built_in_regression",
+      "message": "不要保存但补记两个鸡蛋",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "不要保存但补记两个鸡蛋"
+        }
+      ],
+      "llm_status": "invalid_json",
+      "llm": []
+    },
+    {
+      "id": "C01",
+      "source": "constructed",
+      "message": "我中午吃了两个鸡蛋",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "我中午吃了两个鸡蛋"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "chitchat",
+          "action": "answer",
+          "text": "我中午吃了两个鸡蛋",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "source": "constructed",
+      "message": "我吃了十个鸡蛋肚子难受为什么",
+      "rule": [
+        {
+          "task_type": "safety_triage",
+          "action": "question",
+          "text": "我吃了十个鸡蛋肚子难受为什么"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "safety_triage",
+          "action": "question",
+          "text": "我吃了十个鸡蛋肚子难受为什么",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "source": "constructed",
+      "message": "记录鸡蛋米饭牛奶，再说说蛋白质够不够",
+      "rule": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "记录鸡蛋米饭牛奶"
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "answer",
+          "text": "说说蛋白质够不够"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记录鸡蛋米饭牛奶",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "再说说蛋白质够不够",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "source": "constructed",
+      "message": "帮我记午餐：鸡蛋、米饭、牛奶",
+      "rule": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "帮我记午餐：鸡蛋、米饭、牛奶"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "帮我记午餐：鸡蛋、米饭、牛奶",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "source": "constructed",
+      "message": "记录卧推，再说说如果受伤怎么办",
+      "rule": [
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "记录卧推，再说说如果受伤怎么办"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "记录卧推",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "safety_triage",
+          "action": "question",
+          "text": "如果受伤怎么办",
+          "is_negated": false,
+          "is_hypothetical": true,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "source": "constructed",
+      "message": "别记录我今天吃的牛肉",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "别记录我今天吃的牛肉"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "别记录我今天吃的牛肉",
+          "is_negated": true,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "source": "constructed",
+      "message": "假如我吃了三个鸡蛋，帮我算算营养",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "假如我吃了三个鸡蛋，帮我算算营养"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "假如我吃了三个鸡蛋，帮我算算营养",
+          "is_negated": false,
+          "is_hypothetical": true,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "source": "constructed",
+      "message": "我朋友练了卧推，帮他看看动作",
+      "rule": [
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "我朋友练了卧推，帮他看看动作"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "帮他看看动作",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": true
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "source": "constructed",
+      "message": "比如我吃了两个鸡蛋，这种情况要记吗？",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "比如我吃了两个鸡蛋，这种情况要记吗"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "question",
+          "text": "比如我吃了两个鸡蛋，这种情况要记吗？",
+          "is_negated": false,
+          "is_hypothetical": true,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "source": "constructed",
+      "message": "把今天的深蹲记下来，顺便给我安排明天练什么",
+      "rule": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "把今天的深蹲记下来"
+        },
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "给我安排明天练什么"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "把今天的深蹲记下来",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "training_plan",
+          "action": "question",
+          "text": "顺便给我安排明天练什么",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "source": "constructed",
+      "message": "记下我午餐吃了米饭，再记录晚餐吃了鱼",
+      "rule": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记下我午餐吃了米饭"
+        },
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记录晚餐吃了鱼"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记下我午餐吃了米饭",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "再记录晚餐吃了鱼",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C12",
+      "source": "constructed",
+      "message": "记录鸡蛋、米饭、牛奶，再给我晚饭建议",
+      "rule": [
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "记录鸡蛋、米饭、牛奶"
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "给我晚饭建议"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记录鸡蛋、米饭、牛奶",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "再给我晚饭建议",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C13",
+      "source": "constructed",
+      "message": "我跑步后吃香蕉，给个恢复建议",
+      "rule": [
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "我跑步后吃香蕉，给个恢复建议"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "给个恢复建议",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C14",
+      "source": "constructed",
+      "message": "不要记录鸡蛋；记录午餐米饭，再帮我算蛋白质",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "不要记录鸡蛋；记录午餐米饭，再帮我算蛋白质"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "不要记录鸡蛋",
+          "is_negated": true,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记录午餐米饭",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "再帮我算蛋白质",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C15",
+      "source": "constructed",
+      "message": "我昨天练了卧推4组10次，今天胸有点酸",
+      "rule": [
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "我昨天练了卧推4组10次，今天胸有点酸"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "safety_triage",
+          "action": "question",
+          "text": "今天胸有点酸",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C16",
+      "source": "constructed",
+      "message": "把这句话拆成任务：朋友吃了鸡蛋，而我只是在举例，如果我吃了鱼会怎样",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "把这句话拆成任务：朋友吃了鸡蛋，而我只是在举例，如果我吃了鱼会怎样"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "如果我吃了鱼会怎样",
+          "is_negated": false,
+          "is_hypothetical": true,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C17",
+      "source": "constructed",
+      "message": "先别存档，我只是想问鸡蛋和米饭哪个蛋白质高",
+      "rule": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "先别存档，我只是想问鸡蛋和米饭哪个蛋白质高"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "鸡蛋和米饭哪个蛋白质高",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C18",
+      "source": "constructed",
+      "message": "记录今天早餐两个鸡蛋，午餐一碗米饭；晚餐给我推荐高蛋白搭配",
+      "rule": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记录今天早餐两个鸡蛋，午餐一碗米饭"
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "晚餐给我推荐高蛋白搭配"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "记录今天早餐两个鸡蛋",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "午餐一碗米饭",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "nutrition_advice",
+          "action": "question",
+          "text": "晚餐给我推荐高蛋白搭配",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C19",
+      "source": "constructed",
+      "message": "我今天练了卧推。不是让我保存，先问一下动作发力对吗",
+      "rule": [
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "我今天练了卧推"
+        },
+        {
+          "task_type": "workout_record",
+          "action": "record",
+          "text": "不是让我保存，先问一下动作发力对吗"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "training_qa",
+          "action": "question",
+          "text": "动作发力对吗",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    },
+    {
+      "id": "C20",
+      "source": "constructed",
+      "message": "请记录：鸡蛋、牛奶、燕麦；另外，明天训练怎么安排？",
+      "rule": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "请记录：鸡蛋、牛奶、燕麦"
+        },
+        {
+          "task_type": "training_plan",
+          "action": "question",
+          "text": "明天训练怎么安排"
+        }
+      ],
+      "llm_status": "ok",
+      "llm": [
+        {
+          "task_type": "nutrition_record",
+          "action": "record",
+          "text": "请记录：鸡蛋、牛奶、燕麦",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        },
+        {
+          "task_type": "training_plan",
+          "action": "question",
+          "text": "明天训练怎么安排？",
+          "is_negated": false,
+          "is_hypothetical": false,
+          "is_third_party": false
+        }
+      ]
+    }
+  ]
+}

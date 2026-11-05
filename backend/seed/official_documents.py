@@ -1,0 +1,105 @@
+"""Curated summaries of authoritative public health and training guidance.
+
+These are original Chinese summaries, not verbatim copies of the source
+documents.  The metadata keeps the official provenance available to the RAG
+pipeline and to later citation/display features.
+"""
+
+from app.services.rag.ingestion import SourceDocument
+
+
+OFFICIAL_DOCUMENTS: list[SourceDocument] = [
+    SourceDocument(
+        title="WHO 身体活动和久坐行为指南（成人核心建议）",
+        source="who-physical-activity-2020",
+        metadata={
+            "publisher": "World Health Organization (WHO)",
+            "url": "https://www.who.int/publications/i/item/9789240014886",
+            "document_date": "2020-11-25",
+            "retrieved_at": "2026-09-13",
+            "language": "中文摘要（依据英文官方指南）",
+        },
+        content=(
+            "官方指南摘要：成年人每周宜进行 150–300 分钟中等强度有氧活动，或 "
+            "75–150 分钟高强度有氧活动，也可以用等效组合替代；获得更多健康收益时，"
+            "可在可承受范围内增加活动量。每周至少 2 天进行覆盖主要肌群的肌肉强化活动。"
+            "应减少久坐，把日常走路、家务和工作中的活动也计入整体活动量；少量活动也比完全不动好。"
+            "刚开始训练、长期不活动或健康状况特殊的人，应从较低量开始并逐步增加。老年人还应结合平衡和功能性活动。"
+            "这些是群体层面的健康促进建议，不替代针对个人疾病、伤病或用药情况的专业评估。"
+        ),
+    ),
+    SourceDocument(
+        title="WHO 健康饮食事实表",
+        source="who-healthy-diet-2026",
+        metadata={
+            "publisher": "World Health Organization (WHO)",
+            "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+            "document_date": "2026-01-26",
+            "retrieved_at": "2026-09-13",
+            "language": "中文摘要（依据英文官方事实表）",
+        },
+        content=(
+            "官方事实表摘要：健康饮食的基本原则是充足、平衡、适度和多样。饮食应优先包含蔬菜水果、"
+            "豆类、坚果和全谷物，并根据年龄、活动量、文化习惯、食物可获得性和健康状况调整。"
+            "对 10 岁以上人群，指南提出每天至少 400 克蔬菜水果和至少 25 克天然膳食纤维的公共健康目标；"
+            "游离糖应低于总能量的 10%，成人每日盐摄入宜低于 5 克。脂肪应重视质量，减少饱和脂肪和反式脂肪，"
+            "并避免用大量高糖、高盐或高度加工食品替代多样化食物。以上是人群层面的膳食原则，不能直接替代"
+            "糖尿病、肾病、妊娠、过敏或其他疾病所需的个体化医疗营养方案。"
+        ),
+    ),
+    SourceDocument(
+        title="中国居民膳食指南（2022）——平衡膳食八准则",
+        source="cnsoc-cdg-2022",
+        metadata={
+            "publisher": "中国营养学会；人民卫生出版社",
+            "url": "https://www.cnsoc.org/bookpublica/0522202019.html",
+            "document_date": "2022-07-01",
+            "retrieved_at": "2026-09-13",
+            "language": "中文摘要",
+        },
+        content=(
+            "官方指南摘要：平衡膳食八准则包括食物多样、合理搭配；吃动平衡、健康体重；多吃蔬果、奶类、"
+            "全谷物和大豆；适量吃鱼、禽、蛋和瘦肉；少盐少油，控糖限酒；规律进餐、足量饮水；会烹会选、"
+            "会看标签；公筷分餐、讲究卫生、珍惜食物。指南给出的常用成人参考包括：每天摄入 12 种以上食物、"
+            "每周 25 种以上；谷类约 200–300 克，其中全谷物和杂豆 50–150 克；蔬菜不少于 300 克且深色蔬菜约占一半；"
+            "水果约 200–350 克；液态奶约 300 毫升；鱼禽蛋肉合计约 120–200 克。活动方面，建议每周至少 5 天进行"
+            "中等强度活动，累计约 150 分钟，并减少久坐；抗阻活动可安排每周 2–3 天。盐、烹调油和添加糖应控制，"
+            "具体饮食仍需结合年龄、体重、活动量、疾病和当地食物情况调整。"
+        ),
+    ),
+    SourceDocument(
+        title="美国居民身体活动指南（第二版）",
+        source="hhs-physical-activity-guidelines-2e",
+        metadata={
+            "publisher": "U.S. Department of Health and Human Services / ODPHP",
+            "url": "https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines",
+            "document_date": "2018（官网页面 2025-11-19 更新）",
+            "retrieved_at": "2026-09-13",
+            "language": "中文摘要（依据官方指南）",
+        },
+        content=(
+            "官方指南摘要：成年人每周应完成 150–300 分钟中等强度有氧活动，或 75–150 分钟高强度有氧活动，"
+            "并在每周至少 2 天进行全身主要肌群的肌肉强化活动。核心行动原则是多动、少坐，逐渐达到建议量；"
+            "活动可以拆成多次完成，步行、家务、休闲运动和结构化训练都可以贡献到总量。训练安排应考虑个人能力，"
+            "通过循序渐进、适度变化和恢复来降低过度使用风险。对于有慢性病、残疾、妊娠或明显症状的人，活动类型和"
+            "强度应根据专业建议调整。该摘要用于一般健康教育，不是个人诊疗或竞技训练处方。"
+        ),
+    ),
+    SourceDocument(
+        title="NHS 扭伤和拉伤：自我处理及就医信号",
+        source="nhs-sprains-strains-2024",
+        metadata={
+            "publisher": "National Health Service (NHS), UK",
+            "url": "https://www.nhs.uk/conditions/sprains-and-strains/",
+            "document_date": "页面复核 2024-04-23",
+            "retrieved_at": "2026-09-13",
+            "language": "中文摘要（依据官方健康信息）",
+        },
+        content=(
+            "官方健康信息摘要：扭伤或拉伤后的前 2–3 天，可采用 PRICE 思路：保护受伤部位、停止会加重疼痛的活动、"
+            "冰敷（每次最多约 20 分钟、间隔 2–3 小时）、适度加压并抬高患处；疼痛允许时逐步进行轻柔活动，避免长期完全不动。"
+            "如果疼痛或肿胀严重或持续加重、无法承重或活动、淤青明显、恢复没有改善，应尽快寻求医疗建议。若出现明显变形、"
+            "麻木或针刺感、皮肤颜色异常，或受伤时听到断裂声，应及时接受紧急评估。该信息用于安全分流，不用于自行诊断或替代医生。"
+        ),
+    ),
+]

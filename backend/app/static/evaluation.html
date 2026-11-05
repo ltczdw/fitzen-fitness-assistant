@@ -1,0 +1,19 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FitZen 评测</title>
+<style>body{font:16px system-ui;max-width:1080px;margin:32px auto;padding:0 20px;background:#111827;color:#e5e7eb}article{padding:20px;border:1px solid #536078;border-radius:12px;margin:16px 0}button,select{font:inherit;padding:10px;border-radius:8px;border:1px solid #536078;background:#1f2937;color:inherit}button{cursor:pointer}button:disabled{opacity:.5}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:480px;overflow:auto}a{color:#93c5fd}#notice{color:#fbbf24}</style>
+<h1>评测与问题归并</h1><p>评测使用隔离数据，不使用供应商密钥。四策略代理实验用于检查算法链路，不代表真实模型质量。</p>
+<a href="/api/quality">返回回答质量</a><p id="notice" role="status"></p>
+<article><h2>运行评测</h2><select id="selection" aria-label="评测类型"></select> <button id="start">开始</button> <button id="refresh">刷新</button><section id="jobs"></section></article>
+<article><h2>公开基线</h2><pre id="baseline"></pre></article>
+<article><h2>证据门槛校准</h2><p>建议来自校准集，页面不会自动更改门槛。</p><pre id="calibration"></pre></article>
+<article><h2>最近评测报告</h2><pre id="reports"></pre></article>
+<article><h2>同类问题预览</h2><p>只归并展示，不合并或删除原始案例。数字和不同审核状态会分别保留。</p><section id="groups"></section></article>
+<script>
+const byId=id=>document.getElementById(id);let timer;
+function node(tag,value,parent){const e=document.createElement(tag);e.textContent=value;parent.append(e);return e}
+async function api(path,body){const r=await fetch('/api'+path,{method:body?'POST':'GET',headers:{'Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{})});const v=await r.json();if(!r.ok)throw Error(typeof v.detail==='string'?v.detail:'服务暂不可用');return v}
+async function refresh(){try{const data=await api('/evaluation/jobs');if(!byId('selection').options.length)for(const item of data.available){const option=document.createElement('option');option.value=item.name;option.textContent=item.title;byId('selection').append(option)}byId('jobs').replaceChildren();let running=false;for(const job of data.jobs){const card=node('article','',byId('jobs'));node('h3',job.title+' · '+job.status,card);node('pre',job.lines.join('\n'),card);if(['queued','running','stopping'].includes(job.status)){running=true;const button=node('button','停止',card);button.onclick=async()=>{button.disabled=true;try{await api('/evaluation/jobs/'+job.id+'/cancel',{});await refresh()}catch(e){byId('notice').textContent=e.message}}}}byId('start').disabled=running;clearTimeout(timer);if(running)timer=setTimeout(refresh,1500)}catch(e){byId('notice').textContent=e.message}}
+async function reports(){const results=await Promise.allSettled([api('/evaluation/baseline'),api('/evaluation/reports'),api('/review/groups')]);for(let i=0;i<2;i++)byId(i?'reports':'baseline').textContent=results[i].status==='fulfilled'?JSON.stringify(results[i].value,null,2):results[i].reason.message;byId('groups').replaceChildren();if(results[2].status==='fulfilled'){const data=results[2].value;for(const group of data.groups){const card=node('article','',byId('groups'));node('h3',group.question+' · '+group.occurrence_count+' 次',card);node('p',group.category+' / '+group.status,card);node('p','原始案例：'+group.case_ids.join('、'),card)}if(data.truncated)node('p','仅展示最近200个案例的归并结果',byId('groups'))}else node('p',results[2].reason.message,byId('groups'))}
+byId('start').onclick=async()=>{byId('start').disabled=true;try{byId('notice').textContent='';await api('/evaluation/jobs',{name:byId('selection').value});await refresh()}catch(e){byId('notice').textContent=e.message;byId('start').disabled=false}};
+async function calibration(){try{byId('calibration').textContent=JSON.stringify(await api('/evaluation/calibration'),null,2)}catch(e){byId('calibration').textContent=e.message}}
+byId('refresh').onclick=()=>{refresh();reports();calibration()};refresh();reports();calibration();
+</script></html>

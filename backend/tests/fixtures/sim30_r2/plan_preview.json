@@ -1,0 +1,19 @@
+{
+  "case": "plan_preview",
+  "source_file": "continuation-01/live/synthetic-model-responses.jsonl",
+  "source_message": "我成年、无伤病，是力量训练新手。本周只能周二和周六练，每次从热身到结束最多30分钟，器械只有哑铃。给这两天的完整预览，组间休息也算进30分钟；不要保存或覆盖已存计划。",
+  "items": [
+    {
+      "source_call": 6,
+      "tool": "return_request_understanding",
+      "sha256": "111214387ee262542e73d65a0f09b7924912b6dcb8c6b5a8dea724d7b56f1f12",
+      "arguments": "{\"tasks\": [{\"task_type\": \"training_plan\", \"action\": \"question\", \"text\": \"我成年、无伤病，是力量训练新手。本周只能周二和周六练，每次从热身到结束最多30分钟，器械只有哑铃。给这两天的完整预览，组间休息也算进30分钟；不要保存或覆盖已存计划。\", \"is_negated\": false, \"is_hypothetical\": false, \"is_third_party\": false, \"plan_result\": true, \"result_scope\": \"independent\", \"plan_request_quote\": \"给这两天的完整预览\", \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"none\", \"fact_text\": null, \"reply_mode\": \"grounded\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"delivery_type\": \"plan\"}], \"safety\": {\"level\": \"normal\", \"evidence\": \"无伤病\", \"categories\": [\"negated\"], \"reason\": \"用户明确否认伤病，无当前症状或医疗风险。\"}, \"relation\""
+    },
+    {
+      "source_call": 7,
+      "tool": "return_request_understanding",
+      "sha256": "ba8c76b442238ca1f69fe4e278b995a0059f6cf2123127839857a3b6e1211e8c",
+      "arguments": "{\"tasks\": [{\"task_type\": \"training_plan\", \"action\": \"question\", \"text\": \"我成年、无伤病，是力量训练新手。本周只能周二和周六练，每次从热身到结束最多30分钟，器械只有哑铃。给这两天的完整预览，组间休息也算进30分钟；不要保存或覆盖已存计划。\", \"is_negated\": false, \"is_hypothetical\": false, \"is_third_party\": false, \"plan_result\": true, \"result_scope\": \"independent\", \"plan_goal_id\": \"\", \"plan_request_quote\": \"给这两天的完整预览\", \"shared_scope_quote\": \"\", \"plan_target_quote\": \"\", \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"none\", \"fact_text\": null, \"reply_mode\": \"grounded\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"record_query\": null, \"read_spec\": null, \"delivery_type\": \"preview\"}]}, \"safety\": {\"level\": \"normal\", \"evidence\": \"\", \"categories\": [\"negated\"], \"reason\": \"用户明确说明成年且无伤病，属否定性健康背景，无当前症状或急症风险。\"}, \"memory_requests\": [], \"context_states\": [{\"key\": \"available_days\", \"quote\": \"本周只能周二和周六练\", \"action\": \"set\", \"scope\": \"request\", \"domain\": \"training\"}, {\"key\": \"session_duration_limit\", \"quote\": \"每次从热身到结束最多30分钟\", \"action\": \"set\", \"scope\": \"request\", \"domain\": \"training\"}, {\"key\": \"available_equipment\", \"quote\": \"器械只有哑铃\", \"action\": \"set\", \"scope\": \"request\", \"domain\": \"training\"}], \"constraint_fields\": [], \"conflict_fields\": [], \"references\": [], \"critical_history_ids\": [], \"dialogue_ids\": [], \"relation\": \"new\", \"reply_mode\": \"grounded\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"critical_fact_fields\": [], \"current_is_critical\": false, \"needs_clarification\": false, \"clarification\": \"\"}"
+    }
+  ]
+}

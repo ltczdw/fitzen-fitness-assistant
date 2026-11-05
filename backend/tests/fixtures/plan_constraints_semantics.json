@@ -1,0 +1,47 @@
+{
+  "tasks": [
+    {
+      "task_type": "training_qa",
+      "action": "answer",
+      "text": "先回顾刚才卧推和深蹲的重量",
+      "is_negated": false,
+      "is_hypothetical": false,
+      "is_third_party": false,
+      "fact_text": null,
+      "reply_mode": "conversation",
+      "reply_purpose": "fact_recall",
+      "context_ids": [
+        "bench-user",
+        "squat-user"
+      ],
+      "fact_fields": []
+    },
+    {
+      "task_type": "training_plan",
+      "action": "question",
+      "text": "再给一个新手每周两次、每次20分钟、只有哑铃的增肌周计划。我没有伤病，只要建议，不保存。",
+      "is_negated": false,
+      "is_hypothetical": false,
+      "is_third_party": false,
+      "fact_text": null,
+      "reply_mode": "grounded",
+      "reply_purpose": "general",
+      "context_ids": [],
+      "fact_fields": []
+    }
+  ],
+  "memory_requests": [],
+  "references": [],
+  "critical_history_ids": [],
+  "dialogue_ids": [
+    "bench-user",
+    "squat-user"
+  ],
+  "relation": "follow_up",
+  "reply_mode": "grounded",
+  "reply_purpose": "general",
+  "critical_fact_fields": [],
+  "current_is_critical": false,
+  "needs_clarification": false,
+  "clarification": ""
+}

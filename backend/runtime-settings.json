@@ -1,0 +1,5 @@
+{
+  "llm_context_window_tokens": 65536,
+  "memory_short_window_turns": 10,
+  "memory_recent_max_tokens": 12000
+}

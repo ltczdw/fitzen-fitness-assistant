@@ -1,0 +1,964 @@
+{
+  "model": "gpt-6-luna",
+  "mode": "agent_simulation_not_deepseek",
+  "provenance": "Actual GPT-6-luna sub-agent outputs; raw plans preserved, not corrected to match gold.",
+  "samples": [
+    {
+      "id": "luna-001",
+      "message": "刚练完，深蹲 4 组，每组 8 次，硬拉 3 组 60 公斤。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "深蹲 4 组，每组 8 次",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "深蹲",
+                "sets": 4,
+                "reps": 8,
+                "inferred_fields": []
+              }
+            ]
+          },
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "硬拉 3 组 60 公斤",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "硬拉",
+                "weight_kg": 60,
+                "sets": 3,
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-002",
+      "message": "早餐吃了两个鸡蛋、一杯豆浆和一根香蕉，帮我记一下。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_record",
+            "action": "record",
+            "text": "早餐吃了两个鸡蛋、一杯豆浆和一根香蕉",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": [
+              {
+                "name": "鸡蛋",
+                "quantity": 2,
+                "meal_type": "早餐"
+              },
+              {
+                "name": "豆浆",
+                "quantity": 1,
+                "unit": "杯",
+                "meal_type": "早餐"
+              },
+              {
+                "name": "香蕉",
+                "quantity": 1,
+                "meal_type": "早餐"
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-003",
+      "message": "晚饭吃了半碗米饭和一份红烧鱼，吃完后帮我看看今天蛋白质够不够。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_record",
+            "action": "record",
+            "text": "晚饭吃了半碗米饭和一份红烧鱼",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": [
+              {
+                "name": "米饭",
+                "quantity": 0.5,
+                "unit": "碗",
+                "meal_type": "晚饭"
+              },
+              {
+                "name": "红烧鱼",
+                "quantity": 1,
+                "unit": "份",
+                "meal_type": "晚饭"
+              }
+            ]
+          },
+          {
+            "task_type": "nutrition_advice",
+            "action": "answer",
+            "text": "看看今天蛋白质够不够",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": []
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-004",
+      "message": "把昨天的跑步记上，5 公里，用了 32 分钟。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "跑步记上，5 公里，用了 32 分钟",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "跑步",
+                "record_date": "昨天",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-005",
+      "message": "周一我做了卧推，40 公斤三组，每组十下。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "做了卧推，40 公斤三组，每组十下",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "卧推",
+                "weight_kg": 40,
+                "sets": 3,
+                "reps": 10,
+                "record_date": "周一",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-006",
+      "message": "中午吃了牛肉面，顺便问下我今天还能吃多少热量？",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_record",
+            "action": "record",
+            "text": "中午吃了牛肉面",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": [
+              {
+                "name": "牛肉面",
+                "meal_type": "中午"
+              }
+            ]
+          },
+          {
+            "task_type": "nutrition_advice",
+            "action": "question",
+            "text": "我今天还能吃多少热量",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": []
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-007",
+      "message": "我今天没去健身房，也没有跑步。",
+      "planner_output": {
+        "tasks": []
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-008",
+      "message": "如果我明天去游泳 40 分钟，大概能消耗多少卡？",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "training_qa",
+            "action": "question",
+            "text": "大概能消耗多少卡",
+            "is_negated": false,
+            "is_hypothetical": true,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "游泳",
+                "record_date": "明天",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-009",
+      "message": "我朋友说他昨天骑车 12 公里，叫我替他记一下。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "骑车 12 公里",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": true,
+            "workouts": [
+              {
+                "exercise": "骑车",
+                "record_date": "昨天",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-010",
+      "message": "我不是要记饮食，只想知道一碗燕麦粥大概多少热量。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_advice",
+            "action": "question",
+            "text": "知道一碗燕麦粥大概多少热量",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": [
+              {
+                "name": "燕麦粥",
+                "quantity": 1,
+                "unit": "碗"
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-011",
+      "message": "今天做了引体向上 3 组，每组 6 个；另外含一盒牛奶。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "做了引体向上 3 组，每组 6 个",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "引体向上",
+                "sets": 3,
+                "reps": 6,
+                "inferred_fields": []
+              }
+            ]
+          },
+          {
+            "task_type": "nutrition_record",
+            "action": "record",
+            "text": "含一盒牛奶",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": [
+              {
+                "name": "牛奶",
+                "quantity": 1,
+                "unit": "盒",
+                "record_date": "今天"
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-012",
+      "message": "昨天晚上吃了披萨两片，今天早上体重 68.4 公斤，帮我记下。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_record",
+            "action": "record",
+            "text": "昨天晚上吃了披萨两片",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": [
+              {
+                "name": "披萨",
+                "quantity": 2,
+                "unit": "片",
+                "meal_type": "晚餐",
+                "record_date": "昨天"
+              }
+            ]
+          },
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "今天早上体重 68.4 公斤",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": []
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-013",
+      "message": "刚刚做了平板支撑。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "做了平板支撑",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "平板支撑",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-014",
+      "message": "午餐吃了鸡胸肉和西兰花，份量忘了。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_record",
+            "action": "record",
+            "text": "午餐吃了鸡胸肉和西兰花，份量忘了",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": [
+              {
+                "name": "鸡胸肉",
+                "meal_type": "午餐"
+              },
+              {
+                "name": "西兰花",
+                "meal_type": "午餐"
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-015",
+      "message": "今天跑步 5 公里 30 分钟，帮我记一下。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "跑步 5 公里 30 分钟",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "跑步",
+                "record_date": "今天",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-016",
+      "message": "再记一次今天跑步 5 公里 30 分钟。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "跑步 5 公里 30 分钟",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "跑步",
+                "record_date": "今天",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-017",
+      "message": "帮我记一笔训练。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "confirm",
+            "text": "记一笔训练",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": []
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-018",
+      "message": "我做了卧推三组，每组多少次来着？不记了，先告诉我上次记录。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "training_qa",
+            "action": "question",
+            "text": "告诉我上次记录",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "卧推",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-019",
+      "message": "教练建议我每天吃够蛋白质，这句话不用记；我今天吃了三块豆腐。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_record",
+            "action": "record",
+            "text": "今天吃了三块豆腐",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": [
+              {
+                "name": "豆腐",
+                "quantity": 3,
+                "unit": "块",
+                "record_date": "今天"
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-020",
+      "message": "我妈今天走了八千步，我只是转述给你，不要算我的运动。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "走了八千步",
+            "is_negated": true,
+            "is_hypothetical": false,
+            "is_third_party": true,
+            "workouts": [
+              {
+                "exercise": "走路",
+                "record_date": "今天",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-021",
+      "message": "要是昨天吃了炸鸡，今天是不是该少吃点？",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_advice",
+            "action": "question",
+            "text": "今天是不是该少吃点",
+            "is_negated": false,
+            "is_hypothetical": true,
+            "is_third_party": false,
+            "foods": []
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-022",
+      "message": "周日那顿火锅我还没吃呢，别记录。",
+      "planner_output": {
+        "tasks": []
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-023",
+      "message": "今天练肩，侧平举 5 公斤做了两组。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "侧平举 5 公斤做了两组",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "侧平举",
+                "weight_kg": 5,
+                "sets": 2,
+                "record_date": "今天",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "luna-024",
+      "message": "把今天早餐记一下，我吃了东西但想不起来是什么。",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_record",
+            "action": "confirm",
+            "text": "吃了东西但想不起来是什么",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": []
+          }
+        ]
+      },
+      "cohort": "free_form_adversarial_authored"
+    },
+    {
+      "id": "probe-001",
+      "message": "记录卧推60kg，4组8次",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "记录卧推60kg，4组8次",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "卧推",
+                "weight_kg": 60,
+                "sets": 4,
+                "reps": 8,
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    },
+    {
+      "id": "probe-002",
+      "message": "记录卧推60kg，4组8次？",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "question",
+            "text": "记录卧推60kg，4组8次？",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "卧推",
+                "weight_kg": 60,
+                "sets": 4,
+                "reps": 8,
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    },
+    {
+      "id": "probe-003",
+      "message": "记录卧推60kg，4组8次，然后解释一下为什么要热身？",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "记录卧推60kg，4组8次",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "卧推",
+                "weight_kg": 60,
+                "sets": 4,
+                "reps": 8,
+                "inferred_fields": []
+              }
+            ]
+          },
+          {
+            "task_type": "training_qa",
+            "action": "question",
+            "text": "解释一下为什么要热身",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": []
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    },
+    {
+      "id": "probe-004",
+      "message": "记录两个鸡蛋，然后安排晚餐",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_record",
+            "action": "record",
+            "text": "记录两个鸡蛋",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": [
+              {
+                "name": "鸡蛋",
+                "quantity": 2,
+                "inferred_fields": []
+              }
+            ]
+          },
+          {
+            "task_type": "nutrition_advice",
+            "action": "question",
+            "text": "安排晚餐",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": []
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    },
+    {
+      "id": "probe-005",
+      "message": "鸡蛋没吃，记录米饭200克",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_record",
+            "action": "record",
+            "text": "鸡蛋没吃，记录米饭200克",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": [
+              {
+                "name": "鸡蛋",
+                "is_negated": true
+              },
+              {
+                "name": "米饭",
+                "quantity": 200,
+                "unit": "克",
+                "weight_g": 200,
+                "is_negated": false
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    },
+    {
+      "id": "probe-006",
+      "message": "记录其他动作，卧推60kg，4组8次",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "记录其他动作，卧推60kg，4组8次",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "卧推",
+                "weight_kg": 60,
+                "sets": 4,
+                "reps": 8,
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    },
+    {
+      "id": "probe-007",
+      "message": "记录他昨天的卧推60kg，4组8次",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "记录他昨天的卧推60kg，4组8次",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": true,
+            "workouts": [
+              {
+                "exercise": "卧推",
+                "weight_kg": 60,
+                "sets": 4,
+                "reps": 8,
+                "record_date": "昨天",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    },
+    {
+      "id": "probe-008",
+      "message": "帮我补录昨天卧推60kg，4组8次",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "帮我补录昨天卧推60kg，4组8次",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "卧推",
+                "weight_kg": 60,
+                "sets": 4,
+                "reps": 8,
+                "record_date": "昨天",
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    },
+    {
+      "id": "probe-009",
+      "message": "记录卧推60kg，4组8次，然后补记卧推60kg 4组8次",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "记录卧推60kg，4组8次",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "卧推",
+                "weight_kg": 60,
+                "sets": 4,
+                "reps": 8,
+                "inferred_fields": []
+              }
+            ]
+          },
+          {
+            "task_type": "workout_record",
+            "action": "record",
+            "text": "补记卧推60kg 4组8次",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": [
+              {
+                "exercise": "卧推",
+                "weight_kg": 60,
+                "sets": 4,
+                "reps": 8,
+                "inferred_fields": []
+              }
+            ]
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    },
+    {
+      "id": "probe-010",
+      "message": "给我制定每周三次的训练计划",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "training_plan",
+            "action": "answer",
+            "text": "给我制定每周三次的训练计划",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": []
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    },
+    {
+      "id": "probe-011",
+      "message": "记录午餐100克米饭，然后制定每周三次训练计划",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "nutrition_record",
+            "action": "record",
+            "text": "记录午餐100克米饭",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "foods": [
+              {
+                "name": "米饭",
+                "quantity": 100,
+                "unit": "克",
+                "weight_g": 100,
+                "meal_type": "午餐"
+              }
+            ]
+          },
+          {
+            "task_type": "training_plan",
+            "action": "answer",
+            "text": "制定每周三次训练计划",
+            "is_negated": false,
+            "is_hypothetical": false,
+            "is_third_party": false,
+            "workouts": []
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    },
+    {
+      "id": "probe-012",
+      "message": "如果明天训练，怎么安排热身",
+      "planner_output": {
+        "tasks": [
+          {
+            "task_type": "training_qa",
+            "action": "question",
+            "text": "如果明天训练，怎么安排热身",
+            "is_negated": false,
+            "is_hypothetical": true,
+            "is_third_party": false,
+            "workouts": []
+          }
+        ]
+      },
+      "cohort": "normal_targeted_probe"
+    }
+  ]
+}

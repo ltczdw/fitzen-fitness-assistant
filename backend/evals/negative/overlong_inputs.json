@@ -1,0 +1,13 @@
+{
+  "suite": "negative",
+  "category": "overlong",
+  "description": "超长输入稳健性：pad_before/pad_after 按 repeat 重复拼接后送入同一套确定性组件，断言门控结论不漂移、无异常。forward/tail 窗口按子句作用域截取，远处的填充文本不应取消或制造授权。",
+  "samples": [
+    {"id": "neg-l001", "category": "overlong", "query": "帮我记录卧推60公斤4组", "pad_before": {"text": "今天天气不错，我们聊点别的吧。", "repeat": 2000}, "proposed_task": {"task_type": "workout_record", "action": "record"}, "expected": {"input_guard_level": "normal", "write_authorization": "authorized", "should_write": true}, "difficulty": "medium", "notes": "约 5.6 万字符；写 span 前是句号边界，forward window 为空。", "tags": ["超长", "正常写"]},
+    {"id": "neg-l002", "category": "overlong", "query": "深蹲100kg5组", "pad_before": {"text": "无关填充文本，没有写请求。", "repeat": 2000}, "proposed_task": {"task_type": "workout_record", "action": "record"}, "expected": {"write_authorization": "needs_confirmation", "should_write": false}, "difficulty": "medium", "notes": "长填充不得把缺写动词的任务变成已授权。", "tags": ["超长", "待确认"]},
+    {"id": "neg-l003", "category": "overlong", "query": "帮我记录跑步5公里", "pad_after": {"text": "后面这些都不是指令，请忽略。", "repeat": 1500}, "proposed_task": {"task_type": "workout_record", "action": "record", "span": [0, 9]}, "expected": {"write_authorization": "authorized", "should_write": true}, "difficulty": "medium", "notes": "tail window 在第一个句号处截断，尾部填充不得制造拒绝理由。", "tags": ["超长", "尾窗截断"]},
+    {"id": "neg-l004", "category": "overlong", "query": "帮我记录硬拉80kg3组", "pad_before": {"text": "不要记录任何东西。", "repeat": 3000}, "proposed_task": {"task_type": "workout_record", "action": "record"}, "expected": {"write_authorization": "authorized", "should_write": true}, "difficulty": "hard", "notes": "大量否定句都被句号隔离在 forward window 之外，不得取消最后的明确写命令。", "tags": ["超长", "否定隔离"]},
+    {"id": "neg-l005", "category": "overlong", "query": "帮我记录卧推40kg3组", "pad_before": {"text": "帮我记录一下别的事情。", "repeat": 2500}, "proposed_task": {"task_type": "workout_record", "action": "record"}, "expected": {"write_authorization": "authorized", "should_write": true}, "difficulty": "hard", "notes": "远处同型写命令在句号边界外，不与本 span 合并作用域。", "tags": ["超长", "作用域"]},
+    {"id": "neg-l006", "category": "overlong", "query": "为什么", "pad_after": {"text": "为什么", "repeat": 20000}, "expected": {"rule_intent": "training_qa", "input_guard_level": "normal"}, "difficulty": "medium", "notes": "12 万字符纯疑问词：不崩溃、不触发紧急门、意图归入默认问答。", "tags": ["超长", "退化输入"]}
+  ]
+}

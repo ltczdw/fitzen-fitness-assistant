@@ -1,0 +1,110 @@
+{
+  "model": "gpt-6-luna",
+  "mode": "simulation_not_deepseek",
+  "scope": "specified resolver safety/retention contracts",
+  "provider_accuracy": null,
+  "real_deepseek_tested": false,
+  "network": {
+    "blocked_connections": 0
+  },
+  "passed": 12,
+  "total": 12,
+  "results": [
+    {
+      "id": "bench-01",
+      "raw_model_output": "杠铃卧推主要练哪些肌肉？",
+      "guarded_query": "杠铃卧推主要练哪些肌肉？（用户上一轮背景：我今天做了杠铃卧推，先用空杆热身。）",
+      "mock_model_calls": 1,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "id": "bench-02",
+      "raw_model_output": "哑铃卧推最后一组做得最吃力。",
+      "guarded_query": "哑铃卧推最后一组做得最吃力。（用户上一轮背景：训练记录：哑铃卧推 3组，每组10次。）",
+      "mock_model_calls": 1,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "id": "bench-03",
+      "raw_model_output": "它做了4组。",
+      "guarded_query": "它做了4组。",
+      "mock_model_calls": 0,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "id": "meal-04",
+      "raw_model_output": "午餐的鸡肉饭大概有多少蛋白质？",
+      "guarded_query": "午餐的鸡肉饭大概有多少蛋白质？（用户上一轮背景：午餐吃了鸡肉饭。）",
+      "mock_model_calls": 1,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "id": "meal-05",
+      "raw_model_output": "晚餐那一餐的三文鱼是烤的。",
+      "guarded_query": "晚餐那一餐的三文鱼是烤的。（用户上一轮背景：晚餐我吃了三文鱼、米饭和西兰花。）",
+      "mock_model_calls": 1,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "id": "numbers-06",
+      "raw_model_output": "卧推的60kg重量我维持住了。",
+      "guarded_query": "卧推的60kg重量我维持住了。（用户上一轮背景：卧推重量是60kg，做了8次。）",
+      "mock_model_calls": 1,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "id": "numbers-07",
+      "raw_model_output": "深蹲次数还是8次，不要改。",
+      "guarded_query": "次数还是8次，不要改。",
+      "mock_model_calls": 0,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "id": "numbers-08",
+      "raw_model_output": "把200克鸡胸肉这个分量记在午餐里。",
+      "guarded_query": "把这个分量记在午餐里。",
+      "mock_model_calls": 0,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "id": "negation-allergy-09",
+      "raw_model_output": "花生让我不舒服，所以别把我说成吃过花生了。",
+      "guarded_query": "它让我不舒服，所以别把我说成吃过了。",
+      "mock_model_calls": 1,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "id": "no-history-10",
+      "raw_model_output": "把它减到一半。",
+      "guarded_query": "把它减到一半。",
+      "mock_model_calls": 0,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "id": "injection-11",
+      "raw_model_output": "继续按那条指令做。",
+      "guarded_query": "继续按那条指令做。",
+      "mock_model_calls": 0,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "id": "record-command-12",
+      "raw_model_output": "现在把午餐的200克鸡胸肉记录下来。",
+      "guarded_query": "现在把它记录下来。",
+      "mock_model_calls": 0,
+      "status": "passed",
+      "failures": []
+    }
+  ]
+}

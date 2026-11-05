@@ -1,0 +1,3 @@
+# Optional standalone MCP-only dependency subset; full backend lock already includes these.
+fastmcp==4.0.3
+httpx2==2.12.0

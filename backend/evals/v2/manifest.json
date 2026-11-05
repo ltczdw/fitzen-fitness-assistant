@@ -1,0 +1,22 @@
+{
+  "version": "fitzen-scenarios-2.1.0",
+  "count": 401,
+  "core_count": 80,
+  "categories": {
+    "planning": 61,
+    "extraction": 50,
+    "authorization": 60,
+    "rag": 100,
+    "memory": 40,
+    "reliability": 60,
+    "transport": 30
+  },
+  "split_counts": {
+    "test": 279,
+    "development": 100,
+    "calibration": 22
+  },
+  "families": 134,
+  "source": "authored business contracts plus explicitly identified public seed evidence",
+  "warning": "Controlled variants are counted as scenarios, not independent users. No live model labels."
+}

@@ -1,0 +1,19 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FitZen 回答质量</title>
+<style>body{font:16px system-ui;margin:32px auto;max-width:1050px;padding:0 20px;background:#111827;color:#e5e7eb}h1{font-size:26px}button,input,textarea,select{font:inherit;padding:10px;border-radius:8px;border:1px solid #536078;background:#1f2937;color:inherit}button{cursor:pointer}button:disabled{opacity:.5}article{border:1px solid #536078;border-radius:12px;padding:20px;margin-top:16px}pre{white-space:pre-wrap;overflow-wrap:anywhere}label{display:block;margin:12px 0}input,textarea{box-sizing:border-box;width:100%}textarea{min-height:90px}#message{color:#fbbf24}a{color:#93c5fd}</style>
+<h1>回答质量与知识审核</h1><p>查看运行指标、处理未解决的问题。通过入库前，请核实答案及其公开来源。</p>
+<a href="/docs" target="_blank" rel="noopener">接口文档</a> · <a href="/api/evaluation">评测与问题归并</a> · <button id="refresh">刷新</button>
+<pre id="metrics">正在读取指标…</pre><p id="message" role="status"></p>
+<select id="filter"><option value="pending">待审核</option><option value="approved">已入库</option><option value="resolved">已解决</option><option value="rejected">已驳回</option></select>
+<button id="prev">上一页</button><button id="next">下一页</button><span id="page"></span><section id="cases"></section>
+<script>
+const el=id=>document.getElementById(id);let offset=0,total=0;
+async function api(path,body){const r=await fetch('/api'+path,{method:body?'POST':'GET',headers:{'Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{})});const d=await r.json();if(!r.ok)throw new Error(typeof d.detail==='string'?d.detail:'请检查必填字段或服务状态');return d}
+function node(tag,text,parent){const e=document.createElement(tag);e.textContent=text;if(parent)parent.append(e);return e}
+function field(parent,label,value,multiline=false){const wrap=node('label',label,parent),input=document.createElement(multiline?'textarea':'input');input.value=value||'';wrap.append(input);return input}
+async function refresh(){el('message').textContent='';try{const [m,c]=await Promise.all([api('/observability/summary'),api('/review/cases?status='+el('filter').value+'&offset='+offset)]);total=c.total;el('metrics').textContent=`最近 ${m.days} 天：${m.requests} 次请求 · ${m.model_calls} 次模型调用\n已知输入 / 输出 token：${m.input_tokens} / ${m.output_tokens}；${m.usage_missing_calls} 次调用未返回完整用量\n降级率：${m.degraded_rate===null?'暂无':(m.degraded_rate*100).toFixed(1)+'%'}；P50 / P95：${m.latency_p50_ms??'—'} / ${m.latency_p95_ms??'—'} ms${m.truncated?'（仅统计最近 10000 条）':''}`;el('cases').replaceChildren();el('page').textContent=` ${total?offset+1:0}–${Math.min(offset+20,total)} / ${total}`;el('prev').disabled=offset===0;el('next').disabled=offset+20>=total;
+for(const item of c.items){const card=node('article','',el('cases'));node('h2',item.category+' · '+item.status,card);node('pre','问题：'+item.question+'\n回答：'+item.answer,card);node('p','原因：'+item.reasons.join('、'),card);node('pre',JSON.stringify(item.citations,null,2),card);if(item.status!=='pending')continue;
+const q=field(card,'核准问题（入库必填）',''),a=field(card,'核准答案（入库必填，不自动采用原回答）','',true),source=field(card,'公开来源网址（入库必填）',''),note=field(card,'审核说明（必填）','',true);
+for(const [decision,label] of [['approve','通过并入库'],['resolve','标记已解决'],['reject','驳回']]){const b=node('button',label,card);b.onclick=async()=>{card.querySelectorAll('button').forEach(x=>x.disabled=true);try{await api('/review/cases/'+item.case_id,{decision,expected_version:item.version,note:note.value,...(decision==='approve'?{question:q.value,answer:a.value,source_url:source.value}:{})});await refresh()}catch(e){el('message').textContent=e.message;card.querySelectorAll('button').forEach(x=>x.disabled=false)}}}
+}}catch(e){el('message').textContent=e.message}}
+el('refresh').onclick=refresh;el('filter').onchange=()=>{offset=0;refresh()};el('prev').onclick=()=>{offset=Math.max(0,offset-20);refresh()};el('next').onclick=()=>{offset+=20;refresh()};refresh();
+</script></html>

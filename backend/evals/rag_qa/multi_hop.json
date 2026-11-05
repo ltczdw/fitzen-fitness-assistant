@@ -1,0 +1,703 @@
+{
+ "suite": "rag_qa",
+ "category": "multi_hop",
+ "description": "多跳推理：跨文档对比、跨条款组合、简单算术推导。min_citations>=2 的样本要求两个期望来源都进入最终引用。",
+ "samples": [
+  {
+   "id": "qa-m001",
+   "category": "multi_hop",
+   "query": "WHO 和中国膳食指南分别建议每周进行多少中等强度活动？",
+   "reference_answer": "WHO 建议每周 150–300 分钟中等强度有氧活动；中国膳食指南建议每周至少 5 天、累计约 150 分钟中等强度活动。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "成年人每周宜进行 150–300 分钟中等强度有氧活动"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "建议每周至少 5 天进行中等强度活动，累计约 150 分钟，并减少久坐"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "对比",
+    "有氧"
+   ]
+  },
+  {
+   "id": "qa-m002",
+   "category": "multi_hop",
+   "query": "肌肉强化 WHO 建议每周几天，中国膳食指南的抗阻建议是几天？",
+   "reference_answer": "WHO 建议每周至少 2 天肌肉强化活动；中国膳食指南建议抗阻活动每周 2–3 天。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "每周至少 2 天进行覆盖主要肌群的肌肉强化活动"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "抗阻活动可安排每周 2–3 天"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "对比",
+    "抗阻"
+   ]
+  },
+  {
+   "id": "qa-m003",
+   "category": "multi_hop",
+   "query": "每天至少 400 克蔬菜水果和蔬菜不少于 300 克分别出自哪份指南？",
+   "reference_answer": "400 克蔬菜水果来自 WHO 健康饮食事实表（10 岁以上人群每天至少 400 克）；蔬菜不少于 300 克来自中国居民膳食指南。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "对 10 岁以上人群，指南提出每天至少 400 克蔬菜水果和至少 25 克天然膳食纤维的公共健康目标"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "蔬菜不少于 300 克且深色蔬菜约占一半"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "溯源",
+    "蔬菜"
+   ]
+  },
+  {
+   "id": "qa-m004",
+   "category": "multi_hop",
+   "query": "高强度有氧的建议范围 WHO 和美国指南一致吗？",
+   "reference_answer": "一致，两份指南都给出每周 75–150 分钟高强度有氧活动的建议。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "或 75–150 分钟高强度有氧活动"
+    },
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "或 75–150 分钟高强度有氧活动"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "对比",
+    "有氧"
+   ]
+  },
+  {
+   "id": "qa-m005",
+   "category": "multi_hop",
+   "query": "把 WHO 的蔬果最低克数与中国膳食指南的蔬菜最低克数相加是多少？",
+   "reference_answer": "WHO 每天 400 克蔬菜水果，膳食指南蔬菜不少于 300 克，相加为 700 克。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "每天至少 400 克蔬菜水果和至少 25 克天然膳食纤维的公共健康目标"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "蔬菜不少于 300 克且深色蔬菜约占一半"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "hard",
+   "should_reject": false,
+   "derived_numbers": [
+    700
+   ],
+   "tags": [
+    "算术",
+    "蔬菜"
+   ]
+  },
+  {
+   "id": "qa-m006",
+   "category": "multi_hop",
+   "query": "WHO 的盐建议和中国膳食指南的控盐条款分别是什么？",
+   "reference_answer": "WHO 建议成人每日盐摄入宜低于 5 克；中国膳食准则要求少盐少油、控糖限酒，并把盐列为应控制的调味品。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "成人每日盐摄入宜低于 5 克"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "盐、烹调油和添加糖应控制"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "对比",
+    "盐"
+   ]
+  },
+  {
+   "id": "qa-m007",
+   "category": "multi_hop",
+   "query": "谷类 200–300 克中，全谷物和杂豆的占比范围按膳食指南应如何安排？",
+   "reference_answer": "谷类每天约 200–300 克，其中全谷物和杂豆占 50–150 克，即约四分之一到一半由全谷物和杂豆构成。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "谷类约 200–300 克，其中全谷物和杂豆 50–150 克"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "组合",
+    "谷类"
+   ]
+  },
+  {
+   "id": "qa-m008",
+   "category": "multi_hop",
+   "query": "扭伤后前 2–3 天的处理里，冰敷的时长和频率分别是什么？",
+   "reference_answer": "前 2–3 天采用 PRICE 思路，其中冰敷每次最多约 20 分钟、间隔 2–3 小时。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "扭伤或拉伤后的前 2–3 天，可采用 PRICE 思路：保护受伤部位、停止会加重疼痛的活动、冰敷（每次最多约 20 分钟、间隔 2–3 小时）、适度加压并抬高患处"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "组合",
+    "冰敷"
+   ]
+  },
+  {
+   "id": "qa-m009",
+   "category": "multi_hop",
+   "query": "老年人训练除了有氧和力量还应加什么？这与 WHO 哪句话对应？",
+   "reference_answer": "还应结合平衡和功能性活动，对应 WHO 的老年人建议条款。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "老年人还应结合平衡和功能性活动"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "组合",
+    "老年人"
+   ]
+  },
+  {
+   "id": "qa-m010",
+   "category": "multi_hop",
+   "query": "如果每周 5 天、每天 30 分钟中等强度有氧，是否同时满足 WHO 和膳食指南的建议？",
+   "reference_answer": "满足。每周 5 天共 150 分钟，达到 WHO 每周 150–300 分钟中等强度的下限，也符合膳食指南每周至少 5 天、累计约 150 分钟的建议。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "成年人每周宜进行 150–300 分钟中等强度有氧活动"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "建议每周至少 5 天进行中等强度活动，累计约 150 分钟，并减少久坐"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "hard",
+   "should_reject": false,
+   "derived_numbers": [
+    150
+   ],
+   "tags": [
+    "组合",
+    "有氧"
+   ]
+  },
+  {
+   "id": "qa-m011",
+   "category": "multi_hop",
+   "query": "WHO 健康饮食的脂肪建议和膳食指南的控油条款有什么共同点？",
+   "reference_answer": "两者都指向限制不利的脂肪摄入：WHO 提出减少饱和脂肪和反式脂肪，膳食指南把烹调油列入应控制项并要求少油。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "脂肪应重视质量，减少饱和脂肪和反式脂肪"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "盐、烹调油和添加糖应控制"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "对比",
+    "脂肪"
+   ]
+  },
+  {
+   "id": "qa-m012",
+   "category": "multi_hop",
+   "query": "开始新训练计划时，WHO 和美国指南对渐进安排分别怎么说？",
+   "reference_answer": "WHO 建议刚开始训练者从较低量开始并逐步增加；美国指南提出多动、少坐，逐渐达到建议量，并通过循序渐进降低过度使用风险。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "刚开始训练、长期不活动或健康状况特殊的人，应从较低量开始并逐步增加"
+    },
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "核心行动原则是多动、少坐，逐渐达到建议量"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "对比",
+    "渐进"
+   ]
+  },
+  {
+   "id": "qa-m013",
+   "category": "multi_hop",
+   "query": "水果 200–350 克和液态奶 300 毫升是同一份指南的建议吗？",
+   "reference_answer": "是，都来自中国居民膳食指南（2022）的常用成人参考。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "水果约 200–350 克；液态奶约 300 毫升；鱼禽蛋肉合计约 120–200 克"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "溯源",
+    "同源"
+   ]
+  },
+  {
+   "id": "qa-m014",
+   "category": "multi_hop",
+   "query": "按 WHO 建议的下限，一周 7 天全用高强度有氧补齐 150 分钟可行吗？",
+   "reference_answer": "可行但不是唯一方式：高强度有氧每周 75–150 分钟即达建议，150 分钟正好是高强度区间的上限；也可以与中等强度用等效组合替代。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "或 75–150 分钟高强度有氧活动，也可以用等效组合替代"
+    }
+   ],
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "组合",
+    "有氧"
+   ]
+  },
+  {
+   "id": "qa-m015",
+   "category": "multi_hop",
+   "query": "一个人每天 12 种食物、每周 25 种的目标，同时也要做到多吃全谷物吗？",
+   "reference_answer": "是。膳食指南同时建议每天 12 种以上、每周 25 种以上食物，以及谷类中包含全谷物和杂豆 50–150 克。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "每天摄入 12 种以上食物、每周 25 种以上；谷类约 200–300 克，其中全谷物和杂豆 50–150 克"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "组合",
+    "多样"
+   ]
+  },
+  {
+   "id": "qa-m016",
+   "category": "multi_hop",
+   "query": "WHO 说少量活动也比不动好，美国指南说多动少坐，两者矛盾吗？",
+   "reference_answer": "不矛盾。前者强调起步阶段任何活动都有价值，后者强调总体方向是多动、少坐并逐渐达到建议量。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "少量活动也比完全不动好"
+    },
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "核心行动原则是多动、少坐，逐渐达到建议量"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "对比",
+    "原则"
+   ]
+  },
+  {
+   "id": "qa-m017",
+   "category": "multi_hop",
+   "query": "膳食指南的活动建议和减少久坐有什么关系？",
+   "reference_answer": "膳食指南建议每周至少 5 天中等强度活动、累计约 150 分钟，并明确要求减少久坐。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "建议每周至少 5 天进行中等强度活动，累计约 150 分钟，并减少久坐"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "组合",
+    "久坐"
+   ]
+  },
+  {
+   "id": "qa-m018",
+   "category": "multi_hop",
+   "query": "把膳食指南的液态奶 300 毫升与水果上限 350 克放在一起看，牛奶加水果一天大约多少克/毫升？",
+   "reference_answer": "液态奶约 300 毫升，水果上限约 350 克，两项相加约 650（克/毫升）。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "水果约 200–350 克；液态奶约 300 毫升；鱼禽蛋肉合计约 120–200 克"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "derived_numbers": [
+    650
+   ],
+   "tags": [
+    "算术",
+    "同源"
+   ]
+  },
+  {
+   "id": "qa-m019",
+   "category": "multi_hop",
+   "query": "受伤后既想避免完全不动又怕加重损伤，NHS 的平衡建议是什么？",
+   "reference_answer": "前 2–3 天保护受伤部位、停止会加重疼痛的活动；疼痛允许时逐步进行轻柔活动，避免长期完全不动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "扭伤或拉伤后的前 2–3 天，可采用 PRICE 思路：保护受伤部位、停止会加重疼痛的活动、冰敷（每次最多约 20 分钟、间隔 2–3 小时）、适度加压并抬高患处；疼痛允许时逐步进行轻柔活动，避免长期完全不动"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "组合",
+    "康复"
+   ]
+  },
+  {
+   "id": "qa-m020",
+   "category": "multi_hop",
+   "query": "WHO 与膳食指南关于久坐的说法有什么异同？",
+   "reference_answer": "两者都要求减少久坐。WHO 把日常走路、家务和工作活动计入整体活动量来对冲久坐；膳食指南在活动建议中直接附带减少久坐的要求。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "应减少久坐，把日常走路、家务和工作中的活动也计入整体活动量"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "并减少久坐"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "对比",
+    "久坐"
+   ]
+  },
+  {
+   "id": "qa-m021",
+   "category": "multi_hop",
+   "query": "深色蔬菜占一半的要求与 300 克蔬菜目标怎么组合执行？",
+   "reference_answer": "每天蔬菜不少于 300 克，其中深色蔬菜约占一半，即大约 150 克深色蔬菜。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "蔬菜不少于 300 克且深色蔬菜约占一半"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "derived_numbers": [
+    150
+   ],
+   "tags": [
+    "算术",
+    "蔬菜"
+   ]
+  },
+  {
+   "id": "qa-m022",
+   "category": "multi_hop",
+   "query": "WHO 的高强度有氧建议和肌肉强化建议可以怎么组合成一周计划？",
+   "reference_answer": "例如每周 75–150 分钟高强度有氧满足有氧建议，再在每周至少 2 天安排覆盖主要肌群的肌肉强化活动。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "或 75–150 分钟高强度有氧活动"
+    },
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "每周至少 2 天进行覆盖主要肌群的肌肉强化活动"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "组合",
+    "计划"
+   ]
+  },
+  {
+   "id": "qa-m023",
+   "category": "multi_hop",
+   "query": "鱼禽蛋肉 120–200 克与适量吃鱼禽蛋瘦肉的准则如何对应？",
+   "reference_answer": "八准则中的适量吃鱼、禽、蛋和瘦肉对应量化参考为鱼禽蛋肉合计约 120–200 克。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "适量吃鱼、禽、蛋和瘦肉；"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "鱼禽蛋肉合计约 120–200 克"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "组合",
+    "肉蛋"
+   ]
+  },
+  {
+   "id": "qa-m024",
+   "category": "multi_hop",
+   "query": "美国指南的渐进原则与 WHO 的起步建议结合起来，对久坐新手的一句话建议是什么？",
+   "reference_answer": "从较低量开始、多动少坐、逐渐达到建议量，并在可承受范围内循序渐进地增加。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "刚开始训练、长期不活动或健康状况特殊的人，应从较低量开始并逐步增加"
+    },
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "核心行动原则是多动、少坐，逐渐达到建议量"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "综合",
+    "新手"
+   ]
+  },
+  {
+   "id": "qa-m025",
+   "category": "multi_hop",
+   "query": "膳食指南的谷类范围与全谷物下限相减，精制谷类最多可以吃多少？",
+   "reference_answer": "按上限估算，谷类 200–300 克减去全谷物和杂豆 50–150 克，精制谷类大约在 100–250 克之间（由范围相减得出，指南未直接给出该数字）。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "谷类约 200–300 克，其中全谷物和杂豆 50–150 克"
+    }
+   ],
+   "difficulty": "hard",
+   "should_reject": false,
+   "derived_numbers": [
+    100,
+    250
+   ],
+   "tags": [
+    "算术",
+    "谷类"
+   ]
+  },
+  {
+   "id": "qa-m026",
+   "category": "multi_hop",
+   "query": "WHO 饮食原则中优质脂肪的建议与高糖高盐加工食品的限制怎么配合？",
+   "reference_answer": "一手抓脂肪质量（减少饱和脂肪和反式脂肪），一手避免用高糖、高盐或高度加工食品替代多样化食物，两者共同约束饮食质量。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "脂肪应重视质量，减少饱和脂肪和反式脂肪"
+    },
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "并避免用大量高糖、高盐或高度加工食品替代多样化食物"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "组合",
+    "脂肪"
+   ]
+  },
+  {
+   "id": "qa-m027",
+   "category": "multi_hop",
+   "query": "每周 3 天抗阻训练同时满足膳食指南和 WHO 的建议吗？",
+   "reference_answer": "满足。膳食指南建议抗阻每周 2–3 天，WHO 建议肌肉强化每周至少 2 天，3 天均在范围内。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "抗阻活动可安排每周 2–3 天"
+    },
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "每周至少 2 天进行覆盖主要肌群的肌肉强化活动"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "判断",
+    "抗阻"
+   ]
+  },
+  {
+   "id": "qa-m028",
+   "category": "multi_hop",
+   "query": "一份同时含 400 克蔬果目标和 25 克纤维目标的条款出自哪里？两者什么关系？",
+   "reference_answer": "都出自 WHO 健康饮食事实表，是对 10 岁以上人群提出的公共健康目标：每天至少 400 克蔬菜水果和至少 25 克天然膳食纤维。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "对 10 岁以上人群，指南提出每天至少 400 克蔬菜水果和至少 25 克天然膳食纤维的公共健康目标"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "溯源",
+    "同源"
+   ]
+  },
+  {
+   "id": "qa-m029",
+   "category": "multi_hop",
+   "query": "有氧下限 150 分钟与膳食指南 150 分钟数字相同，含义一样吗？",
+   "reference_answer": "数字相同但口径不同：WHO 是每周 150–300 分钟中等强度有氧活动的区间下限；膳食指南是每周至少 5 天、累计约 150 分钟，并强调活动天数。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "成年人每周宜进行 150–300 分钟中等强度有氧活动"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "建议每周至少 5 天进行中等强度活动，累计约 150 分钟，并减少久坐"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "对比",
+    "口径"
+   ]
+  },
+  {
+   "id": "qa-m030",
+   "category": "multi_hop",
+   "query": "扭伤后既要冰敷又要活动，两者在时间上怎么衔接？",
+   "reference_answer": "前 2–3 天按 PRICE 处理（冰敷每次最多约 20 分钟、间隔 2–3 小时）；疼痛允许时逐步进行轻柔活动，避免长期完全不动。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "冰敷（每次最多约 20 分钟、间隔 2–3 小时）"
+    },
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "疼痛允许时逐步进行轻柔活动，避免长期完全不动"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "组合",
+    "康复"
+   ]
+  },
+  {
+   "id": "qa-m031",
+   "category": "multi_hop",
+   "query": "WHO 与美国指南的肌肉强化部位要求有什么细微差别？",
+   "reference_answer": "WHO 表述为覆盖主要肌群，美国指南表述为全身主要肌群，两者实质都要求覆盖主要肌群、每周至少 2 天。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "每周至少 2 天进行覆盖主要肌群的肌肉强化活动"
+    },
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "并在每周至少 2 天进行全身主要肌群的肌肉强化活动"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "对比",
+    "力量"
+   ]
+  },
+  {
+   "id": "qa-m032",
+   "category": "multi_hop",
+   "query": "综合各指南，健康成年人一周的活动骨架应该长什么样？",
+   "reference_answer": "每周 150–300 分钟中等强度有氧（或 75–150 分钟高强度，可用等效组合），每周至少 2 天主要肌群肌肉强化，抗阻可安排 2–3 天，同时减少久坐并把日常活动计入总量。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "成年人每周宜进行 150–300 分钟中等强度有氧活动，或 75–150 分钟高强度有氧活动，也可以用等效组合替代"
+    },
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "每周至少 2 天进行覆盖主要肌群的肌肉强化活动"
+    },
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "抗阻活动可安排每周 2–3 天"
+    }
+   ],
+   "min_citations": 2,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "综合",
+    "计划"
+   ]
+  }
+ ]
+}

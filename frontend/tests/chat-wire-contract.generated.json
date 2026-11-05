@@ -1,0 +1,125 @@
+{
+  "pending": {
+    "answer": "模拟结果",
+    "intent": "nutrition_record",
+    "citations": [],
+    "clarifications": [],
+    "safety_level": "unknown",
+    "model_used": false,
+    "memory_status": "ready",
+    "diagnostics_status": "ready",
+    "request_id": "synthetic-original",
+    "message_id": "synthetic-original:assistant",
+    "run_id": "synthetic-run",
+    "replayed": false,
+    "metrics": {
+      "requested_mode": "react_write",
+      "execution_mode": "react_write",
+      "mode_reason": "explicit_write",
+      "react_write": "pending",
+      "react_status": "pending",
+      "receipt_refs": [],
+      "pending_confirmations": [
+        {
+          "pending_request_id": "synthetic-original",
+          "pending_op_id": "op2_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "pending_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "expires_at": "2099-01-01T00:00:00+00:00"
+        }
+      ]
+    }
+  },
+  "pending_sse": "event: status\ndata: {\"message\": \"正在处理请求\"}\n\nevent: meta\ndata: {\"intent\": \"nutrition_record\", \"citations\": [], \"clarifications\": [], \"safety_level\": \"unknown\", \"model_used\": false, \"memory_status\": \"ready\", \"diagnostics_status\": \"ready\", \"request_id\": \"synthetic-original\", \"message_id\": \"synthetic-original:assistant\", \"run_id\": \"synthetic-run\", \"replayed\": false, \"metrics\": {\"requested_mode\": \"react_write\", \"execution_mode\": \"react_write\", \"mode_reason\": \"explicit_write\", \"react_write\": \"pending\", \"react_status\": \"pending\", \"receipt_refs\": [], \"pending_confirmations\": [{\"pending_request_id\": \"synthetic-original\", \"pending_op_id\": \"op2_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\", \"pending_digest\": \"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\", \"expires_at\": \"2099-01-01T00:00:00+00:00\"}]}}\n\nevent: token\ndata: {\"content\": \"模拟结果\"}\n\nevent: done\ndata: {\"intent\": \"nutrition_record\", \"citations\": [], \"clarifications\": [], \"safety_level\": \"unknown\", \"model_used\": false, \"memory_status\": \"ready\", \"diagnostics_status\": \"ready\", \"request_id\": \"synthetic-original\", \"message_id\": \"synthetic-original:assistant\", \"run_id\": \"synthetic-run\", \"replayed\": false, \"metrics\": {\"requested_mode\": \"react_write\", \"execution_mode\": \"react_write\", \"mode_reason\": \"explicit_write\", \"react_write\": \"pending\", \"react_status\": \"pending\", \"receipt_refs\": [], \"pending_confirmations\": [{\"pending_request_id\": \"synthetic-original\", \"pending_op_id\": \"op2_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\", \"pending_digest\": \"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\", \"expires_at\": \"2099-01-01T00:00:00+00:00\"}]}}\n\n",
+  "completed": {
+    "answer": "模拟结果",
+    "intent": "nutrition_record",
+    "citations": [],
+    "clarifications": [],
+    "safety_level": "unknown",
+    "model_used": false,
+    "memory_status": "ready",
+    "diagnostics_status": "ready",
+    "request_id": "synthetic-confirmation",
+    "message_id": "synthetic-confirmation:assistant",
+    "run_id": "synthetic-confirm-run",
+    "replayed": false,
+    "metrics": {
+      "requested_mode": "react_write",
+      "execution_mode": "react_write",
+      "mode_reason": "explicit_write",
+      "react_write": "completed",
+      "react_status": "completed",
+      "receipt_refs": [
+        "nutrition:c2-2:op2_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:g0:17"
+      ],
+      "pending_confirmations": []
+    }
+  },
+  "completed_sse": "event: status\ndata: {\"message\": \"正在处理请求\"}\n\nevent: meta\ndata: {\"intent\": \"nutrition_record\", \"citations\": [], \"clarifications\": [], \"safety_level\": \"unknown\", \"model_used\": false, \"memory_status\": \"ready\", \"diagnostics_status\": \"ready\", \"request_id\": \"synthetic-confirmation\", \"message_id\": \"synthetic-confirmation:assistant\", \"run_id\": \"synthetic-confirm-run\", \"replayed\": false, \"metrics\": {\"requested_mode\": \"react_write\", \"execution_mode\": \"react_write\", \"mode_reason\": \"explicit_write\", \"react_write\": \"completed\", \"react_status\": \"completed\", \"receipt_refs\": [\"nutrition:c2-2:op2_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:g0:17\"], \"pending_confirmations\": []}}\n\nevent: token\ndata: {\"content\": \"模拟结果\"}\n\nevent: done\ndata: {\"intent\": \"nutrition_record\", \"citations\": [], \"clarifications\": [], \"safety_level\": \"unknown\", \"model_used\": false, \"memory_status\": \"ready\", \"diagnostics_status\": \"ready\", \"request_id\": \"synthetic-confirmation\", \"message_id\": \"synthetic-confirmation:assistant\", \"run_id\": \"synthetic-confirm-run\", \"replayed\": false, \"metrics\": {\"requested_mode\": \"react_write\", \"execution_mode\": \"react_write\", \"mode_reason\": \"explicit_write\", \"react_write\": \"completed\", \"react_status\": \"completed\", \"receipt_refs\": [\"nutrition:c2-2:op2_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:g0:17\"], \"pending_confirmations\": []}}\n\n",
+  "disabled": {
+    "answer": "本次写入请求未进入执行：写入运行时当前不可用；未执行模型或保存。",
+    "intent": "execution_limited",
+    "citations": [],
+    "clarifications": [],
+    "safety_level": "unknown",
+    "model_used": false,
+    "memory_status": "ready",
+    "diagnostics_status": "ready",
+    "request_id": null,
+    "message_id": null,
+    "run_id": null,
+    "replayed": false,
+    "metrics": {
+      "requested_mode": "react_write",
+      "execution_mode": "limited",
+      "mode_reason": "react_write_disabled",
+      "react_status": "limited",
+      "receipt_refs": []
+    }
+  },
+  "confirmation_privacy_limited": {
+    "answer": "模拟结果",
+    "intent": "nutrition_record",
+    "citations": [],
+    "clarifications": [],
+    "safety_level": "unknown",
+    "model_used": false,
+    "memory_status": "ready",
+    "diagnostics_status": "ready",
+    "request_id": "synthetic-confirmation",
+    "message_id": "synthetic-confirmation:assistant",
+    "run_id": "synthetic-confirm-run",
+    "replayed": false,
+    "metrics": {
+      "requested_mode": "react_write",
+      "execution_mode": "react_write",
+      "mode_reason": "privacy_invalidated",
+      "react_write": "limited",
+      "react_status": "limited",
+      "receipt_refs": [],
+      "pending_confirmations": []
+    }
+  },
+  "confirmation_privacy_sse": "event: status\ndata: {\"message\": \"正在处理请求\"}\n\nevent: meta\ndata: {\"intent\": \"nutrition_record\", \"citations\": [], \"clarifications\": [], \"safety_level\": \"unknown\", \"model_used\": false, \"memory_status\": \"ready\", \"diagnostics_status\": \"ready\", \"request_id\": \"synthetic-confirmation\", \"message_id\": \"synthetic-confirmation:assistant\", \"run_id\": \"synthetic-confirm-run\", \"replayed\": false, \"metrics\": {\"requested_mode\": \"react_write\", \"execution_mode\": \"react_write\", \"mode_reason\": \"privacy_invalidated\", \"react_write\": \"limited\", \"react_status\": \"limited\", \"receipt_refs\": [], \"pending_confirmations\": []}}\n\nevent: token\ndata: {\"content\": \"模拟结果\"}\n\nevent: done\ndata: {\"intent\": \"nutrition_record\", \"citations\": [], \"clarifications\": [], \"safety_level\": \"unknown\", \"model_used\": false, \"memory_status\": \"ready\", \"diagnostics_status\": \"ready\", \"request_id\": \"synthetic-confirmation\", \"message_id\": \"synthetic-confirmation:assistant\", \"run_id\": \"synthetic-confirm-run\", \"replayed\": false, \"metrics\": {\"requested_mode\": \"react_write\", \"execution_mode\": \"react_write\", \"mode_reason\": \"privacy_invalidated\", \"react_write\": \"limited\", \"react_status\": \"limited\", \"receipt_refs\": [], \"pending_confirmations\": []}}\n\n",
+  "terminal_privacy": {
+    "answer": "该会话的隐私设置已变更，本次请求不再恢复或保存；如需记录请重新发起。",
+    "intent": "execution_limited",
+    "citations": [],
+    "clarifications": [],
+    "safety_level": "normal",
+    "model_used": false,
+    "memory_status": "ready",
+    "diagnostics_status": "ready",
+    "request_id": null,
+    "message_id": null,
+    "run_id": null,
+    "replayed": false,
+    "metrics": {
+      "react_write": "limited",
+      "react_status": "limited",
+      "mode_reason": "privacy_invalidated",
+      "receipt_refs": [],
+      "pending_confirmations": []
+    }
+  }
+}

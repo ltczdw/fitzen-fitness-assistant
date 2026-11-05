@@ -1,0 +1,473 @@
+[
+  {
+    "id": "shoulder",
+    "topic": "injury",
+    "title_zh": "肩部疼痛与运动时肩膀不适",
+    "url": "https://www.nhs.uk/conditions/shoulder-pain/",
+    "questions": [
+      "哑铃卧推时肩部不适有哪些常见相关因素",
+      "训练时肩前刺痛，需要了解哪些情况"
+    ]
+  },
+  {
+    "id": "shoulder-impingement",
+    "topic": "injury",
+    "title_zh": "肩部撞击与肩袖相关疼痛",
+    "url": "https://www.nhs.uk/conditions/shoulder-impingement-syndrome/",
+    "questions": [
+      "举手过头时肩膀疼可能和什么有关",
+      "肩袖相关疼痛有哪些一般表现"
+    ]
+  },
+  {
+    "id": "frozen-shoulder",
+    "topic": "injury",
+    "title_zh": "肩关节僵硬与冻结肩",
+    "url": "https://www.nhs.uk/conditions/frozen-shoulder/",
+    "questions": [
+      "肩关节僵硬和活动受限需要注意什么",
+      "冻结肩能靠强行拉伸解决吗"
+    ]
+  },
+  {
+    "id": "knee",
+    "topic": "injury",
+    "title_zh": "膝关节疼痛与运动时膝盖不适",
+    "url": "https://www.nhs.uk/conditions/knee-pain/",
+    "questions": [
+      "深蹲时膝盖疼该注意什么",
+      "跑步后膝关节肿痛什么时候就医"
+    ]
+  },
+  {
+    "id": "back",
+    "topic": "injury",
+    "title_zh": "背痛腰痛与运动安全",
+    "url": "https://www.nhs.uk/conditions/back-pain/",
+    "questions": [
+      "硬拉以后腰背疼需要注意什么",
+      "腰痛伴随哪些症状需要尽快就医"
+    ]
+  },
+  {
+    "id": "elbow",
+    "topic": "injury",
+    "title_zh": "肘部手臂疼痛与训练不适",
+    "url": "https://www.nhs.uk/conditions/elbow-and-arm-pain/",
+    "questions": [
+      "做弯举肘关节疼怎么办",
+      "手臂疼痛持续不缓解要去看医生吗"
+    ]
+  },
+  {
+    "id": "tendonitis",
+    "topic": "injury",
+    "title_zh": "肌腱炎与重复负荷相关疼痛",
+    "url": "https://www.nhs.uk/conditions/tendonitis/",
+    "questions": [
+      "反复训练后肌腱部位疼痛需要注意什么",
+      "肌腱疼痛时还能继续原强度训练吗"
+    ]
+  },
+  {
+    "id": "hip",
+    "topic": "injury",
+    "title_zh": "髋关节疼痛与运动限制",
+    "url": "https://www.nhs.uk/conditions/hip-pain/",
+    "questions": [
+      "深蹲时髋部疼痛需要了解什么",
+      "髋关节疼痛出现哪些情况需要就医"
+    ]
+  },
+  {
+    "id": "wrist",
+    "topic": "injury",
+    "title_zh": "手腕疼痛与手部负荷",
+    "url": "https://www.nhs.uk/conditions/hand-pain/wrist-pain/",
+    "questions": [
+      "俯卧撑时手腕疼该注意什么",
+      "手腕疼痛伴麻木需要评估吗"
+    ]
+  },
+  {
+    "id": "ankle",
+    "topic": "injury",
+    "title_zh": "踝关节疼痛与跑跳安全",
+    "url": "https://www.nhs.uk/conditions/foot-pain/ankle-pain/",
+    "questions": [
+      "跑步后脚踝疼需要注意什么",
+      "脚踝疼痛不能承重该怎么处理"
+    ]
+  },
+  {
+    "id": "sprains",
+    "topic": "injury",
+    "title_zh": "扭伤拉伤的处理与恢复",
+    "url": "https://www.nhs.uk/conditions/sprains-and-strains/",
+    "questions": [
+      "脚踝扭伤后还能跑步吗",
+      "拉伤和扭伤后应该怎样恢复活动"
+    ]
+  },
+  {
+    "id": "sports-injuries",
+    "topic": "recovery",
+    "title_zh": "运动损伤、过度使用与恢复原则",
+    "url": "https://www.niams.nih.gov/health-topics/sports-injuries",
+    "questions": [
+      "运动后酸痛和受伤有什么区别",
+      "如何减少重复训练造成的过度使用损伤"
+    ],
+    "task_type": "safety_triage"
+  },
+  {
+    "id": "injury-treatment",
+    "topic": "recovery",
+    "title_zh": "运动损伤治疗、康复与重返训练",
+    "url": "https://www.niams.nih.gov/health-topics/sports-injuries/diagnosis-treatment-and-steps-to-take",
+    "questions": [
+      "受伤后什么时候逐步恢复训练",
+      "康复过程中为什么需要调整训练负荷"
+    ],
+    "task_type": "safety_triage"
+  },
+  {
+    "id": "adult-activity",
+    "topic": "training",
+    "title_zh": "成人有氧运动、力量训练与每周安排",
+    "url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+    "questions": [
+      "成年人每周需要多少有氧运动",
+      "力量训练和有氧训练怎么安排"
+    ]
+  },
+  {
+    "id": "strength-flexibility",
+    "topic": "training",
+    "title_zh": "力量训练、增肌基础、组数次数与柔韧性",
+    "url": "https://www.nhs.uk/live-well/exercise/how-to-improve-strength-flexibility/",
+    "questions": [
+      "新手增肌每周练几次、每组做几次",
+      "肌肉强化训练如何循序渐进增加负荷"
+    ]
+  },
+  {
+    "id": "strength-exercises",
+    "topic": "training",
+    "title_zh": "基础力量动作与居家力量练习",
+    "url": "https://www.nhs.uk/live-well/exercise/strength-exercises/",
+    "questions": [
+      "没有健身房器械如何开始力量训练",
+      "居家腿部力量练习有哪些基础动作"
+    ]
+  },
+  {
+    "id": "warmup",
+    "topic": "training",
+    "title_zh": "训练前热身与循序进入运动",
+    "url": "https://www.nhs.uk/live-well/exercise/how-to-warm-up-before-exercising/",
+    "questions": [
+      "力量训练前怎么热身",
+      "很久没运动的人热身要注意什么"
+    ]
+  },
+  {
+    "id": "stretching",
+    "topic": "training",
+    "title_zh": "运动后伸展与肌肉柔韧练习",
+    "url": "https://www.nhs.uk/live-well/exercise/how-to-stretch-after-exercising/",
+    "questions": [
+      "运动后怎样进行温和拉伸",
+      "拉伸时疼痛是否应该继续用力"
+    ],
+    "expected_sources": {
+      "1": [
+        "stretching",
+        "injury-treatment"
+      ]
+    },
+    "question_task_types": {
+      "1": "safety_triage"
+    }
+  },
+  {
+    "id": "balance",
+    "topic": "training",
+    "title_zh": "平衡能力与基础功能性练习",
+    "url": "https://www.nhs.uk/live-well/exercise/balance-exercises/",
+    "questions": [
+      "如何开始简单的平衡训练",
+      "平衡练习需要怎样的安全环境"
+    ]
+  },
+  {
+    "id": "walking",
+    "topic": "training",
+    "title_zh": "步行健身与逐步增加日常活动",
+    "url": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+    "questions": [
+      "走路能作为减脂和健康运动吗",
+      "久坐后如何逐步开始步行锻炼"
+    ]
+  },
+  {
+    "id": "older-adults",
+    "topic": "special-populations",
+    "title_zh": "老年人力量、平衡、有氧活动建议",
+    "url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-older-adults/",
+    "questions": [
+      "老年人每周运动如何安排",
+      "老年人怎样结合力量和平衡练习"
+    ]
+  },
+  {
+    "id": "pregnancy",
+    "topic": "special-populations",
+    "title_zh": "孕期和产后身体活动的专业边界",
+    "url": "https://www.cdc.gov/physical-activity-basics/guidelines/healthy-pregnant-or-postpartum-women.html",
+    "questions": [
+      "怀孕后还能运动吗需要注意什么",
+      "产后恢复运动需要先了解哪些限制"
+    ]
+  },
+  {
+    "id": "disability",
+    "topic": "special-populations",
+    "title_zh": "慢性疾病和残障人群的运动适配",
+    "url": "https://www.cdc.gov/disability-and-health/articles-documents/physical-activity-for-people-with-disability.html",
+    "questions": [
+      "有慢性疾病可以怎么选择运动",
+      "身体活动受限时如何安全增加活动"
+    ]
+  },
+  {
+    "id": "eatwell",
+    "topic": "nutrition",
+    "title_zh": "均衡饮食与食物组搭配",
+    "url": "https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/the-eatwell-guide/",
+    "questions": [
+      "减脂期一日三餐如何均衡搭配",
+      "健康饮食需要哪些食物组"
+    ]
+  },
+  {
+    "id": "calories",
+    "topic": "nutrition",
+    "title_zh": "热量、能量摄入与体重变化",
+    "url": "https://www.nhs.uk/live-well/healthy-weight/managing-your-weight/understanding-calories/",
+    "questions": [
+      "什么是热量和能量平衡",
+      "摄入热量和体重变化有什么关系"
+    ]
+  },
+  {
+    "id": "protein-foods",
+    "topic": "nutrition",
+    "title_zh": "肉鱼蛋豆类等蛋白质食物来源",
+    "url": "https://www.nhs.uk/live-well/eat-well/food-types/meat-nutrition/",
+    "questions": [
+      "蛋白质可以从哪些日常食物获得",
+      "健身饮食选择肉类时需要注意什么"
+    ]
+  },
+  {
+    "id": "carbohydrate",
+    "topic": "nutrition",
+    "title_zh": "碳水化合物、淀粉类主食与全谷物",
+    "url": "https://www.nhs.uk/live-well/eat-well/food-types/starchy-foods-and-carbohydrates/",
+    "questions": [
+      "减脂是不是不能吃米饭和碳水",
+      "全谷物和淀粉类食物如何选择"
+    ]
+  },
+  {
+    "id": "fat",
+    "topic": "nutrition",
+    "title_zh": "膳食脂肪、饱和脂肪与不饱和脂肪",
+    "url": "https://www.nhs.uk/live-well/eat-well/food-types/different-fats-nutrition/",
+    "questions": [
+      "减脂期间是不是脂肪越少越好",
+      "饱和脂肪和不饱和脂肪有什么区别"
+    ]
+  },
+  {
+    "id": "fibre",
+    "topic": "nutrition",
+    "title_zh": "膳食纤维与消化健康",
+    "url": "https://www.nhs.uk/live-well/eat-well/digestive-health/how-to-get-more-fibre-into-your-diet/",
+    "questions": [
+      "如何增加日常饮食中的膳食纤维",
+      "全谷物和蔬菜为什么有助于纤维摄入"
+    ]
+  },
+  {
+    "id": "hydration",
+    "topic": "nutrition",
+    "title_zh": "饮水、运动补水与饮料选择",
+    "url": "https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/water-drinks-nutrition/",
+    "questions": [
+      "运动时应该如何补充水分",
+      "日常饮水量和哪些因素有关"
+    ]
+  },
+  {
+    "id": "food-labels",
+    "topic": "nutrition",
+    "title_zh": "营养标签、每100克与每份营养数据",
+    "url": "https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/how-to-read-food-labels/",
+    "questions": [
+      "食品营养表每100克和每份怎么理解",
+      "怎么通过食品标签比较糖盐和脂肪"
+    ]
+  },
+  {
+    "id": "weight-loss",
+    "topic": "weight",
+    "title_zh": "健康减脂、饮食调整与可持续习惯",
+    "url": "https://www.nhs.uk/live-well/healthy-weight/managing-your-weight/tips-to-help-you-lose-weight/",
+    "questions": [
+      "想减脂应该先调整哪些饮食习惯",
+      "怎样避免极端节食并长期管理体重"
+    ]
+  },
+  {
+    "id": "weight-gain",
+    "topic": "weight",
+    "title_zh": "健康增重、增加能量与肌肉强化",
+    "url": "https://www.nhs.uk/live-well/healthy-weight/managing-your-weight/healthy-ways-to-gain-weight/",
+    "questions": [
+      "偏瘦的人如何健康增重",
+      "增重时怎么兼顾饮食和力量锻炼"
+    ]
+  },
+  {
+    "id": "vegetarian",
+    "topic": "nutrition",
+    "title_zh": "素食饮食中的蛋白质与营养平衡",
+    "url": "https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/the-vegetarian-diet/",
+    "questions": [
+      "素食健身怎样获得蛋白质",
+      "素食饮食需要关注哪些营养素"
+    ]
+  },
+  {
+    "id": "weight-maintenance",
+    "topic": "weight",
+    "title_zh": "减重和保持体重的饮食与身体活动",
+    "url": "https://www.niddk.nih.gov/health-information/weight-management/adult-overweight-obesity/eating-physical-activity",
+    "questions": [
+      "减重之后怎么保持体重",
+      "怎样把运动和长期饮食计划结合起来"
+    ]
+  },
+  {
+    "id": "sleep-habits",
+    "topic": "recovery",
+    "title_zh": "睡眠规律、咖啡因与恢复习惯",
+    "url": "https://www.nhlbi.nih.gov/health/sleep-deprivation/healthy-sleep-habits",
+    "questions": [
+      "健身恢复期怎样改善睡眠习惯",
+      "睡前喝咖啡和训练时间会影响睡眠吗"
+    ]
+  },
+  {
+    "id": "sleep-needs",
+    "topic": "recovery",
+    "title_zh": "睡眠时长与睡眠不足",
+    "url": "https://www.nhlbi.nih.gov/health/sleep/how-much-sleep",
+    "questions": [
+      "成年人每天需要睡多久",
+      "长期睡眠不足为什么需要重视"
+    ]
+  },
+  {
+    "id": "performance-supplements",
+    "topic": "supplements",
+    "title_zh": "运动营养补剂：蛋白粉、肌酸、咖啡因及证据边界",
+    "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-Consumer/",
+    "questions": [
+      "增肌一定需要蛋白粉吗",
+      "肌酸和咖啡因的运动作用及风险是什么"
+    ]
+  },
+  {
+    "id": "weight-loss-supplements",
+    "topic": "supplements",
+    "title_zh": "减肥补充剂的有效性与安全风险",
+    "url": "https://ods.od.nih.gov/factsheets/WeightLoss-Consumer/",
+    "questions": [
+      "减肥补剂靠谱吗有什么风险",
+      "燃脂产品是否能代替饮食和运动"
+    ]
+  },
+  {
+    "id": "vitamin-d",
+    "topic": "supplements",
+    "title_zh": "维生素D与补充剂使用边界",
+    "url": "https://www.nhs.uk/conditions/vitamins-and-minerals/vitamin-d/",
+    "questions": [
+      "维生素D对骨骼肌肉健康有什么作用",
+      "维生素D是不是越多越好"
+    ]
+  },
+  {
+    "id": "dehydration",
+    "topic": "safety",
+    "title_zh": "脱水症状与需要求助的情况",
+    "url": "https://www.nhs.uk/conditions/dehydration/",
+    "questions": [
+      "运动后怎样识别脱水",
+      "脱水出现哪些表现需要及时求助"
+    ]
+  },
+  {
+    "id": "heat-illness",
+    "topic": "safety",
+    "title_zh": "高温运动、中暑与热衰竭",
+    "url": "https://www.nhs.uk/conditions/heat-exhaustion-heatstroke/",
+    "questions": [
+      "炎热天气运动如何防止中暑",
+      "热衰竭和中暑有哪些危险信号"
+    ]
+  },
+  {
+    "id": "chest-pain",
+    "topic": "safety",
+    "title_zh": "胸痛的紧急就医信号",
+    "url": "https://www.nhs.uk/conditions/chest-pain/",
+    "questions": [
+      "运动中胸痛哪些情况需要紧急处理",
+      "胸痛伴随哪些症状不能继续运动"
+    ]
+  },
+  {
+    "id": "performance-nccih",
+    "topic": "supplements",
+    "title_zh": "增肌与运动表现补剂、肌酸和蛋白补充的证据与风险",
+    "url": "https://www.nccih.nih.gov/health/bodybuilding-and-performance-enhancement-supplements",
+    "questions": [
+      "增肌必须吃蛋白粉和肌酸吗",
+      "运动补剂可能有哪些健康风险"
+    ]
+  },
+  {
+    "id": "weight-loss-nccih",
+    "topic": "supplements",
+    "title_zh": "减肥补剂、燃脂产品与隐藏成分风险",
+    "url": "https://www.nccih.nih.gov/health/tips/tips-know-the-facts-about-supplements-marketed-for-weight-loss",
+    "questions": [
+      "减肥补剂真的有效安全吗",
+      "燃脂补充剂能代替饮食和运动吗"
+    ]
+  },
+  {
+    "id": "strength-aging",
+    "topic": "training",
+    "title_zh": "力量训练、渐进负荷与随年龄增长的肌肉维护",
+    "url": "https://www.nia.nih.gov/news/how-can-strength-training-build-healthier-bodies-we-age",
+    "questions": [
+      "力量训练如何逐渐增加重量和次数",
+      "年纪大了还能练力量增加肌肉吗"
+    ]
+  }
+]

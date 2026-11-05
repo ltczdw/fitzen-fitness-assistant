@@ -1,0 +1,28 @@
+FitZen distribution notices
+
+Project source and newly authored SVG assets:
+Copyright (c) 2026 ltczdw. MIT License; see MIT.txt.
+
+Inter Variable:
+Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter).
+SIL Open Font License 1.1; see Inter-OFL.txt.
+Distributed unmodified from upstream commit 353b61b9f4430d5f420d56605a6e7993e0941470,
+docs/font-files/InterVariable.woff2.
+
+Material Symbols Outlined:
+Copyright 2026 Google LLC. All Rights Reserved.
+Apache License 2.0; see Material-Symbols-APACHE-2.0.txt.
+Source: google/material-design-icons commit 49d4db35df873165d6bd6ba09b063c7dafbac2f4,
+variablefont/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf.
+Modified on 2026-10-14 by ltczdw's project tooling: converted the font container
+from TTF to WOFF2 using fontTools 4.66.1 and Brotli 1.2.0. Glyph order, character
+mapping, ligature substitutions, and variable axes are unchanged.
+
+These font licenses apply to their respective files; the project's MIT license
+does not replace them. This distribution does not imply upstream endorsement.
+
+See the source distribution's THIRD_PARTY_NOTICES.md and asset-provenance.json
+for pinned download locations, hashes, and the complete asset mapping.
+
+Frontend runtime/generated styles also retain their notices:
+Vue: see Vue-MIT.txt; Pinia: see Pinia-MIT.txt; Vue Devtools API: see Vue-Devtools-API-MIT.txt; Tailwind CSS preflight: see Tailwind-CSS-MIT.txt.

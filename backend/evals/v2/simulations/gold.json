@@ -1,0 +1,331 @@
+[
+  {
+    "id": "luna-001",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-002",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 1,
+    "required_types": [
+      "nutrition_record"
+    ],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-003",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 1,
+    "required_types": [
+      "nutrition_record",
+      "nutrition_advice"
+    ],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-004",
+    "max_authorized_workout_tasks": 1,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-005",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-006",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 1,
+    "required_types": [
+      "nutrition_advice"
+    ],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-007",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-008",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "training_qa"
+    ],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-009",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-010",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "nutrition_advice"
+    ],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-011",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-012",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 1,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-013",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-014",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 1,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-015",
+    "max_authorized_workout_tasks": 1,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-016",
+    "max_authorized_workout_tasks": 1,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-017",
+    "max_authorized_workout_tasks": 1,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-018",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "training_qa"
+    ],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-019",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 1,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-020",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-021",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "nutrition_advice"
+    ],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-022",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-023",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "luna-024",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 1,
+    "required_types": [],
+    "sql_workout_rows": null,
+    "rationale": "未明确授权/第三人/否定/假设不能授权训练写入；信息缺失需澄清。只标注可明确的任务约束。"
+  },
+  {
+    "id": "probe-001",
+    "max_authorized_workout_tasks": 1,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "workout_record"
+    ],
+    "sql_workout_rows": 1,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  },
+  {
+    "id": "probe-002",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "training_qa"
+    ],
+    "sql_workout_rows": 0,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  },
+  {
+    "id": "probe-003",
+    "max_authorized_workout_tasks": 1,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "workout_record",
+      "training_qa"
+    ],
+    "sql_workout_rows": 1,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  },
+  {
+    "id": "probe-004",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 1,
+    "required_types": [
+      "nutrition_record",
+      "nutrition_advice"
+    ],
+    "sql_workout_rows": null,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  },
+  {
+    "id": "probe-005",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 1,
+    "required_types": [
+      "nutrition_record"
+    ],
+    "sql_workout_rows": null,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  },
+  {
+    "id": "probe-006",
+    "max_authorized_workout_tasks": 1,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "workout_record"
+    ],
+    "sql_workout_rows": 1,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  },
+  {
+    "id": "probe-007",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [],
+    "sql_workout_rows": 0,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  },
+  {
+    "id": "probe-008",
+    "max_authorized_workout_tasks": 1,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "workout_record"
+    ],
+    "sql_workout_rows": 1,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  },
+  {
+    "id": "probe-009",
+    "max_authorized_workout_tasks": 2,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "workout_record",
+      "workout_record"
+    ],
+    "sql_workout_rows": 2,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  },
+  {
+    "id": "probe-010",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "training_plan"
+    ],
+    "sql_workout_rows": null,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  },
+  {
+    "id": "probe-011",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 1,
+    "required_types": [
+      "nutrition_record",
+      "training_plan"
+    ],
+    "sql_workout_rows": null,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  },
+  {
+    "id": "probe-012",
+    "max_authorized_workout_tasks": 0,
+    "max_authorized_food_tasks": 0,
+    "required_types": [
+      "training_qa"
+    ],
+    "sql_workout_rows": 0,
+    "rationale": "独立按用户命令、问号作用域、第三人及重复操作位置标注；不根据模型输出调整。"
+  }
+]

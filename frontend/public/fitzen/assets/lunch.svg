@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" fill="none">
+  <!-- Original decorative lunch icon; not a meal photograph. Copyright (c) 2026 ltczdw. MIT License. -->
+  <rect width="640" height="240" fill="#201f20"/>
+  <circle cx="320" cy="120" r="90" fill="#131314" stroke="#3d4a3d" stroke-width="2"/>
+  <circle cx="320" cy="120" r="60" stroke="#bccbb9" stroke-width="6"/>
+  <path d="M320 61v59l51 30m-51-30-51 30" stroke="#3d4a3d" stroke-width="5"/>
+  <path d="M339 82c-5 24 0 39 23 40 17-22 10-41-23-40Z" fill="#4be277"/>
+  <circle cx="287" cy="109" r="13" fill="#bccbb9"/>
+  <path d="M307 145h26m-20 13h14" stroke="#bccbb9" stroke-width="6" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,15 @@
+{
+  "suite": "negative",
+  "category": "routing_confusion",
+  "description": "意图路由迷惑样本：混合域、疑问外壳、单位换算等易误路由输入。断言规则分类器与 RAG 路由的确定性输出，并保证其中出现写意图时门控仍然兜底。",
+  "samples": [
+    {"id": "neg-r001", "category": "routing_confusion", "query": "记录饮食后再帮我安排训练计划", "expected": {"rule_intent": "nutrition", "rag_route_task": "nutrition_qa"}, "difficulty": "medium", "notes": "复合请求：规则层先命中\"记录饮食\"；多任务拆分由 Planner/校验层处理，此处断言规则层输出。", "tags": ["复合请求"]},
+    {"id": "neg-r002", "category": "routing_confusion", "query": "卧推100公斤是多少磅", "proposed_task": {"task_type": "workout_record", "action": "record"}, "expected": {"rule_intent": "workout_record", "write_authorization": "needs_confirmation", "should_write": false}, "difficulty": "hard", "notes": "单位换算问句带训练实体+数字，规则层归 workout_record（已知边界）；即使拟议写任务也因无写动词转待确认。", "tags": ["单位换算", "误路由边界"]},
+    {"id": "neg-r003", "category": "routing_confusion", "query": "怎么记录才规范的深蹲姿势", "proposed_task": {"task_type": "workout_record", "action": "record"}, "expected": {"rule_intent": "nutrition", "write_authorization": "rejected_unauthorized", "write_rejection_reason": "source_question", "should_write": false}, "difficulty": "hard", "notes": "\"怎么记录\"在规则层命中饮食咨询分支（已知边界）；写门按疑问句拒绝，不落库。", "tags": ["疑问外壳", "误路由边界"]},
+    {"id": "neg-r004", "category": "routing_confusion", "query": "练背日安排：引体向上4组，帮我记一下", "proposed_task": {"task_type": "workout_record", "action": "record"}, "expected": {"rule_intent": "workout_record", "write_authorization": "authorized", "should_write": true}, "difficulty": "medium", "tags": ["混合域"]},
+    {"id": "neg-r005", "category": "routing_confusion", "query": "我不吃早餐，这样健康吗", "expected": {"rule_intent": "training_qa", "input_guard_level": "normal"}, "difficulty": "medium", "notes": "否定式饮食陈述不构成记录命令，也不触发否定写拒绝（无写任务）。", "tags": ["否定", "咨询"]},
+    {"id": "neg-r006", "category": "routing_confusion", "query": "帮我记录卧推60kg，另外不要记录深蹲", "proposed_tasks": [{"task_type": "workout_record", "action": "record", "span": [0, 10]}, {"task_type": "workout_record", "action": "record", "span": [13, 19]}], "expected": {"task_write_authorizations": ["authorized", "rejected_unauthorized"], "task_write_rejection_reasons": [null, "source_negation"]}, "difficulty": "hard", "notes": "连接词\"另外\"隔离作用域：第一个写放行、第二个按否定拒绝。", "tags": ["多任务", "作用域"]},
+    {"id": "neg-r007", "category": "routing_confusion", "query": "深蹲膝盖痛，还要继续吗", "expected": {"input_guard_level": "normal", "rule_intent": "symptom_triage", "rule_intent_safety": "caution"}, "difficulty": "medium", "tags": ["症状", "路由"]},
+    {"id": "neg-r008", "category": "routing_confusion", "query": "把今天的饮食记成午餐：鸡胸肉200g", "proposed_task": {"task_type": "nutrition_record", "action": "record"}, "expected": {"rule_intent": "nutrition", "write_authorization": "needs_confirmation", "should_write": false}, "difficulty": "hard", "notes": "\"记成\"不在写动词白名单，即使归为饮食意图也必须转待确认。", "tags": ["改述", "待确认"]}
+  ]
+}

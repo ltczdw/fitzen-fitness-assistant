@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" fill="none">
+  <!-- Original decorative dinner icon; not a meal photograph. Copyright (c) 2026 ltczdw. MIT License. -->
+  <rect width="640" height="240" fill="#201f20"/>
+  <circle cx="320" cy="120" r="90" fill="#131314" stroke="#3d4a3d" stroke-width="2"/>
+  <path d="M267 124c27-43 66-43 89 0-23 43-62 43-89 0Z" fill="#bccbb9"/>
+  <path d="m356 124 28-26v52l-28-26Z" fill="#4be277"/>
+  <circle cx="286" cy="120" r="5" fill="#201f20"/>
+  <path d="M317 103v38m15-29v22" stroke="#3d4a3d" stroke-width="4" stroke-linecap="round"/>
+</svg>

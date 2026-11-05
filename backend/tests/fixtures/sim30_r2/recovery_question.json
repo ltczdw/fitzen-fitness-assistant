@@ -1,0 +1,13 @@
+{
+  "case": "recovery_question",
+  "source_file": "continuation-01/live/synthetic-model-responses.jsonl",
+  "source_message": "按我今天的真实训练记录给一般恢复建议。我没有填写睡眠时长和静息心率，这两项请明确说未知，不要编数字，也不要保存新的健康事实。",
+  "items": [
+    {
+      "source_call": 47,
+      "tool": "return_request_understanding",
+      "sha256": "13490107b1ea205e6fa1284bf0bbed6c046534c4acab8554dad8039b2d771817",
+      "arguments": "{\"tasks\": [{\"task_type\": \"training_qa\", \"action\": \"question\", \"text\": \"按我今天的真实训练记录给一般恢复建议。\", \"is_negated\": false, \"is_hypothetical\": false, \"is_third_party\": false, \"goal_role\": \"result\", \"history_requirement\": \"none\", \"fact_text\": null, \"reply_mode\": \"grounded\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"delivery_type\": \"advice\", \"read_spec\": {\"resource\": \"workout_records\", \"date_start\": \"2026-10-30\", \"date_end\": \"2026-10-30\"}}, {\"task_type\": \"chitchat\", \"action\": \"answer\", \"text\": \"我没有填写睡眠时长和静息心率，这两项请明确说未知，不要编数字，也不要保存新的健康事实。\", \"is_negated\": true, \"is_hypothetical\": false, \"is_third_party\": false, \"goal_role\": \"constraint\", \"history_requirement\": \"none\", \"fact_text\": null, \"reply_mode\": \"conversation\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"delivery_type\": null}], \"safety\": {\"level\": \"normal\", \"evidence\": \"\", \"categories\": [], \"reason\": \"无当前症状或医疗风险，仅请求恢复建议并声明两项数据未知、不保存\"}, \"memory_requests\": [], \"context_states\": [], \"constraint_fields\": [], \"conflict_fields\": [], \"references\": [], \"critical_history_ids\": [], \"dialogue_ids\": [], \"relation\": \"new\", \"reply_mode\": \"grounded\", \"reply_purpose\": \"general\", \"output_format\": \"default\", \"critical_fact_fields\": [], \"current_is_critical\": false, \"needs_clarification\": false, \"clarification\": \"\"}}"
+    }
+  ]
+}

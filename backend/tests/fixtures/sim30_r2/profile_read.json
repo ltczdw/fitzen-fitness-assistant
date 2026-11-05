@@ -1,0 +1,19 @@
+{
+  "case": "profile_read",
+  "source_file": "run-01/live/synthetic-model-responses.jsonl",
+  "source_message": "我档案里的身高、当前体重、目标体重和每周可训练天数分别是多少？只读档案，不要猜也不要修改。",
+  "items": [
+    {
+      "source_call": 1,
+      "tool": "return_request_understanding",
+      "sha256": "7f6e2cfbd67655b39a830737871059445ae1a024fc61cff46965cd6359e13fb5",
+      "arguments": "{\"tasks\": [{\"task_type\": \"chitchat\", \"action\": \"question\", \"text\": \"我档案里的身高、当前体重、目标体重和每周可训练天数分别是多少？只读档案，不要猜也不要修改。\", \"is_negated\": false, \"is_hypothetical\": false, \"is_third_party\": false, \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"none\", \"fact_text\": null, \"reply_mode\": \"conversation\", \"reply_purpose\": \"fact_recall\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"read_spec\": {\"resource\": \"profile\", \"fields\": [\"height\", \"current_weight\", \"target_weight\", \"weekly_training_days\"]}, \"delivery_type\": \"read\"}], \"safety\": {\"level\": \"normal\", \"evidence\": \"\", \"categories\": [], \"reason\": \"仅只读查询档案字段，无当前症状或医疗风险语境。\"}, \"reply_mode\": \"conversation\", \"reply_purpose\": \"fact_recall\", \"output_format\": \"default\", \"relation\": \"new\", \"needs_clarification\": false, \"current_is_critical\": false}"
+    },
+    {
+      "source_call": 2,
+      "tool": "return_request_understanding",
+      "sha256": "5c65a78f6a2ae814ca69c6cacb86836896f97aef2960194e64891b40303fb49a",
+      "arguments": "{\"tasks\": [{\"task_type\": \"chitchat\", \"action\": \"question\", \"text\": \"我档案里的身高、当前体重、目标体重和每周可训练天数分别是多少？只读档案，不要猜也不要修改。\", \"is_negated\": false, \"is_hypothetical\": false, \"is_third_party\": false, \"goal_role\": \"result\", \"quoted\": false, \"history_requirement\": \"none\", \"fact_text\": null, \"reply_mode\": \"conversation\", \"reply_purpose\": \"fact_recall\", \"output_format\": \"default\", \"context_ids\": [], \"fact_fields\": [], \"critical_fact_fields\": [], \"read_spec\": {\"resource\": \"profile\", \"fields\": [\"height\", \"weight\", \"target_weight\", \"training_days_per_week\"]}, \"delivery_type\": \"read\"}], \"safety\": {\"level\": \"normal\", \"evidence\": \"\", \"categories\": [], \"reason\": \"仅只读查询档案字段，无当前医疗风险语境\"}, \"reply_mode\": \"conversation\", \"reply_purpose\": \"fact_recall\", \"output_format\": \"default\", \"relation\": \"new\", \"needs_clarification\": false}"
+    }
+  ]
+}

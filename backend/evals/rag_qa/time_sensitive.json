@@ -1,0 +1,601 @@
+{
+ "suite": "rag_qa",
+ "category": "time_sensitive",
+ "description": "时间敏感问答：发布/复核/抓取日期、\"最新\"\"最近\"类表述、年份锚定问题。日期类答案的证据是引用对象的元数据（document_date/retrieved_at/publisher/url），评估脚本会把元数据并入证据文本做支持校验；涉及\"今天/明天\"的个人计划问题应拒答（见 refusal 文件）。",
+ "samples": [
+  {
+   "id": "qa-t001",
+   "category": "time_sensitive",
+   "query": "最新的 WHO 身体活动和久坐行为指南是什么时候发布的？",
+   "reference_answer": "语料中收录的 WHO 身体活动和久坐行为指南发布于 2020-11-25。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "官方指南摘要：成年人每周宜进行 150–300 分钟中等强度有氧活动"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "发布日期"
+   ]
+  },
+  {
+   "id": "qa-t002",
+   "category": "time_sensitive",
+   "query": "WHO 健康饮食事实表的发布日期是哪天？",
+   "reference_answer": "2026-01-26。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "官方事实表摘要：健康饮食的基本原则是充足、平衡、适度和多样"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "发布日期"
+   ]
+  },
+  {
+   "id": "qa-t003",
+   "category": "time_sensitive",
+   "query": "中国居民膳食指南（2022）是什么时候出版的？",
+   "reference_answer": "2022-07-01，由中国营养学会编写、人民卫生出版社出版。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "官方指南摘要：平衡膳食八准则包括食物多样、合理搭配"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "发布日期"
+   ]
+  },
+  {
+   "id": "qa-t004",
+   "category": "time_sensitive",
+   "query": "美国居民身体活动指南第二版是哪一年发布的？",
+   "reference_answer": "2018 年；官网页面在 2025-11-19 有更新。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "官方指南摘要：成年人每周应完成 150–300 分钟中等强度有氧活动"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "发布日期"
+   ]
+  },
+  {
+   "id": "qa-t005",
+   "category": "time_sensitive",
+   "query": "NHS 扭伤和拉伤页面最近一次复核是什么时候？",
+   "reference_answer": "页面复核日期为 2024-04-23。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "官方健康信息摘要：扭伤或拉伤后的前 2–3 天，可采用 PRICE 思路"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "复核日期"
+   ]
+  },
+  {
+   "id": "qa-t006",
+   "category": "time_sensitive",
+   "query": "这批健康指南资料是什么时候抓取的？",
+   "reference_answer": "语料元数据显示，这批资料均于 2026-09-13 抓取（如 WHO 健康饮食事实表的 retrieved_at）。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "官方事实表摘要：健康饮食的基本原则是充足、平衡、适度和多样"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "元数据",
+    "抓取时间"
+   ]
+  },
+  {
+   "id": "qa-t007",
+   "category": "time_sensitive",
+   "query": "最近发布的 WHO 饮食类官方资料是哪份？",
+   "reference_answer": "WHO 健康饮食事实表，发布日期 2026-01-26，是知识库中发布时间最新的资料。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "官方事实表摘要：健康饮食的基本原则是充足、平衡、适度和多样"
+    }
+   ],
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "最新",
+    "对比"
+   ]
+  },
+  {
+   "id": "qa-t008",
+   "category": "time_sensitive",
+   "query": "最近的官方指南建议成人每周高强度有氧多少分钟？",
+   "reference_answer": "按语料中的官方指南，高强度有氧建议为每周 75–150 分钟（WHO 2020-11-25 发布；美国指南第二版官网页面 2025-11-19 更新）。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "或 75–150 分钟高强度有氧活动"
+    },
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "或 75–150 分钟高强度有氧活动"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "最新",
+    "有氧"
+   ]
+  },
+  {
+   "id": "qa-t009",
+   "category": "time_sensitive",
+   "query": "2020 年 WHO 发布的身体活动指南对成年人有什么核心建议？",
+   "reference_answer": "该指南（2020-11-25 发布）建议成年人每周 150–300 分钟中等强度有氧或 75–150 分钟高强度有氧，每周至少 2 天肌肉强化，并减少久坐。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "成年人每周宜进行 150–300 分钟中等强度有氧活动，或 75–150 分钟高强度有氧活动"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "年份",
+    "WHO"
+   ]
+  },
+  {
+   "id": "qa-t010",
+   "category": "time_sensitive",
+   "query": "2022 版中国居民膳食指南的八准则现在还能作为参考吗？",
+   "reference_answer": "可以作为公共健康参考。该指南 2022-07-01 出版，是知识库中收录的现行版本，但具体饮食仍需结合个人情况调整。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "具体饮食仍需结合年龄、体重、活动量、疾病和当地食物情况调整"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "膳食指南",
+    "时效"
+   ]
+  },
+  {
+   "id": "qa-t011",
+   "category": "time_sensitive",
+   "query": "NHS 的扭伤处理建议是 2024 年复核的吗？",
+   "reference_answer": "是。页面复核日期为 2024-04-23。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "官方健康信息摘要：扭伤或拉伤后的前 2–3 天，可采用 PRICE 思路"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "复核日期"
+   ]
+  },
+  {
+   "id": "qa-t012",
+   "category": "time_sensitive",
+   "query": "美国身体活动指南页面最近更新时间和指南发布年份分别是多少？",
+   "reference_answer": "指南第二版发布于 2018 年，官网页面更新于 2025-11-19。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "官方指南摘要：成年人每周应完成 150–300 分钟中等强度有氧活动"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "HHS",
+    "更新时间"
+   ]
+  },
+  {
+   "id": "qa-t013",
+   "category": "time_sensitive",
+   "query": "这几份活动与饮食指南里，哪一份发布得最早？",
+   "reference_answer": "美国居民身体活动指南（第二版），发布于 2018 年（官网页面 2025-11-19 更新），是五份资料中发布最早的。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "官方指南摘要：成年人每周应完成 150–300 分钟中等强度有氧活动"
+    }
+   ],
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "最早",
+    "对比"
+   ]
+  },
+  {
+   "id": "qa-t014",
+   "category": "time_sensitive",
+   "query": "2018 年以来美国指南的核心建议变了吗？",
+   "reference_answer": "语料无法给出版本间差异：知识库只收录了第二版摘要（2018 年发布、官网页面 2025-11-19 更新），其建议为每周 150–300 分钟中等强度或 75–150 分钟高强度有氧、每周至少 2 天肌肉强化。",
+   "expected_citations": [
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "成年人每周应完成 150–300 分钟中等强度有氧活动，或 75–150 分钟高强度有氧活动"
+    }
+   ],
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "边界",
+    "版本"
+   ]
+  },
+  {
+   "id": "qa-t015",
+   "category": "time_sensitive",
+   "query": "扭伤前 2–3 天之后的恢复期，NHS 资料有什么建议？",
+   "reference_answer": "疼痛允许时逐步进行轻柔活动，避免长期完全不动；若恢复没有改善或出现危险信号，应尽快寻求医疗建议。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "疼痛允许时逐步进行轻柔活动，避免长期完全不动"
+    },
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "恢复没有改善，应尽快寻求医疗建议"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "时间窗"
+   ]
+  },
+  {
+   "id": "qa-t016",
+   "category": "time_sensitive",
+   "query": "一周里应该有几天安排中等强度活动？",
+   "reference_answer": "中国膳食指南建议每周至少 5 天进行中等强度活动，累计约 150 分钟。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "建议每周至少 5 天进行中等强度活动，累计约 150 分钟，并减少久坐"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "频次",
+    "膳食指南"
+   ]
+  },
+  {
+   "id": "qa-t017",
+   "category": "time_sensitive",
+   "query": "最近想开始健身，官方对新手第一周有什么建议？",
+   "reference_answer": "从较低量开始并逐步增加；多动、少坐，逐渐达到建议量；少量活动也比完全不动好。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "刚开始训练、长期不活动或健康状况特殊的人，应从较低量开始并逐步增加"
+    },
+    {
+     "source": "hhs-physical-activity-guidelines-2e",
+     "evidence_snippet": "核心行动原则是多动、少坐，逐渐达到建议量"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "最近",
+    "新手"
+   ]
+  },
+  {
+   "id": "qa-t018",
+   "category": "time_sensitive",
+   "query": "扭伤当天到第三天应该做什么？",
+   "reference_answer": "前 2–3 天采用 PRICE 思路：保护受伤部位、停止会加重疼痛的活动、冰敷（每次最多约 20 分钟、间隔 2–3 小时）、适度加压并抬高患处。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "扭伤或拉伤后的前 2–3 天，可采用 PRICE 思路：保护受伤部位、停止会加重疼痛的活动、冰敷（每次最多约 20 分钟、间隔 2–3 小时）、适度加压并抬高患处"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "时间窗"
+   ]
+  },
+  {
+   "id": "qa-t019",
+   "category": "time_sensitive",
+   "query": "WHO 饮食目标里提到的人群适用年龄下限是多少？",
+   "reference_answer": "10 岁以上人群。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "对 10 岁以上人群，指南提出每天至少 400 克蔬菜水果和至少 25 克天然膳食纤维的公共健康目标"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "WHO",
+    "适用范围"
+   ]
+  },
+  {
+   "id": "qa-t020",
+   "category": "time_sensitive",
+   "query": "今年官方对健康饮食的基本原则有新说法吗？",
+   "reference_answer": "知识库收录的 WHO 健康饮食事实表（2026-01-26）提出的基本原则仍是充足、平衡、适度和多样。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "健康饮食的基本原则是充足、平衡、适度和多样"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "今年",
+    "原则"
+   ]
+  },
+  {
+   "id": "qa-t021",
+   "category": "time_sensitive",
+   "query": "2026 年收录的这份健康饮食指南，现在还算新吗？",
+   "reference_answer": "语料抓取时间为 2026-09-13，其中 WHO 健康饮食事实表发布于 2026-01-26，属于 2026 年的资料。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "官方事实表摘要：健康饮食的基本原则是充足、平衡、适度和多样"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "更新",
+    "元数据"
+   ]
+  },
+  {
+   "id": "qa-t022",
+   "category": "time_sensitive",
+   "query": "上个月 WHO 有新指南发布吗？",
+   "reference_answer": "知识库只收录了 2026-01-26 发布的 WHO 健康饮食事实表，不包含逐月发布动态，无法回答上个月是否有新指南。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "官方事实表摘要：健康饮食的基本原则是充足、平衡、适度和多样"
+    }
+   ],
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "边界",
+    "时间线"
+   ]
+  },
+  {
+   "id": "qa-t023",
+   "category": "time_sensitive",
+   "query": "扭伤后冰敷频率是按小时还是按天安排？",
+   "reference_answer": "按小时安排：冰敷每次最多约 20 分钟、间隔 2–3 小时。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "冰敷（每次最多约 20 分钟、间隔 2–3 小时）"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "NHS",
+    "频率"
+   ]
+  },
+  {
+   "id": "qa-t024",
+   "category": "time_sensitive",
+   "query": "今天天气适合跑步吗？",
+   "reference_answer": "【应拒答】知识库是静态的官方指南摘要，不包含天气、地点或个人日程信息，无法判断今天是否适合跑步。",
+   "expected_citations": [],
+   "difficulty": "easy",
+   "should_reject": true,
+   "rejection_category": "no_realtime_data",
+   "tags": [
+    "今天",
+    "拒答"
+   ]
+  },
+  {
+   "id": "qa-t025",
+   "category": "time_sensitive",
+   "query": "我最近两周体重涨了，今天中午该吃什么？",
+   "reference_answer": "【应拒答】这属于需要结合个人近期记录和当日情况的个体化建议，静态指南语料没有依据给出今天的具体餐食安排。",
+   "expected_citations": [],
+   "difficulty": "medium",
+   "should_reject": true,
+   "rejection_category": "personal_context",
+   "tags": [
+    "最近",
+    "今天",
+    "拒答"
+   ]
+  },
+  {
+   "id": "qa-t026",
+   "category": "time_sensitive",
+   "query": "WHO 身体活动指南的检索编号是多少？",
+   "reference_answer": "ISBN/编号为 9789240014886（见官方出版物链接）。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "官方指南摘要：成年人每周宜进行 150–300 分钟中等强度有氧活动"
+    }
+   ],
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "元数据",
+    "编号"
+   ]
+  },
+  {
+   "id": "qa-t027",
+   "category": "time_sensitive",
+   "query": "NHS 扭伤页面的官方网址是什么？",
+   "reference_answer": "https://www.nhs.uk/conditions/sprains-and-strains/",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "官方健康信息摘要：扭伤或拉伤后的前 2–3 天，可采用 PRICE 思路"
+    }
+   ],
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "元数据",
+    "url"
+   ]
+  },
+  {
+   "id": "qa-t028",
+   "category": "time_sensitive",
+   "query": "WHO 健康饮食事实表发布到现在过了多久？",
+   "reference_answer": "按语料抓取日期 2026-09-13 计算，距 2026-01-26 发布约 230 余天。",
+   "expected_citations": [
+    {
+     "source": "who-healthy-diet-2026",
+     "evidence_snippet": "官方事实表摘要：健康饮食的基本原则是充足、平衡、适度和多样"
+    }
+   ],
+   "difficulty": "hard",
+   "should_reject": false,
+   "derived_numbers": [
+    230
+   ],
+   "tags": [
+    "推算",
+    "元数据"
+   ]
+  },
+  {
+   "id": "qa-t029",
+   "category": "time_sensitive",
+   "query": "这周我只休息一天，怎么安排训练？",
+   "reference_answer": "【应拒答】个人周计划需要结合你的训练史、目标和恢复情况，知识库只有人群层面建议，无法给出本周的具体安排。",
+   "expected_citations": [],
+   "difficulty": "medium",
+   "should_reject": true,
+   "rejection_category": "personal_context",
+   "tags": [
+    "这周",
+    "拒答"
+   ]
+  },
+  {
+   "id": "qa-t030",
+   "category": "time_sensitive",
+   "query": "膳食指南的活动建议用天数还是分钟表达？",
+   "reference_answer": "两者都用：每周至少 5 天进行中等强度活动，累计约 150 分钟。",
+   "expected_citations": [
+    {
+     "source": "cnsoc-cdg-2022",
+     "evidence_snippet": "建议每周至少 5 天进行中等强度活动，累计约 150 分钟，并减少久坐"
+    }
+   ],
+   "difficulty": "easy",
+   "should_reject": false,
+   "tags": [
+    "频次",
+    "口径"
+   ]
+  },
+  {
+   "id": "qa-t031",
+   "category": "time_sensitive",
+   "query": "明天开始执行 WHO 建议来得及吗？",
+   "reference_answer": "随时可以开始。官方建议对起步人群是从较低量开始并逐步增加，少量活动也比完全不动好；但具体计划应结合个人情况。",
+   "expected_citations": [
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "刚开始训练、长期不活动或健康状况特殊的人，应从较低量开始并逐步增加"
+    },
+    {
+     "source": "who-physical-activity-2020",
+     "evidence_snippet": "少量活动也比完全不动好"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "medium",
+   "should_reject": false,
+   "tags": [
+    "明天",
+    "起步"
+   ]
+  },
+  {
+   "id": "qa-t032",
+   "category": "time_sensitive",
+   "query": "扭伤超过 3 天了还要继续冰敷吗？",
+   "reference_answer": "语料的冰敷建议明确覆盖前 2–3 天（每次最多约 20 分钟、间隔 2–3 小时）；超过该时间窗后应以逐步轻柔活动为主，疼痛或肿胀持续加重则应就医。",
+   "expected_citations": [
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "扭伤或拉伤后的前 2–3 天，可采用 PRICE 思路"
+    },
+    {
+     "source": "nhs-sprains-strains-2024",
+     "evidence_snippet": "疼痛允许时逐步进行轻柔活动，避免长期完全不动"
+    }
+   ],
+   "min_citations": 1,
+   "difficulty": "hard",
+   "should_reject": false,
+   "tags": [
+    "时间窗",
+    "边界"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none">
+  <!-- Original decorative mobility icon; not an exercise instruction. Copyright (c) 2026 ltczdw. MIT License. -->
+  <rect width="240" height="180" fill="#201f20"/>
+  <circle cx="120" cy="90" r="24" stroke="#4be277" stroke-width="7"/>
+  <g stroke="#bccbb9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M74 56c20-20 51-22 76-8l15 12m-1-22 1 22-23 1"/>
+    <path d="M166 124c-20 20-51 22-76 8l-15-12m1 22-1-22 23-1"/>
+  </g>
+</svg>

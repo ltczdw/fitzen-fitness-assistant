@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- Original project brand icon. Copyright (c) 2026 ltczdw. MIT License. -->
+  <rect x="2" y="2" width="32" height="32" rx="9" fill="#201f20"/>
+  <g stroke="#4be277" stroke-width="2.8" stroke-linecap="round">
+    <path d="M12 18h12m-12-6v12m12-12v12M8 14v8m20-8v8"/>
+  </g>
+</svg>

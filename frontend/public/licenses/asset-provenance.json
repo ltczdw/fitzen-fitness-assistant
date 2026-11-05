@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "path": "frontend/public/fitzen/assets/breakfast.svg",
+      "sha256": "cebc0cb8587b17f24abca13f744c8dc6be38c4951b371b1220c46a1cce94dfe6",
+      "origin": "Created in this project on 2026-10-14; source is the SVG file itself",
+      "copyright": "Copyright (c) 2026 ltczdw",
+      "license": "MIT",
+      "license_file": "frontend/public/licenses/MIT.txt"
+    },
+    {
+      "path": "frontend/public/fitzen/assets/default-avatar.svg",
+      "sha256": "c9cbf2a563add483e5b2fdff0263853fc053579ec2f05c0a26ea04b607c542a2",
+      "origin": "Created in this project on 2026-10-14; source is the SVG file itself",
+      "copyright": "Copyright (c) 2026 ltczdw",
+      "license": "MIT",
+      "license_file": "frontend/public/licenses/MIT.txt"
+    },
+    {
+      "path": "frontend/public/fitzen/assets/dinner.svg",
+      "sha256": "46420930094d9a187203b587cad455fe72db6c2ed8030f7ff74364fc11b11b4e",
+      "origin": "Created in this project on 2026-10-14; source is the SVG file itself",
+      "copyright": "Copyright (c) 2026 ltczdw",
+      "license": "MIT",
+      "license_file": "frontend/public/licenses/MIT.txt"
+    },
+    {
+      "path": "frontend/public/fitzen/assets/lunch.svg",
+      "sha256": "9e1c2cf0211c5233467a908fc634a911012c33341c39e8f5296b45fb00a3c2e4",
+      "origin": "Created in this project on 2026-10-14; source is the SVG file itself",
+      "copyright": "Copyright (c) 2026 ltczdw",
+      "license": "MIT",
+      "license_file": "frontend/public/licenses/MIT.txt"
+    },
+    {
+      "path": "frontend/public/fitzen/assets/mobility.svg",
+      "sha256": "399fcce56581cf9315c898a3c2ad950a487236c3e8dd01c78df5d6bc0fe695e5",
+      "origin": "Created in this project on 2026-10-14; source is the SVG file itself",
+      "copyright": "Copyright (c) 2026 ltczdw",
+      "license": "MIT",
+      "license_file": "frontend/public/licenses/MIT.txt"
+    },
+    {
+      "path": "frontend/public/fitzen/assets/training.svg",
+      "sha256": "d48025958911b11414e7408e90ac73b6d0f582b385c603275d22a18ccfef8b75",
+      "origin": "Created in this project on 2026-10-14; source is the SVG file itself",
+      "copyright": "Copyright (c) 2026 ltczdw",
+      "license": "MIT",
+      "license_file": "frontend/public/licenses/MIT.txt"
+    },
+    {
+      "path": "frontend/public/fitzen/fonts/InterVariable.woff2",
+      "sha256": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3",
+      "source_url": "https://raw.githubusercontent.com/rsms/inter/353b61b9f4430d5f420d56605a6e7993e0941470/docs/font-files/InterVariable.woff2",
+      "source_commit": "353b61b9f4430d5f420d56605a6e7993e0941470",
+      "source_sha256": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3",
+      "license": "OFL-1.1",
+      "license_file": "frontend/public/licenses/Inter-OFL.txt",
+      "modification": "None; exact upstream bytes"
+    },
+    {
+      "path": "frontend/public/fitzen/fonts/MaterialSymbolsOutlined.woff2",
+      "sha256": "9d4d2c619480144b240052715956dbd1cbe58a91225998c594ea3b1ab17bbf70",
+      "source_url": "https://raw.githubusercontent.com/google/material-design-icons/49d4db35df873165d6bd6ba09b063c7dafbac2f4/variablefont/MaterialSymbolsOutlined%5BFILL%2CGRAD%2Copsz%2Cwght%5D.ttf",
+      "source_commit": "49d4db35df873165d6bd6ba09b063c7dafbac2f4",
+      "source_sha256": "77ff1c20896afc6f1abf7d57fc408234dfd021ab050b63e0442e71d6c9f0d6b8",
+      "license": "Apache-2.0",
+      "license_file": "frontend/public/licenses/Material-Symbols-APACHE-2.0.txt",
+      "modification": "Converted TTF container to WOFF2 with fontTools 4.66.1/Brotli 1.2.0; source font identity, outlines, mappings, ligatures and axes retained"
+    },
+    {
+      "path": "frontend/public/fitzen/logo.svg",
+      "sha256": "bc9235d33b190e9163f0d7c880a7653680dd1a097fee9fac8a8d17696395c545",
+      "origin": "Created in this project on 2026-10-14; source is the SVG file itself",
+      "copyright": "Copyright (c) 2026 ltczdw",
+      "license": "MIT",
+      "license_file": "frontend/public/licenses/MIT.txt"
+    }
+  ],
+  "licenses": [
+    {
+      "path": "frontend/public/licenses/Inter-OFL.txt",
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+      "source_url": "https://raw.githubusercontent.com/rsms/inter/353b61b9f4430d5f420d56605a6e7993e0941470/LICENSE.txt"
+    },
+    {
+      "path": "frontend/public/licenses/Material-Symbols-APACHE-2.0.txt",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "source_url": "https://raw.githubusercontent.com/google/material-design-icons/49d4db35df873165d6bd6ba09b063c7dafbac2f4/LICENSE"
+    }
+  ],
+  "frontend_code_licenses": [
+    {
+      "package": "vue",
+      "version": "3.5.42",
+      "license": "MIT",
+      "path": "frontend/public/licenses/Vue-MIT.txt",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175",
+      "origin": "License distributed with installed package; package-lock.json fixes its registry integrity",
+      "source_url": "https://registry.npmjs.org/vue/3.5.42"
+    },
+    {
+      "package": "pinia",
+      "version": "4.0.3",
+      "license": "MIT",
+      "path": "frontend/public/licenses/Pinia-MIT.txt",
+      "sha256": "91a2845c4db44e7497b514b98634a674c737986ad0db81599307cf733bf850b2",
+      "origin": "License distributed with installed package; package-lock.json fixes its registry integrity",
+      "source_url": "https://registry.npmjs.org/pinia/4.0.3"
+    },
+    {
+      "package": "@vue/devtools-api",
+      "version": "8.2.1",
+      "license": "MIT",
+      "path": "frontend/public/licenses/Vue-Devtools-API-MIT.txt",
+      "sha256": "d0ac09e8df2b54625ea1606dfae75d5b6af1cbc5d28a17eca1350be9c367175c",
+      "origin": "License distributed with installed package; package-lock.json fixes its registry integrity",
+      "source_url": "https://registry.npmjs.org/@vue%2fdevtools-api/8.2.1"
+    },
+    {
+      "package": "tailwindcss",
+      "version": "3.4.17",
+      "license": "MIT",
+      "path": "frontend/public/licenses/Tailwind-CSS-MIT.txt",
+      "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985",
+      "origin": "License distributed with installed package; package-lock.json fixes its registry integrity",
+      "source_url": "https://registry.npmjs.org/tailwindcss/3.4.17"
+    }
+  ]
+}
