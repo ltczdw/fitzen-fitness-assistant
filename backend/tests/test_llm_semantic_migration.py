@@ -532,7 +532,7 @@ def test_bad_first_ref_cannot_mark_the_three_question_goal_complete():
 
 
 def test_valid_refs_deliver_all_three_answers_once_in_source_order():
-    from tests.react_phase_a_support import FakeLLM, RecordingExecutor, assistant, ref_of, tool_call
+    from tests.react_supervisor_fixtures import FakeLLM, RecordingExecutor, assistant, ref_of, tool_call
     from app.services.agent.react_graph import ReactDependencies, invoke_react
 
     candidates = _three_candidates()
@@ -680,7 +680,7 @@ def test_partial_commit_survives_cold_semantic_budget_stop(tmp_path, monkeypatch
     from tests.react_phase_c1_support import isolated
     from tests.react_phase_c2_2_support import ensure_catalog
     from tests.react_phase_c2_3_support import C3HTTPHarness, business_keys
-    from test_sim26_multi_read_delivery import (
+    from test_react_read_answer_delivery import (
         MIXED_SOURCE, _count_read_handlers, _install_provider, _install_rag,
         _mixed_program, _mixed_understanding, _phase_fault,
     )
@@ -746,7 +746,7 @@ def test_json_sse_replay_is_strict_with_no_extra_provider_worker_or_rows(tmp_pat
     from tests.react_phase_c1_support import isolated
     from tests.react_phase_c2_2_support import ensure_catalog
     from tests.react_phase_c2_3_support import C3HTTPHarness, business_keys
-    from test_sim26_multi_read_delivery import (
+    from test_react_read_answer_delivery import (
         SAVED_TWO_READ_CASES, _count_read_handlers, _install_provider, _install_rag,
         _nine_table_counts, _saved_batch, _task, _understanding,
     )

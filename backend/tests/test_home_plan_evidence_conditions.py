@@ -14,7 +14,7 @@ from tests.test_rag_evidence_conflict import _chunk
 from tests.react_phase_c2_3_support import (
     C3HTTPHarness, c3_env, mock_provider_transport, all_business_rows,
 )
-from tests.test_workout_save_repair_20261102 import semantic_response, native_tools
+from tests.test_workout_source_bound_writes import semantic_response, native_tools
 from tests.test_react_record_continuation import tool_response
 
 GENERAL = '每个动作尝试8至12次为1组,至少2组,3组可获得更多益处'

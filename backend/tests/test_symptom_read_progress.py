@@ -4,8 +4,8 @@ import pytest
 
 from app.services.rag.evidence_conflict import EvidenceAnalysis
 from evals.v2.safety import deny_network
-from tests.react_phase_a_support import tool_call
-from tests.react_phase_b_codex_support import environment, chunks, semantic_outline, semantic_task, sse_body
+from tests.react_supervisor_fixtures import tool_call
+from tests.react_readonly_fixtures import environment, chunks, semantic_outline, semantic_task, sse_body
 
 SOURCE='跑步的时候小腿痛'
 

@@ -6,8 +6,8 @@ directly, then the same user asks what they did today.
 """
 import json
 
-from tests.react_phase_a_support import tool_call
-from tests.react_phase_b_codex_support import (
+from tests.react_supervisor_fixtures import tool_call
+from tests.react_readonly_fixtures import (
     environment, semantic_outline, semantic_task, tool_results,
 )
 

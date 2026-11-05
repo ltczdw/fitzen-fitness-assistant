@@ -10,8 +10,8 @@ from app.services.llm.budget import ModelBudgetError, ModelBudgetUnavailable
 from app.services.llm.structured import StructuredOutputError
 from app.services.agent.failure_details import exception_failure, transport_failure
 from evals.v2.safety import deny_network
-from tests.react_phase_a_support import tool_call
-from tests.react_phase_b_codex_support import environment, chunks, semantic_outline, semantic_task, sse_body
+from tests.react_supervisor_fixtures import tool_call
+from tests.react_readonly_fixtures import environment, chunks, semantic_outline, semantic_task, sse_body
 
 SOURCE = "请给我饮食建议"
 SECRET = "SECRET_PROVIDER_BODY_TOKEN"

@@ -231,7 +231,7 @@ def test_correction_budget_stop_keeps_original_format_failure_and_only_one_http(
 
 @pytest.mark.parametrize("transport", ["json", "sse"])
 def test_api_reports_both_json_failure_and_correction_budget_stop(tmp_path, monkeypatch, transport):
-    from tests.react_phase_b_codex_support import environment, sse_body
+    from tests.react_readonly_fixtures import environment, sse_body
     from app.services.llm.client import LLMErrorCategory
     error = LLMGatewayError("STOP", LLMErrorCategory.POLICY, code="model_prepare_token_budget_exhausted")
     error.correction_failure_code = "structured_invalid_json"
@@ -309,7 +309,7 @@ def test_format_correction_window_stop_preserves_cause_with_no_second_http(tmp_p
 
 def test_large_real_understanding_schema_can_correct_inside_original_prepare_budget(tmp_path, monkeypatch):
     from app.services.agent.semantics import RequestUnderstanding, PROMPT, validate_understanding
-    from tests.react_phase_b_codex_support import semantic_outline, semantic_task
+    from tests.react_readonly_fixtures import semantic_outline, semantic_task
     store, engine = make_store(tmp_path)
     seen = []
     query = "请说明训练恢复建议"

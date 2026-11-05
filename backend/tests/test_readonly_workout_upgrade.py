@@ -7,7 +7,7 @@ from tests.test_react_record_continuation import (
     C3HTTPHarness, c3_env, provider, saved_rows,
 )
 from tests.react_phase_c2_3_support import set_write_flag
-from tests.test_workout_save_repair_20261102 import (
+from tests.test_workout_source_bound_writes import (
     mock_provider_transport, semantic_response, native_tools, native, ref_of,
 )
 

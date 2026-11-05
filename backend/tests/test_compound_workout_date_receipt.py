@@ -12,7 +12,7 @@ from app.services.agent.react_graph import completed_delivery_goals, _extract_fi
 from tests.react_phase_c2_3_support import (
     c3_env, C3HTTPHarness, all_business_rows, workout_rows, mock_provider_transport,
 )
-from tests.test_workout_save_repair_20261102 import (
+from tests.test_workout_source_bound_writes import (
     semantic_response, native, native_tools, ref_of, record,
 )
 

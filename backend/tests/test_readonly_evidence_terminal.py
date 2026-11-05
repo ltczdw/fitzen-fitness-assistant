@@ -2,8 +2,8 @@
 import pytest
 from unittest.mock import AsyncMock
 from evals.v2.safety import deny_network
-from tests.react_phase_a_support import tool_call
-from tests.react_phase_b_codex_support import (
+from tests.react_supervisor_fixtures import tool_call
+from tests.react_readonly_fixtures import (
     environment, chunks, semantic_outline, semantic_task, sse_body,
 )
 
@@ -49,7 +49,7 @@ def test_read_goal_evidence_outcome_is_terminal(tmp_path, monkeypatch, transport
 @pytest.mark.parametrize('tool',['advise_nutrition','answer_training','plan_training'])
 def test_retrieval_outage_is_not_misreported_as_completed_evidence_check(tmp_path,monkeypatch,tool):
     from app.services.agent import react_readonly_workers as workers
-    from tests.react_phase_b_codex_support import obs
+    from tests.react_readonly_fixtures import obs
     from app.services.agent import task_information
     with deny_network() as audit, environment(tmp_path,monkeypatch,'outage') as env:
         env.mock_rag([])

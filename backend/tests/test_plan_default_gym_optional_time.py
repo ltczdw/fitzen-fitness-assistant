@@ -6,7 +6,7 @@ from uuid import uuid4
 import httpx,pytest
 from app.services.agent.task_information import PlanInformation,check_plan_information
 from app.services.agent.training_structure import parse_untimed_plan,render_untimed_plan
-from tests.test_workout_save_repair_20261102 import c3_env,C3HTTPHarness,mock_provider_transport,semantic_response,native_tools
+from tests.test_workout_source_bound_writes import c3_env,C3HTTPHarness,mock_provider_transport,semantic_response,native_tools
 from tests.test_react_record_continuation import tool_response
 
 

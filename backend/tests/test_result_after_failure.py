@@ -86,8 +86,8 @@ def test_legacy_result_is_retained_and_execution_mode_alone_marks_failure(memory
 @pytest.mark.parametrize("window", [0, 10])
 def test_diet_failure_then_concrete_followup_succeeds_and_replays(tmp_path, monkeypatch, transport, window):
     from evals.v2.safety import deny_network
-    from tests.react_phase_a_support import tool_call
-    from tests.react_phase_b_codex_support import environment, chunks, semantic_outline, semantic_task, sse_body
+    from tests.react_supervisor_fixtures import tool_call
+    from tests.react_readonly_fixtures import environment, chunks, semantic_outline, semantic_task, sse_body
     source, followup = "给我制定减脂饮食计划", "给我具体的食物"
     with deny_network() as audit, environment(tmp_path, monkeypatch, "result-after-failure") as env:
         env.mp.setattr(settings, "wiki_enabled", True)

@@ -7,8 +7,8 @@ import pytest
 from app.services.agent.result_reference import result_sources, validate_result_reference
 from app.services.agent.semantics import SemanticTask
 from evals.v2.safety import deny_network
-from tests.react_phase_a_support import tool_call
-from tests.react_phase_b_codex_support import environment, chunks, semantic_outline, semantic_task, sse_body
+from tests.react_supervisor_fixtures import tool_call
+from tests.react_readonly_fixtures import environment, chunks, semantic_outline, semantic_task, sse_body
 
 SOURCE='给我制定一个减脂饮食计划'
 REPLY='重新生成'

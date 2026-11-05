@@ -115,7 +115,7 @@ def test_provider_message_is_not_exposed_and_completed_receipts_are_preserved(mo
 
 @pytest.mark.parametrize("transport", ["json", "sse"])
 def test_api_followup_explains_retry_stop_and_replay_makes_no_calls(tmp_path, monkeypatch, transport):
-    from tests.react_phase_b_codex_support import environment, sse_body
+    from tests.react_readonly_fixtures import environment, sse_body
     error = LLMGatewayError("local stop", LLMErrorCategory.POLICY,
                             code="model_prepare_token_budget_exhausted")
     error.retry_failure = LLMGatewayError("temporary", LLMErrorCategory.UPSTREAM,

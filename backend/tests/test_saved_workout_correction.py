@@ -9,7 +9,7 @@ from sqlalchemy import text
 from tests.react_phase_c2_3_support import (
     c3_env, C3HTTPHarness, C3SQLFault, mock_provider_transport, workout_rows, all_business_rows,
 )
-from tests.test_workout_save_repair_20261102 import semantic_response, native_tools, native, record, ref_of
+from tests.test_workout_source_bound_writes import semantic_response, native_tools, native, record, ref_of
 
 ORIGINAL='帮我记录昨天哑推胸15*8*4'
 CORRECTION='说错了是哑铃推胸'

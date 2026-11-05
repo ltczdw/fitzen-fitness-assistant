@@ -10,7 +10,7 @@ from sqlalchemy import select
 
 from app.db.memory_models import MemoryTurn
 from app.services.agent import planning_questions
-from tests.test_workout_save_repair_20261102 import (
+from tests.test_workout_source_bound_writes import (
     C3HTTPHarness, c3_env, mock_provider_transport, native_tools, semantic_response, saved_rows,
 )
 from tests.test_react_record_continuation import tool_response

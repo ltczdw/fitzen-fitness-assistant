@@ -165,8 +165,8 @@ def test_real_hybrid_load_routes_ten_turns_but_generates_only_selected_goal(tmp_
     from app.core import clock
     from app.schemas.chat import ChatRequest
     from evals.v2.safety import deny_network
-    from tests.react_phase_a_support import tool_call
-    from tests.react_phase_b_codex_support import environment,chunks,semantic_outline,semantic_task,sse_body
+    from tests.react_supervisor_fixtures import tool_call
+    from tests.react_readonly_fixtures import environment,chunks,semantic_outline,semantic_task,sse_body
     with deny_network() as audit,environment(tmp_path,monkeypatch,'recent-http') as env:
         enable(monkeypatch)
         monkeypatch.setattr(settings,'wiki_enabled',True)
